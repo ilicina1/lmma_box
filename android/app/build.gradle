@@ -48,6 +48,11 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    lintOptions {
+        disable 'InvalidPackage'
+        checkReleaseBuilds false
+    }
 }
 
 flutter {
@@ -56,9 +61,4 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
-
-lintOptions {
-    disable 'InvalidPackage'
-    checkReleaseBuilds false
 }
