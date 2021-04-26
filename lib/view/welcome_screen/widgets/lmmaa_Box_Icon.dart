@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
 Widget lmmaaBoxIcon() {
-  return Text('');
+  return Image(image: AssetImage('assets/lmmaa_box.png'));
 }
