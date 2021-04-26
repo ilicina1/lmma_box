@@ -62,7 +62,7 @@ flutter:
   fonts:
     - family: Averta
       fonts:
-        - asset: assets/Averta Cyrillic Black Italic.otf
+        - asset: assets/Averta Cyrillic Regular.otf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

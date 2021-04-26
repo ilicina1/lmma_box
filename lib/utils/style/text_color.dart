@@ -4,7 +4,7 @@ TextStyle welcomeScreenTextStyle() {
   return TextStyle(
       color: Colors.black,
       fontSize: 12,
-      fontFamily: 'assets/Averta Cyrillic Bold.otf');
+      fontFamily: 'assets/Averta Cyrillic Regular.otf');
 }
 
 //TextStyle welcomeScreenTextStyle =
