@@ -18,8 +18,8 @@ class _FirstPageState extends State<FirstPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-                width: 100,
-                height: 100,
+                width: 315, //315
+                height: 334, //334
                 child:
                     Image(image: AssetImage('assets/first_screen_image.png'))),
             Padding(
