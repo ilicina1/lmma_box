@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'LmmaBox',
-      theme: ThemeData(fontFamily: 'Averta'),
+      theme: ThemeData(fontFamily: 'Averta', primaryColor: Colors.yellow),
       home: SecondPage(),
     );
   }

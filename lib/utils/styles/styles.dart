@@ -5,3 +5,10 @@ TextStyle skipButtonStyle = TextStyle(
   fontSize: 15,
   fontWeight: FontWeight.w500,
 );
+
+TextStyle headerText = TextStyle(
+  color: Colors.grey[800],
+  fontFamily: "Averta",
+  fontWeight: FontWeight.bold,
+  fontSize: 40,
+);
