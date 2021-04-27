@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/view/welcome_screen/pages/third_page.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 class SplashApp extends StatefulWidget {
@@ -11,7 +12,7 @@ class _SplashAppState extends State<SplashApp> {
   Widget build(BuildContext context) {
     return new SplashScreen(
         seconds: 5,
-        navigateAfterSeconds: new AfterSplash(),
+        navigateAfterSeconds: new FourthPage(),
         title: new Text(
           'Welcome to Lmmaa box',
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
