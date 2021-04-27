@@ -31,7 +31,7 @@ class PageScroller extends StatelessWidget {
                 ],
               )),
               WelcomeScreenPagination(),
-              BottomButtons(pageController)
+              BottomButtons(_pageController, screenScroll)
             ],
           ),
         );

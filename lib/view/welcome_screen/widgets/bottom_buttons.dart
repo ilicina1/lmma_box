@@ -6,7 +6,8 @@ import 'package:provider/provider.dart';
 
 class BottomButtons extends StatelessWidget {
   final PageController _pageController;
-  BottomButtons(this._pageController);
+  var screenScroll;
+  BottomButtons(this._pageController, this.screenScroll);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,8 +29,8 @@ class BottomButtons extends StatelessWidget {
             )
           : Column(
               children: [
-                previousButton(context, _pageController),
-                nextButton(context, _pageController),
+                previousButton(context, _pageController, screenScroll),
+                nextButton(context, _pageController, screenScroll),
               ],
             ),
     );
