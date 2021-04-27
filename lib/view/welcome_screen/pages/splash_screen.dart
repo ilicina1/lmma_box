@@ -11,7 +11,7 @@ class _SplashAppState extends State<SplashApp> {
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-        seconds: 5,
+        seconds: 3,
         navigateAfterSeconds: new SecondPage(),
         title: new Text(
           'Welcome to Lmmaa box',
@@ -23,22 +23,5 @@ class _SplashAppState extends State<SplashApp> {
         photoSize: 100.0,
         onClick: () => print("Flutter Egypt"),
         loaderColor: Colors.red);
-  }
-}
-
-class AfterSplash extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-          title: new Text("Zavrsen splash screen od 5 sekundi"),
-          automaticallyImplyLeading: false),
-      body: new Center(
-        child: new Text(
-          "Ovdje ide signin stranica!",
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
-        ),
-      ),
-    );
   }
 }

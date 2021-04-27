@@ -27,17 +27,17 @@ Widget previousButton(context) {
         ),
         onPressed: () {
           if (trenutnaStranica == "second_page") {
-            // Navigator.push(
+            // Navigator.pushReplacement(
             //   context,
             //   MaterialPageRoute(builder: (context) => SecondPage()),
             // );
           } else if (trenutnaStranica == "third_page") {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => SecondPage()),
             );
           } else if (trenutnaStranica == "fourth_page") {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => ThirdPage()),
             );

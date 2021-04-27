@@ -22,17 +22,17 @@ Widget nextButton(context) {
         ),
         onPressed: () {
           if (trenutnaStranica == "first_page") {
-            //   Navigator.push(
+            //   Navigator.pushReplacement(
             //   context,
             //   MaterialPageRoute(builder: (context) => FirstPage()),
             // );
           } else if (trenutnaStranica == "second_page") {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => ThirdPage()),
             );
           } else if (trenutnaStranica == "third_page") {
-            // Navigator.push(
+            // Navigator.pushReplacement(
             //   context,
             //   MaterialPageRoute(builder: (context) => ThirdPage()),
             // );
