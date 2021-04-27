@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget previousButton(context, _pageController) {
+Widget previousButton(context, _pageController,screenScroll) {
   return Padding(
     padding: const EdgeInsets.fromLTRB(50, 0, 50, 20),
     child: Container(
@@ -23,11 +23,14 @@ Widget previousButton(context, _pageController) {
           ),
         ),
         onPressed: () {
-          _pageController.animateToPage(
-            _pageController.page - 1,
-            duration: (const Duration(milliseconds: 400)),
-            curve: Curves.easeInOut,
-          );
+             screenScroll.changePage(screenScroll.page - 1);
+          if (_pageController.hasClients) {
+            _pageController.animateToPage(
+              screenScroll.page,
+              duration: (const Duration(milliseconds: 400)),
+              curve: Curves.easeInOut,
+            );
+          }
         },
       ),
     ),

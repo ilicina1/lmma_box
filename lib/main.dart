@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:lmma_box/view/welcome_screen/pages/splash_screen.dart';
 import 'package:lmma_box/providers/screen_scroll.dart';
 import 'package:provider/provider.dart';
+import 'package:lmma_box/view/welcome_screen/pages/splash_screen.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(

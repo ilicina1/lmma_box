@@ -6,7 +6,10 @@ class ScreenScrollProvider extends ChangeNotifier {
   ScreenScrollProvider(this._page);
   int get page => _page;
   void changePage(page) {
-    _page = page;
+    if (page < 0) {
+      _page = 0;
+    } else {
+    _page = page;}
     notifyListeners();
   }
 }

@@ -9,7 +9,7 @@ import 'package:lmma_box/view/welcome_screen/widgets/welcome_screen_pagination.d
 import 'package:provider/provider.dart';
 
 class PageScroller extends StatelessWidget {
-  PageController pageController = PageController();
+  PageController _pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Consumer<ScreenScrollProvider>(
@@ -20,6 +20,7 @@ class PageScroller extends StatelessWidget {
             children: [
               Expanded(
                   child: PageView(
+                    controller: _pageController,
                 onPageChanged: (p) {
                   screenScroll.changePage(p);
                 },
@@ -31,7 +32,7 @@ class PageScroller extends StatelessWidget {
                 ],
               )),
               WelcomeScreenPagination(),
-              BottomButtons(pageController, screenScroll)
+              BottomButtons(_pageController, screenScroll)
             ],
           ),
         );
