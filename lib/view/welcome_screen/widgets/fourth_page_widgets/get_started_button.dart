@@ -13,7 +13,7 @@ Widget getStarted(context, _pageController, screenScroll) {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
-            primary: Colors.amber[400]),
+            primary: Color(0xFFFFDF36)),
         child: Text(
           'Get started',
           style: TextStyle(fontSize: 20, color: Colors.grey[800]),
