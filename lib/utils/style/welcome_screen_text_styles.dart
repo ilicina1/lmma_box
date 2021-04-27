@@ -24,7 +24,7 @@ class FirstPageStyles {
         fontWeight = FontWeight.w700;
         isBold = true;
         fontSize = 34;
-        height = 34 / 34;
+        height = fontSize / fontSize;
         letterSpacing = -0.8;
         break;
       case 'SKIP':
@@ -32,8 +32,8 @@ class FirstPageStyles {
         break;
       case 'details':
         opacity = 0.7;
-        height = 20 / 16;
         fontSize = 16;
+        height = 20 / fontSize;
     }
   }
 }
