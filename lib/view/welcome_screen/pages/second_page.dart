@@ -32,12 +32,12 @@ class _SecondPageState extends State<SecondPage> {
           ),
           centerImage(context),
           HeaderText(),
-          Column(
-            children: [
-              previousButton(context),
-              nextButton(context),
-            ],
-          ),
+          // Column(
+          //   children: [
+          //     previousButton(context),
+          //     nextButton(context),
+          //   ],
+          // ),
         ],
       ),
     );
