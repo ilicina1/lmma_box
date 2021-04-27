@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/next_button_style.dart';
-import 'package:lmma_box/utils/style/next_page_text_style.dart';
+import 'package:lmma_box/utils/style/first_page_text_styles.dart';
 
 Widget nextPageButton() {
   return SizedBox(
@@ -10,7 +10,7 @@ Widget nextPageButton() {
       onPressed: () {},
       child: Text(
         'Next page',
-        style: nextPageTextStyle(),
+        style: FirstPageStyles("Next page").setTextStyle(),
       ),
       style: nextButtonStyle(),
     ),

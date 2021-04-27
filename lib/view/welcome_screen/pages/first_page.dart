@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/welcomeToLmmaaBoxTextStyle.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/app_bar_widget.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/next_page_button.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/set_text_first_page.dart';
 
 class FirstPage extends StatefulWidget {
   @override
@@ -26,14 +26,18 @@ class _FirstPageState extends State<FirstPage> {
                   height: 234,
                   child: Image(
                       image: AssetImage('assets/first_screen_image.png'))),
-              SizedBox(height: 30),
-              Text(
-                'Welcome to LmmaaBox',
-                style: welcomeToLmmaaBoxTextStyle(),
-              ),
-              Text('Delivering quality home cooking to your door',
-              //style: welcomeToLmmaaBoxTextStyle(16),),
-              nextPageButton(),
+              Padding(
+                  padding: EdgeInsets.fromLTRB(20, 30, 0, 0),
+                  child: Column(
+                    children: [
+                      TextWidget('Welcome to LmmaaBox').getTextWidget(),
+                      SizedBox(height: 20.0),
+                      TextWidget('Delivering quality home cooking to your door')
+                          .getTextWidget(),
+                      SizedBox(height: 20.0),
+                      nextPageButton(),
+                    ],
+                  ))
             ],
           ),
         ),

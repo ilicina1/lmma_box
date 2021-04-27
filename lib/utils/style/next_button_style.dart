@@ -6,7 +6,7 @@ ButtonStyle nextButtonStyle() {
       elevation: MaterialStateProperty.all<double>(0.0),
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
+        borderRadius: BorderRadius.circular(16.0),
         //side: BorderSide(color: Colors.red)
       )));
 }
