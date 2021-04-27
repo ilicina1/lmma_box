@@ -22,8 +22,8 @@ class _FirstPageState extends State<FirstPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                  width: 220,
-                  height: 234,
+                  width: 315,
+                  height: 334,
                   child: Image(
                       image: AssetImage('assets/first_screen_image.png'))),
               Padding(
@@ -34,8 +34,6 @@ class _FirstPageState extends State<FirstPage> {
                       SizedBox(height: 20.0),
                       TextWidget('Delivering quality home cooking to your door')
                           .getTextWidget(),
-                      SizedBox(height: 20.0),
-                      nextPageButton(),
                     ],
                   ))
             ],
