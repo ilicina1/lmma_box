@@ -13,12 +13,9 @@ class _SecondPageState extends State<SecondPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // SafeArea(
-          //   child: appBarWidget(),
-          // ),
           centerImage(context),
           HeaderText(),
         ],

@@ -5,8 +5,11 @@ class DescriptionText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: TextWidget("Delivering quality home cooking to your door")
-          .getTextWidget('details'),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 15.0),
+        child: TextWidget("Delivering quality home cooking to your door")
+            .getTextWidget('details'),
+      ),
     );
   }
 }

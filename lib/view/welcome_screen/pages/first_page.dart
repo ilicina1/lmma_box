@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/first_page_widgets/set_text_welcome_screen.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/description_text.dart';
 
 class FirstPage extends StatefulWidget {
   @override
@@ -11,29 +12,24 @@ class _FirstPageState extends State<FirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-                width: 315,
-                height: 334,
-                child:
-                    Image(image: AssetImage('assets/first_screen_image.png'))),
-            Padding(
-                padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
-                child: Column(
-                  children: [
-                    TextWidget('Welcome to LmmaaBox').getTextWidget('title'),
-                    SizedBox(height: 20.0),
-                    TextWidget('Delivering quality home cooking to your door')
-                        .getTextWidget('details'),
-                  ],
-                ))
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image(
+            image: AssetImage('assets/first_screen_image.png'),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(50, 50, 50, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextWidget("Welcome to LmaaBox").getTextWidget('title'),
+                DescriptionText(),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
