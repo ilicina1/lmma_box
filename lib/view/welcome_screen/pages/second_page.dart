@@ -11,13 +11,6 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    trenutnaStranica = "second_page";
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,

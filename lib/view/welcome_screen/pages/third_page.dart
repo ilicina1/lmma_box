@@ -10,13 +10,6 @@ class ThirdPage extends StatefulWidget {
 
 class _ThirdPageState extends State<ThirdPage> {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    trenutnaStranica = "third_page";
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
