@@ -4,9 +4,9 @@ import 'package:lmma_box/view/welcome_screen/pages/fourth_page.dart';
 import 'package:lmma_box/view/welcome_screen/pages/first_page.dart';
 import 'package:lmma_box/view/welcome_screen/pages/second_page.dart';
 import 'package:lmma_box/view/welcome_screen/pages/third_page.dart';
-import 'package:lmma_box/view/welcome_screen/widgets/bottom_buttons.dart';
-import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/app_bar_widget.dart';
-import 'package:lmma_box/view/welcome_screen/widgets/welcome_screen_pagination.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/shared_widgets/bottom_buttons.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/shared_widgets/app_bar_widget.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/shared_widgets/welcome_screen_pagination.dart';
 import 'package:provider/provider.dart';
 
 class PageScroller extends StatelessWidget {
