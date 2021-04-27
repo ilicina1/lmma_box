@@ -3,8 +3,7 @@ import 'package:lmma_box/providers/screen_scroll.dart';
 import 'package:provider/provider.dart';
 
 class WelcomeScreenPagination extends StatefulWidget {
-  final int page;
-  WelcomeScreenPagination({this.page});
+
   @override
   _WelcomeScreenPaginationState createState() =>
       _WelcomeScreenPaginationState();
