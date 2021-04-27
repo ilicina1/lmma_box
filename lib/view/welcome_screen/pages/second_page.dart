@@ -27,7 +27,7 @@ class _SecondPageState extends State<SecondPage> {
           Column(
             children: [
               previousButton(),
-              nextButton(),
+              nextButton(context),
             ],
           ),
         ],
