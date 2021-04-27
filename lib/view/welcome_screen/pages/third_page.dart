@@ -34,12 +34,12 @@ class _ThirdPageState extends State<ThirdPage> {
             child: Image.asset('assets/images/logothirdpage.png'),
           ),
           HeaderTextThird(),
-          Column(
-            children: [
-              previousButton(context),
-              nextButton(context),
-            ],
-          ),
+          // Column(
+          //   children: [
+          //     previousButton(context),
+          //     nextButton(context),
+          //   ],
+          // ),
         ],
       ),
     );

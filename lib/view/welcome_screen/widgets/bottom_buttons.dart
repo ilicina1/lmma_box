@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/screen_scroll.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/next_button.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/previous_button.dart';
 import 'package:provider/provider.dart';
 
 class BottomButtons extends StatelessWidget {
@@ -14,7 +16,7 @@ class BottomButtons extends StatelessWidget {
               height: 45,
               child: FloatingActionButton.extended(
                 onPressed: () {
-                  
+                  // Add your onPressed code here!
                 },
                 label: const Text(
                   'Get Started',
@@ -24,8 +26,11 @@ class BottomButtons extends StatelessWidget {
                 elevation: 0,
               ),
             )
-          : Container(
-              child: Text('next'),
+          : Column(
+              children: [
+                previousButton(context, _pageController),
+                nextButton(context, _pageController),
+              ],
             ),
     );
   }
