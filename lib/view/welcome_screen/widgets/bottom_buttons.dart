@@ -5,6 +5,9 @@ import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/previou
 import 'package:provider/provider.dart';
 
 class BottomButtons extends StatelessWidget {
+  final PageController pageController;
+  var screenScroll;
+  BottomButtons(this.pageController, this.screenScroll);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,8 +29,8 @@ class BottomButtons extends StatelessWidget {
             )
           : Column(
               children: [
-                previousButton(context),
-                nextButton(context),
+                previousButton(context, pageController),
+                nextButton(context, pageController, screenScroll),
               ],
             ),
     );
