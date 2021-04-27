@@ -11,9 +11,9 @@ Widget nextButton(context, _pageController, screenScroll) {
         style: ElevatedButton.styleFrom(
             // padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(16),
             ),
-            primary: Colors.amber[400]),
+            primary: Color(0xFFFFDF36)),
         child: Text(
           'Next',
           style: TextStyle(fontSize: 20, color: Colors.grey[800]),
