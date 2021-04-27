@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/screen_scroll.dart';
 import 'package:lmma_box/view/welcome_screen/pages/fourth_page.dart';
+import 'package:lmma_box/view/welcome_screen/pages/first_page.dart';
 import 'package:lmma_box/view/welcome_screen/pages/second_page.dart';
 import 'package:lmma_box/view/welcome_screen/pages/third_page.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/bottom_buttons.dart';
@@ -23,7 +24,7 @@ class PageScroller extends StatelessWidget {
                   screenScroll.changePage(p);
                 },
                 children: [
-                  FourthPage(),
+                  FirstPage(),
                   SecondPage(),
                   ThirdPage(),
                   FourthPage()
