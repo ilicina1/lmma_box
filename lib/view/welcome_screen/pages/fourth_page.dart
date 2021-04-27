@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/set_text_welcome_screen.dart';
 
 class FourthPage extends StatelessWidget {
   @override
@@ -14,17 +15,13 @@ class FourthPage extends StatelessWidget {
           Container(
             margin: EdgeInsets.fromLTRB(50, 96, 50, 50),
             child: Center(
-                child: Text(
-              'Some Onboarding Text',
-              style: TextStyle(fontSize: 34, fontWeight: FontWeight.w500),
-            )),
+              child: TextWidget("Some Onboarding Text").getTextWidget("title"),
+            ),
           ),
           Container(
             margin: EdgeInsets.fromLTRB(50, 0, 50, 30),
-            child: Text(
-              'Delivering quality home cooking to your door',
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
-            ),
+            child: TextWidget("Delivering quality home cooking to your door")
+                .getTextWidget("details"),
           ),
         ],
       ),

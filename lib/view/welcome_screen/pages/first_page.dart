@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/app_bar_widget.dart';
-import 'package:lmma_box/view/welcome_screen/widgets/next_page_button.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/set_text_welcome_screen.dart';
 
 class FirstPage extends StatefulWidget {

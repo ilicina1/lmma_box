@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/styles/styles.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/description_text.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/set_text_welcome_screen.dart';
 
 class HeaderTextThird extends StatelessWidget {
   @override
@@ -10,14 +11,7 @@ class HeaderTextThird extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Some",
-            style: headerText,
-          ),
-          Text(
-            "Description text",
-            style: headerText,
-          ),
+          TextWidget("Some lmma box text").getTextWidget("title"),
           DescriptionText(),
         ],
       ),
