@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/welcome_screen/pages/second_page.dart';
+import 'package:lmma_box/view/welcome_screen/pages/splash_screen.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/splashscreen_widget.dart';
+import 'package:splashscreen/splashscreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,8 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'LmmaBox',
-      theme: ThemeData(fontFamily: 'Averta', primaryColor: Colors.yellow),
-      home: SecondPage(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: SplashApp(),
     );
   }
 }
