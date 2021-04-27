@@ -5,8 +5,8 @@ class FirstPageStyles {
   bool isBold = false;
   FontWeight fontWeight = FontWeight.w400;
 
-  FirstPageStyles(String stringTitle) {
-    setVariables(stringTitle);
+  FirstPageStyles(String stylingCode) {
+    setVariables(stylingCode);
   }
 
   TextStyle setTextStyle() {
@@ -17,9 +17,9 @@ class FirstPageStyles {
         letterSpacing: letterSpacing);
   }
 
-  void setVariables(String stringTitle) {
-    switch (stringTitle) {
-      case 'Welcome to LmmaaBox':
+  void setVariables(String stylingCode) {
+    switch (stylingCode) {
+      case 'title':
         fontWeight = FontWeight.w700;
         isBold = true;
         fontSize = 34;
@@ -28,7 +28,7 @@ class FirstPageStyles {
       case 'SKIP':
         fontWeight = FontWeight.w600;
         break;
-      case 'Delivering quality home cooking to your door':
+      case 'details':
         opacity = 0.7;
         fontSize = 16;
     }
