@@ -5,6 +5,7 @@ import 'package:lmma_box/view/welcome_screen/pages/first_page.dart';
 import 'package:lmma_box/view/welcome_screen/pages/second_page.dart';
 import 'package:lmma_box/view/welcome_screen/pages/third_page.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/bottom_buttons.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/app_bar_widget.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/welcome_screen_pagination.dart';
 import 'package:provider/provider.dart';
 
@@ -18,9 +19,12 @@ class PageScroller extends StatelessWidget {
           backgroundColor: Colors.white,
           body: Column(
             children: [
+              SafeArea(
+                child: appBarWidget(),
+              ),
               Expanded(
                   child: PageView(
-                    controller: _pageController,
+                controller: _pageController,
                 onPageChanged: (p) {
                   screenScroll.changePage(p);
                 },

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/dummyData/dummyData.dart';
-import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/app_bar_widget.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/center_image.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/header_text.dart';
 
@@ -18,9 +16,9 @@ class _SecondPageState extends State<SecondPage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SafeArea(
-            child: appBarWidget(),
-          ),
+          // SafeArea(
+          //   child: appBarWidget(),
+          // ),
           centerImage(context),
           HeaderText(),
         ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/styles/styles.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/description_text.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/set_text_welcome_screen.dart';
 
