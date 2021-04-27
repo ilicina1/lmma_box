@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/dummyData/dummyData.dart';
+import 'package:lmma_box/view/welcome_screen/pages/second_page.dart';
 import 'package:lmma_box/view/welcome_screen/pages/third_page.dart';
 
 Widget nextButton(context) {
@@ -19,10 +21,22 @@ Widget nextButton(context) {
           style: TextStyle(fontSize: 20, color: Colors.grey[800]),
         ),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => ThirdPage()),
-          );
+          if (trenutnaStranica == "first_page") {
+            //   Navigator.push(
+            //   context,
+            //   MaterialPageRoute(builder: (context) => FirstPage()),
+            // );
+          } else if (trenutnaStranica == "second_page") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ThirdPage()),
+            );
+          } else if (trenutnaStranica == "third_page") {
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(builder: (context) => ThirdPage()),
+            // );
+          }
         },
       ),
     ),
