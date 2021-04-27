@@ -10,13 +10,13 @@ class _SplashAppState extends State<SplashApp> {
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-        seconds: 14,
+        seconds: 5,
         navigateAfterSeconds: new AfterSplash(),
         title: new Text(
-          'Welcome to SplashScreen',
+          'Welcome to Lmmaa box',
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
         ),
-        image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
+        image: new Image.asset('assets/images/logo1.png'),
         backgroundColor: Colors.white,
         styleTextUnderTheLoader: new TextStyle(),
         photoSize: 100.0,
@@ -30,11 +30,11 @@ class AfterSplash extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-          title: new Text("Welcome In SplashScreen Package"),
+          title: new Text("Zavrsen splash screen od 5 sekundi"),
           automaticallyImplyLeading: false),
       body: new Center(
         child: new Text(
-          "Done!",
+          "Ovdje ide signin stranica!",
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
         ),
       ),
