@@ -18,17 +18,18 @@ class _FirstPageState extends State<FirstPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-                width: 315,
-                height: 334,
+                width: 100,
+                height: 100,
                 child:
                     Image(image: AssetImage('assets/first_screen_image.png'))),
             Padding(
                 padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextWidget('Welcome to LmmaaBox').getTextWidget('title'),
                     SizedBox(height: 20.0),
-                    TextWidget('Delivering quality home cooking to your door')
+                    TextWidget('Delivering quality home cooking\nto your door')
                         .getTextWidget('details'),
                   ],
                 ))
