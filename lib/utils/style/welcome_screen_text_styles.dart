@@ -20,7 +20,7 @@ class FirstPageStyles {
   void setVariables(String stylingCode) {
     switch (stylingCode) {
       case 'title':
-        fontWeight = FontWeight.w700;
+        fontWeight = FontWeight.w800;
         isBold = true;
         fontSize = 34;
         letterSpacing = -0.8;
