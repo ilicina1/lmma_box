@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/welcome_screen/pages/page_view.dart';
-import 'package:lmma_box/view/welcome_screen/pages/second_page.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 class SplashApp extends StatefulWidget {

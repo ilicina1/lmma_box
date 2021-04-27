@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/dummyData/dummyData.dart';
-import 'package:lmma_box/view/welcome_screen/pages/second_page.dart';
-import 'package:lmma_box/view/welcome_screen/pages/third_page.dart';
 
 Widget previousButton(context, _pageController) {
   return Padding(

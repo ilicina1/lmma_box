@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/dummyData/dummyData.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/app_bar_widget.dart';
-import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/header_text.dart';
-import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/next_button.dart';
-import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/previous_button.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/third_page_widgets/headerTextThird.dart';
 
 class ThirdPage extends StatefulWidget {
