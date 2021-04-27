@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/welcome_screen_pagination.dart';
 
 class FourthPage extends StatelessWidget {
   @override
@@ -21,6 +22,7 @@ class FourthPage extends StatelessWidget {
             margin: EdgeInsets.fromLTRB(50, 0, 50, 30),
             child: Text('Delivering quality home cooking to your door', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),),
           ),
+          WelcomeScreenPagination(page: 4),
           Container(
             width: 275,
             height: 45,
