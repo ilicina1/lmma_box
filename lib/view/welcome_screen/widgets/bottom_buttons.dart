@@ -20,7 +20,14 @@ class BottomButtons extends StatelessWidget {
               ],
             )
           : Provider.of<ScreenScrollProvider>(context).page == 0
-              ? nextButton(context, _pageController, screenScroll)
+              ? Column(
+                  children: [
+                    SizedBox(
+                      height: 60,
+                    ),
+                    nextButton(context, _pageController, screenScroll),
+                  ],
+                )
               : Column(
                   children: [
                     previousButton(context, _pageController, screenScroll),
