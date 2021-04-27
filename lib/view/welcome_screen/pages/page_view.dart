@@ -1,21 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/providers/screen_scroll.dart';
 import 'package:lmma_box/view/welcome_screen/pages/fourth_page.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/welcome_screen_pagination.dart';
+import 'package:provider/provider.dart';
 
 class PageScroller extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(
-            child: PageView(
-              children: [FourthPage(), FourthPage()],
+            child: Consumer<ScreenScrollProvider>(
+              builder: (context, screenScroll, child) {
+                return PageView(
+                  onPageChanged: (p) {
+                    screenScroll.changePage(p);
+                  },
+                  children: [FourthPage(), FourthPage(), FourthPage(), FourthPage()],
+                );
+              },
             ),
           ),
-          WelcomeScreenPagination(page: 4),
+          Consumer<ScreenScrollProvider>(
+              builder: (context, screenScroll, child) {
+            return WelcomeScreenPagination(page: screenScroll.page);
+          }),
           Container(
             width: 275,
             height: 45,
