@@ -22,20 +22,7 @@ class FourthPage extends StatelessWidget {
             margin: EdgeInsets.fromLTRB(50, 0, 50, 30),
             child: Text('Delivering quality home cooking to your door', style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),),
           ),
-          WelcomeScreenPagination(page: 4),
-          Container(
-            width: 275,
-            height: 45,
-            child: FloatingActionButton.extended(
-        onPressed: () {
-            // Add your onPressed code here!
-        },
-        label: const Text('Get Started', style: TextStyle(fontSize: 16, color: Colors.brown),),
-        backgroundColor: Colors.yellow,
-        elevation: 0,
-        
-      ),
-          )
+     
           
         ],
       ),

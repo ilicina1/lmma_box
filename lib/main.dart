@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/welcome_screen/pages/fourth_page.dart';
+import 'package:lmma_box/view/welcome_screen/pages/page_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FourthPage(),
+      home: PageScroller(),
     );
   }
 }
