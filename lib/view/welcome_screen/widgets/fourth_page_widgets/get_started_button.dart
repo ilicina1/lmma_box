@@ -7,7 +7,9 @@ Widget getStarted(context, _pageController, screenScroll) {
     padding: const EdgeInsets.fromLTRB(50, 0, 50, 20),
     child: Container(
       width: double.infinity,
-      height: 45,
+      height: MediaQuery.of(context).size.height < 670
+          ? MediaQuery.of(context).size.height * 0.05
+          : 45,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             elevation: 0.0,
