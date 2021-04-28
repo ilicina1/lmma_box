@@ -32,7 +32,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
               ),
             ),
             hintText: "Ex: 3452323423",
-            showCountryFlags: false,
+            showCountryFlags: true,
           ),
         ],
       ),
