@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   @override
@@ -41,7 +42,7 @@ class ResetPasswordPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
                         ),
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.justify,
                       )
                     ],
                   ),
@@ -53,13 +54,14 @@ class ResetPasswordPage extends StatelessWidget {
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          labelText: "E-mail",
-                          labelStyle: TextStyle(
-                            color: Colors.black38,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 20,
-                          ),
-                        ),
+                            labelText: "Email",
+                            labelStyle: TextStyle(
+                                color: Color(0xFF373737),
+                                fontWeight: FontWeight.w700,
+                                fontSize: 14,
+                                fontFamily: "Averta"),
+                            hintStyle: TextStyle(fontSize: 16),
+                            hintText: "Enter your Email"),
                         style: TextStyle(fontSize: 20),
                       ),
                       SizedBox(
@@ -83,15 +85,20 @@ class ResetPasswordPage extends StatelessWidget {
                           ),
                         ),
                         child: SizedBox.expand(
-                          child: FlatButton(
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                elevation: 0.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                primary: Color(0xFFFFDF36)),
                             child: Text(
-                              "Enviar",
+                              'Send reset link',
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                              textAlign: TextAlign.center,
+                                  fontFamily: "Averta CY",
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600),
                             ),
                             onPressed: () {},
                           ),
