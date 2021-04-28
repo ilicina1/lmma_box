@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/viewModel/welcome_screen.dart';
 
-Widget previousButton(context, _pageController,screenScroll) {
+Widget previousButton(context, _pageController, screenScroll) {
   return Padding(
     padding: const EdgeInsets.fromLTRB(50, 0, 50, 20),
     child: Container(
@@ -23,14 +24,8 @@ Widget previousButton(context, _pageController,screenScroll) {
           ),
         ),
         onPressed: () {
-             screenScroll.changePage(screenScroll.page - 1);
-          if (_pageController.hasClients) {
-            _pageController.animateToPage(
-              screenScroll.page,
-              duration: (const Duration(milliseconds: 400)),
-              curve: Curves.easeInOut,
-            );
-          }
+          screenScroll.changePage(screenScroll.page - 1);
+          previousButtonClickModel(_pageController, screenScroll);
         },
       ),
     ),
