@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lmma_box/providers/screen_scroll.dart';
 import 'package:lmma_box/view/loading_screen/pages/splash_screen.dart';
+import 'package:lmma_box/view/signinscreens/pages/reset_password.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
     create: (context) => ScreenScrollProvider(0),
-    child: MyApp(),
+    child: (MaterialApp(home: ResetPasswordPage())),
   ));
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(statusBarColor: Colors.white));
@@ -16,7 +17,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ResetPasswordPage();
+    /* MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'LmmaBox',
       theme: ThemeData(
@@ -24,6 +26,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: SplashApp(),
-    );
+    );*/
   }
 }
