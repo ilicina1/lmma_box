@@ -12,17 +12,12 @@ class _SplashAppState extends State<SplashApp> {
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-        seconds: 3,
-        navigateAfterSeconds: new PageScroller(),
-        title: new Text(
-          'Welcome to Lmmaa box',
-          style: textLmmaBox,
-        ),
-        image: new Image.asset('assets/images/logo1.png'),
-        backgroundColor: Colors.white,
-        // styleTextUnderTheLoader: new TextStyle(),
-        photoSize: 100.0,
-        onClick: () => print("Flutter Egypt"),
-        loaderColor: Color(0xFFFFDF36));
+      seconds: 3,
+      navigateAfterSeconds: new PageScroller(),
+      image: new Image.asset('assets/images/logo1.png'),
+      backgroundColor: Colors.white,
+      photoSize: 100.0,
+      loaderColor: Colors.white,
+    );
   }
 }
