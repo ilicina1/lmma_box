@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lmma_box/viewModel/welcome_screen.dart';
 
 Widget nextButton(context, _pageController, screenScroll) {
   return Padding(
@@ -9,7 +10,6 @@ Widget nextButton(context, _pageController, screenScroll) {
       height: 40,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            // padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -20,13 +20,7 @@ Widget nextButton(context, _pageController, screenScroll) {
         ),
         onPressed: () {
           screenScroll.changePage(screenScroll.page + 1);
-          if (_pageController.hasClients) {
-            _pageController.animateToPage(
-              screenScroll.page,
-              duration: (const Duration(milliseconds: 400)),
-              curve: Curves.easeInOut,
-            );
-          }
+          nextButtonClickModel(_pageController, screenScroll);
         },
       ),
     ),

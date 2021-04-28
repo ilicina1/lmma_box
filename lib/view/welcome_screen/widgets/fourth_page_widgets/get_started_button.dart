@@ -9,7 +9,6 @@ Widget getStarted(context, _pageController, screenScroll) {
       height: 40,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            // padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
