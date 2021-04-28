@@ -13,7 +13,7 @@ Widget previousButton(context, _pageController, screenScroll) {
           elevation: 0,
           shape: RoundedRectangleBorder(
             side: BorderSide(color: Color(0xFFFFDF36), width: 2),
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(16),
           ),
           primary: Colors.white,
         ),

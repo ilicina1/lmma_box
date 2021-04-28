@@ -12,7 +12,7 @@ Widget getStarted(context, _pageController, screenScroll) {
         style: ElevatedButton.styleFrom(
             elevation: 0.0,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(16),
             ),
             primary: Color(0xFFFFDF36)),
         child: Text(
