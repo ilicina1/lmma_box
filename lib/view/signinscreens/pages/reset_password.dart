@@ -6,6 +6,7 @@ class ResetPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
         leading: IconButton(
@@ -81,7 +82,7 @@ class ResetPasswordPage extends StatelessWidget {
                             ],
                           ),
                           borderRadius: BorderRadius.all(
-                            Radius.circular(5),
+                            Radius.circular(16),
                           ),
                         ),
                         child: SizedBox.expand(
