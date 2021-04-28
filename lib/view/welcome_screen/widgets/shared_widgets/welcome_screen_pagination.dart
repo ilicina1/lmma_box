@@ -31,7 +31,7 @@ class _WelcomeScreenPaginationState extends State<WelcomeScreenPagination> {
             margin: EdgeInsets.fromLTRB(0, 0, 7, 0),
             decoration: BoxDecoration(
                 color: Colors.cyan,
-                border: Border.all(color: Colors.cyan),
+                border: Border.all(color: Color(0x47D7AC)),
                 borderRadius: BorderRadius.all(Radius.circular(20))),
             width:
                 (Provider.of<ScreenScrollProvider>(context).page == i) ? 11 : 7,
