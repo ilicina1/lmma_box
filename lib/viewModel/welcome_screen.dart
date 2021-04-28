@@ -1,9 +1,9 @@
-import 'package:lmma_box/services/welcome_screen.dart';
+import 'package:lmma_box/services/welcome_screen_services.dart';
 
-void nextButtonClickModel(_pageController, screenScroll) {
-  return nextButtonClick(_pageController, screenScroll);
+nextButtonClickModel(_pageController, screenScroll) {
+  WelcomeScreen().nextButtonClick(_pageController, screenScroll);
 }
 
-void previousButtonClickModel(_pageController, screenScroll) {
-  return previousButtonClick(_pageController, screenScroll);
+previousButtonClickModel(_pageController, screenScroll) {
+  WelcomeScreen().previousButtonClick(_pageController, screenScroll);
 }
