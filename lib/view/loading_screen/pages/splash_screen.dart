@@ -20,9 +20,9 @@ class _SplashAppState extends State<SplashApp> {
         ),
         image: new Image.asset('assets/images/logo1.png'),
         backgroundColor: Colors.white,
-        styleTextUnderTheLoader: new TextStyle(),
+        // styleTextUnderTheLoader: new TextStyle(),
         photoSize: 100.0,
         onClick: () => print("Flutter Egypt"),
-        loaderColor: Colors.red);
+        loaderColor: Color(0xFFFFDF36));
   }
 }
