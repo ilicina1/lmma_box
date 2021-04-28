@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'LmmaBox',
       theme: ThemeData(
+        fontFamily: 'Averta',
         primarySwatch: Colors.blue,
       ),
       home: SplashApp(),
