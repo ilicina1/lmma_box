@@ -23,16 +23,18 @@ class BottomButtons extends StatelessWidget {
               ? Column(
                   children: [
                     SizedBox(
-                      height: 60,
+                      height: MediaQuery.of(context).size.width < 380 ? 71 : 85,
                     ),
                     nextButton(context, _pageController, screenScroll),
                   ],
                 )
-              : Column(
-                  children: [
-                    previousButton(context, _pageController, screenScroll),
-                    nextButton(context, _pageController, screenScroll),
-                  ],
+              : Container(
+                  child: Column(
+                    children: [
+                      previousButton(context, _pageController, screenScroll),
+                      nextButton(context, _pageController, screenScroll),
+                    ],
+                  ),
                 ),
     );
   }

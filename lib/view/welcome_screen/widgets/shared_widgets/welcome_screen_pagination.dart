@@ -42,7 +42,7 @@ class _WelcomeScreenPaginationState extends State<WelcomeScreenPagination> {
       );
     }
     return Container(
-      margin: EdgeInsets.fromLTRB(50, 20, 50, 47),
+      margin: EdgeInsets.fromLTRB(50, 20, 50, 0),
       child: Row(children: children),
     );
   }

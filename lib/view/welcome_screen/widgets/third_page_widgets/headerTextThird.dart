@@ -6,7 +6,9 @@ class HeaderTextThird extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+      padding: MediaQuery.of(context).size.width < 380
+          ? const EdgeInsets.fromLTRB(50, 0, 50, 0)
+          : const EdgeInsets.fromLTRB(50, 80, 50, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

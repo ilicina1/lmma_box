@@ -12,11 +12,16 @@ class _ThirdPageState extends State<ThirdPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(
-            child: Image.asset('assets/images/logothirdpage.png'),
+          Image(
+            height: MediaQuery.of(context).size.width < 380
+                ? MediaQuery.of(context).size.height * 0.4
+                : 334,
+            image: AssetImage(
+              'assets/first_screen_image.png',
+            ),
           ),
           HeaderTextThird(),
         ],
