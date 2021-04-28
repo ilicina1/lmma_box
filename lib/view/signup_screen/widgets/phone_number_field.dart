@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:international_phone_input/international_phone_input.dart';
 
 class PhoneNumberField extends StatefulWidget {
   @override
@@ -20,18 +21,9 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          TextFormField(
+          InternationalPhoneInput(
             decoration: const InputDecoration(
               hintText: 'Ex: 3452323423',
-              hintStyle: TextStyle(
-                color: Color(0xFFBABABA),
-              ),
-              focusedBorder: UnderlineInputBorder(
-                borderSide: const BorderSide(
-                  color: Color(0xFFFFDF36),
-                  width: 2.0,
-                ),
-              ),
               border: UnderlineInputBorder(
                 borderSide: const BorderSide(
                   color: Color(0xFFE0E0E0),
@@ -39,6 +31,8 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
                 ),
               ),
             ),
+            hintText: "Ex: 3452323423",
+            showCountryFlags: false,
           ),
         ],
       ),
