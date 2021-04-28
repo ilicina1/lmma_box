@@ -44,13 +44,6 @@ TextStyle skipButtonStyle = TextStyle(
   fontWeight: FontWeight.w500,
 );
 
-TextStyle headerText = TextStyle(
-  color: Colors.grey[800],
-  fontFamily: "Averta",
-  fontWeight: FontWeight.bold,
-  fontSize: 40,
-);
-
 TextStyle textLmmaBox = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 20.0,
