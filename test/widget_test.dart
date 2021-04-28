@@ -5,26 +5,40 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:lmma_box/main.dart';
+import 'package:lmma_box/view/welcome_screen/pages/first_page.dart';
+import 'package:lmma_box/view/welcome_screen/pages/page_scroller.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/first_page_widgets/set_text_welcome_screen.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/app_icon.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/shared_widgets/welcome_screen_pagination.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+  Widget createWidgetForTesting({Widget child}) {
+    return MaterialApp(
+      home: child,
+    );
+  }
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  testWidgets('Koristi se Scaffold', (WidgetTester tester) async {
+    await tester.pumpWidget(createWidgetForTesting(child: new FirstPage()));
+    var textField = find.byType(Scaffold);
+    expect(textField, findsOneWidget);
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  testWidgets('Naslov je dobar', (WidgetTester tester) async {
+    await tester.pumpWidget(createWidgetForTesting(child: new FirstPage()));
+    var textField = find.text("Welcome to LmaaBox");
+    expect(textField, findsOneWidget);
+  });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  testWidgets('Postoji logo firme', (WidgetTester tester) async {
+    await tester.pumpWidget(createWidgetForTesting(child: new FirstPage()));
+    var textField = find.byType(Image);
+    expect(textField, findsOneWidget);
   });
 }
