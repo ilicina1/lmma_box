@@ -32,7 +32,7 @@ class PageScroller extends StatelessWidget {
                   FirstPage(),
                   SecondPage(),
                   ThirdPage(),
-                  FourthPage()
+                  FourthPage(),
                 ],
               )),
               WelcomeScreenPagination(),
