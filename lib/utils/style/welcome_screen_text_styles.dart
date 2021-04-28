@@ -37,3 +37,26 @@ class FirstPageStyles {
     }
   }
 }
+
+TextStyle skipButtonStyle = TextStyle(
+  color: Colors.black,
+  fontSize: 15,
+  fontWeight: FontWeight.w500,
+);
+
+TextStyle textLmmaBox = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 20.0,
+);
+
+TextStyle getStartedStyle = TextStyle(
+  fontSize: 15,
+  color: Colors.grey[800],
+  fontWeight: FontWeight.normal,
+);
+
+TextStyle twoButtonsStyle = TextStyle(
+  fontSize: 16,
+  color: Colors.grey[800],
+  fontWeight: FontWeight.normal,
+);

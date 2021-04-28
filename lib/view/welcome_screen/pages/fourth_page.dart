@@ -10,11 +10,16 @@ class FourthPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Center(
-            child: Image.asset('assets/image_27.jpg'),
+          Image(
+            height: MediaQuery.of(context).size.width < 380
+                ? MediaQuery.of(context).size.height * 0.4
+                : 236,
+            image: AssetImage('assets/images/image 27.png'),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(50, 100, 50, 0),
+            padding: MediaQuery.of(context).size.width < 380
+                ? const EdgeInsets.fromLTRB(50, 0, 50, 0)
+                : const EdgeInsets.fromLTRB(50, 80, 50, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -17,10 +17,17 @@ class _FirstPageState extends State<FirstPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image(
-            image: AssetImage('assets/first_screen_image.png'),
+            height: MediaQuery.of(context).size.width < 380
+                ? MediaQuery.of(context).size.height * 0.4
+                : 334,
+            image: AssetImage(
+              'assets/first_screen_image.png',
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(50, 50, 50, 0),
+            padding: MediaQuery.of(context).size.width < 380
+                ? const EdgeInsets.fromLTRB(50, 0, 50, 0)
+                : const EdgeInsets.fromLTRB(50, 80, 50, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

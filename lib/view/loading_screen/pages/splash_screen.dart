@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
 import 'package:lmma_box/view/welcome_screen/pages/page_scroller.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -15,7 +16,7 @@ class _SplashAppState extends State<SplashApp> {
         navigateAfterSeconds: new PageScroller(),
         title: new Text(
           'Welcome to Lmmaa box',
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+          style: textLmmaBox,
         ),
         image: new Image.asset('assets/images/logo1.png'),
         backgroundColor: Colors.white,
