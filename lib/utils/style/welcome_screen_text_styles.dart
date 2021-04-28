@@ -50,3 +50,18 @@ TextStyle headerText = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 40,
 );
+
+TextStyle textLmmaBox = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 20.0,
+);
+
+TextStyle getStartedStyle = TextStyle(
+  fontSize: 20,
+  color: Colors.grey[800],
+);
+
+TextStyle twoButtonsStyle = TextStyle(
+  fontSize: 20,
+  color: Colors.grey[800],
+);

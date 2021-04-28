@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
 import 'package:lmma_box/viewModel/welcome_screen.dart';
 
 Widget nextButton(context, _pageController, screenScroll) {
@@ -16,7 +17,7 @@ Widget nextButton(context, _pageController, screenScroll) {
             primary: Color(0xFFFFDF36)),
         child: Text(
           'Next',
-          style: TextStyle(fontSize: 20, color: Colors.grey[800]),
+          style: twoButtonsStyle,
         ),
         onPressed: () {
           screenScroll.changePage(screenScroll.page + 1);

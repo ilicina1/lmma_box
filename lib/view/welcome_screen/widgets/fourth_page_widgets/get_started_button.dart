@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
 
 Widget getStarted(context, _pageController, screenScroll) {
   return Padding(
@@ -15,7 +16,7 @@ Widget getStarted(context, _pageController, screenScroll) {
             primary: Color(0xFFFFDF36)),
         child: Text(
           'Get started',
-          style: TextStyle(fontSize: 20, color: Colors.grey[800]),
+          style: getStartedStyle,
         ),
         onPressed: () {},
       ),
