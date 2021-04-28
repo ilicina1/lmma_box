@@ -8,9 +8,10 @@ Widget nextButton(context, _pageController, screenScroll) {
     padding: const EdgeInsets.fromLTRB(50, 0, 50, 20),
     child: Container(
       width: double.infinity,
-      height: 40,
+      height: 45,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+            elevation: 0.0,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),

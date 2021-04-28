@@ -57,11 +57,13 @@ TextStyle textLmmaBox = TextStyle(
 );
 
 TextStyle getStartedStyle = TextStyle(
-  fontSize: 20,
+  fontSize: 15,
   color: Colors.grey[800],
+  fontWeight: FontWeight.normal,
 );
 
 TextStyle twoButtonsStyle = TextStyle(
-  fontSize: 20,
+  fontSize: 16,
   color: Colors.grey[800],
+  fontWeight: FontWeight.normal,
 );
