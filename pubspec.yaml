@@ -27,6 +27,7 @@ dependencies:
   international_phone_input: ^1.0.4
   provider: ^4.0.0
   test: ^1.15.0
+  pin_code_fields: ^7.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

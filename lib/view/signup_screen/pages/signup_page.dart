@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signup_screen/widgets/form_list.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/form_list.dart';
 import 'package:lmma_box/view/welcome_screen/widgets/shared_widgets/app_bar_widget.dart';
 
 class SignUpPage extends StatefulWidget {

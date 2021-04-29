@@ -1,36 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:international_phone_input/international_phone_input.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 
-class PhoneNumberField extends StatefulWidget {
+class EmailField extends StatefulWidget {
   @override
-  _PhoneNumberFieldState createState() => _PhoneNumberFieldState();
+  _EmailFieldState createState() => _EmailFieldState();
 }
 
-class _PhoneNumberFieldState extends State<PhoneNumberField> {
+class _EmailFieldState extends State<EmailField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: MediaQuery.of(context).size.width < 380
           ? const EdgeInsets.only(top: 10.0)
-          : const EdgeInsets.only(top: 20.0),
+          : const EdgeInsets.only(top: 30.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Phone number",
-            style: MediaQuery.of(context).size.width < 380
+            "Email",
+            style: MediaQuery.of(context).size.width < 470
                 ? labelaStyleSmall
                 : labelaStyle,
           ),
-          InternationalPhoneInput(
-            initialSelection: "+387",
+          TextFormField(
             decoration: InputDecoration(
-              hintText: 'Ex: 3452323423',
+              hintText: 'Enter your Email',
+              hintStyle: hintStyle,
+              focusedBorder: focused,
               border: border,
             ),
-            hintText: "Ex: 3452323423",
-            showCountryFlags: true,
           ),
         ],
       ),

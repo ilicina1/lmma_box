@@ -58,3 +58,26 @@ TextStyle signUpText = TextStyle(
   color: Colors.grey[800],
   fontWeight: FontWeight.normal,
 );
+
+TextStyle infoText = TextStyle(
+  color: Color(0xFF373737),
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+);
+
+TextStyle confirmHeader = TextStyle(
+  fontSize: 26,
+  fontWeight: FontWeight.w700,
+  fontFamily: "Averta",
+  color: Color(0xFF373737),
+);
+
+TextStyle privacyConf = TextStyle(
+  fontSize: 17,
+  color: Color(0xFF373737),
+);
+
+TextStyle privacyBlueConf = TextStyle(
+  fontSize: 17,
+  color: Color(0xFF1CBD8D),
+);
