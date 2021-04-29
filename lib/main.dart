@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(ChangeNotifierProvider(
     create: (context) => ScreenScrollProvider(0),
-    child: (MaterialApp(home: ConfirmNumberPage())),
+    child: (MaterialApp(home: ResetPasswordPage())),
   ));
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(statusBarColor: Colors.white));
@@ -18,7 +18,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ConfirmNumberPage();
+    return ResetPasswordPage();
     /* MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'LmmaBox',

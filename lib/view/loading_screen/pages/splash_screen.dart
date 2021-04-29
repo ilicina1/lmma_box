@@ -12,7 +12,7 @@ class _SplashAppState extends State<SplashApp> {
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-        seconds: 3,
+        seconds: 0,
         navigateAfterSeconds: new PageScroller(),
         title: new Text(
           'Welcome to Lmmaa box',
