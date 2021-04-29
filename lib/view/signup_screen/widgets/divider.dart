@@ -3,7 +3,7 @@ import 'package:lmma_box/utils/style/signup_screen_style.dart';
 
 Widget dividerOr() {
   return Padding(
-    padding: const EdgeInsets.only(top: 20.0),
+    padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
     child: Row(children: <Widget>[
       Expanded(
         child: Divider(),
