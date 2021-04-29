@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/shared/size_config.dart';
 import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
+import 'package:lmma_box/view/signinscreens/widgets/pin_container.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class ConfirmNumberPage extends StatelessWidget {
@@ -52,24 +53,7 @@ class ConfirmNumberPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  width: double.infinity,
-                  child: Column(
-                    children: <Widget>[
-                      PinCodeTextField(
-                        appContext: context,
-                        length: 4,
-                        onChanged: (value) {},
-                        keyboardType: TextInputType.number,
-                        pinTheme: PinTheme(
-                          shape: PinCodeFieldShape.underline,
-                          inactiveColor: Colors.black38,
-                          fieldWidth: 80,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                PinContainer(),
                 Container(
                   alignment: Alignment.centerLeft,
                   child: RichText(
