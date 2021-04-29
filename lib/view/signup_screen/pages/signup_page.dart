@@ -8,9 +8,12 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Container(
@@ -19,7 +22,7 @@ class _SignUpPageState extends State<SignUpPage> {
             SafeArea(
               child: appBarSignUp(context),
             ),
-            FormList(),
+            FormList(_scaffoldKey),
           ],
         ),
       ),
