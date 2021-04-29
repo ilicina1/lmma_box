@@ -6,6 +6,7 @@ class ResetPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true, // this is all you need
         elevation: 0,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
@@ -13,6 +14,15 @@ class ResetPasswordPage extends StatelessWidget {
           icon: Icon(Icons.arrow_back),
           color: Colors.black38,
           onPressed: () => Navigator.pop(context, false),
+        ),
+        title: Text(
+          "Reset password",
+          style: TextStyle(
+            fontSize: 26,
+            fontWeight: FontWeight.w700,
+            fontFamily: "Averta",
+            color: Colors.black,
+          ),
         ),
       ),
       body: Container(
@@ -26,14 +36,6 @@ class ResetPasswordPage extends StatelessWidget {
                 Container(
                   child: Column(
                     children: <Widget>[
-                      Text(
-                        "Reset password",
-                        style: TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: "Averta",
-                        ),
-                      ),
                       SizedBox(
                         height: 10,
                       ),
