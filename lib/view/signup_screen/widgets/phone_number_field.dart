@@ -11,13 +11,17 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
+      padding: MediaQuery.of(context).size.width < 380
+          ? const EdgeInsets.only(top: 10.0)
+          : const EdgeInsets.only(top: 20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Phone number",
-            style: labelaStyle,
+            style: MediaQuery.of(context).size.width < 380
+                ? labelaStyleSmall
+                : labelaStyle,
           ),
           InternationalPhoneInput(
             initialSelection: "+387",

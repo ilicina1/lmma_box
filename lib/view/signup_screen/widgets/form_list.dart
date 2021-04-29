@@ -23,22 +23,27 @@ class _FormListState extends State<FormList> {
         padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),
+              padding: MediaQuery.of(context).size.width < 380
+                  ? const EdgeInsets.fromLTRB(0, 10, 0, 15)
+                  : const EdgeInsets.fromLTRB(0, 20, 0, 20),
               child: Text(
                 "Create Account",
-                style: createAccount,
+                style: MediaQuery.of(context).size.width < 380
+                    ? createAccountSmall
+                    : createAccount,
               ),
             ),
             NameField(),
             EmailField(),
             PhoneNumberField(),
             PasswordField(),
-            policyAndTerms(),
+            policyAndTerms(context),
             signUpButton(context),
-            dividerOr(),
-            signUpSocialRow(),
+            dividerOr(context),
+            signUpSocialRow(context),
             loginRichText(context),
           ],
         ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget twitterIcon() {
+Widget twitterIcon(context) {
   return Container(
-    height: 23,
+    height: MediaQuery.of(context).size.width < 380 ? 18 : 24,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,

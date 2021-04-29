@@ -6,10 +6,23 @@ TextStyle createAccount = TextStyle(
   fontSize: 24,
 );
 
+TextStyle createAccountSmall = TextStyle(
+  color: Color(0xff373737),
+  fontWeight: FontWeight.bold,
+  fontSize: 17,
+);
+
 TextStyle labelaStyle = TextStyle(
   color: Color(0xff373737),
   fontWeight: FontWeight.bold,
   height: 0.5,
+);
+
+TextStyle labelaStyleSmall = TextStyle(
+  color: Color(0xff373737),
+  fontWeight: FontWeight.bold,
+  height: 0.5,
+  fontSize: 12,
 );
 
 UnderlineInputBorder border = UnderlineInputBorder(

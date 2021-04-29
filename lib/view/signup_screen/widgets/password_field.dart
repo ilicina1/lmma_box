@@ -17,13 +17,17 @@ class _PasswordFieldState extends State<PasswordField> {
     }
 
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
+      padding: MediaQuery.of(context).size.width < 380
+          ? const EdgeInsets.only(top: 10.0)
+          : const EdgeInsets.only(top: 20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Password",
-            style: labelaStyle,
+            style: MediaQuery.of(context).size.width < 380
+                ? labelaStyleSmall
+                : labelaStyle,
           ),
           TextFormField(
             obscureText: _isHidden,

@@ -5,17 +5,19 @@ import 'package:lmma_box/view/signup_screen/widgets/socialIcons/instagram.dart';
 import 'package:lmma_box/view/signup_screen/widgets/socialIcons/linkedin.dart';
 import 'package:lmma_box/view/signup_screen/widgets/socialIcons/twitter.dart';
 
-Widget signUpSocialRow() {
+Widget signUpSocialRow(context) {
   return Padding(
-    padding: const EdgeInsets.only(top: 20.0),
+    padding: MediaQuery.of(context).size.width < 380
+        ? const EdgeInsets.only(top: 10)
+        : const EdgeInsets.only(top: 20),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        facebookIcon(),
-        googleIcon(),
-        twitterIcon(),
-        linkedinIcon(),
-        instagramIcon(),
+        facebookIcon(context),
+        googleIcon(context),
+        twitterIcon(context),
+        linkedinIcon(context),
+        instagramIcon(context),
       ],
     ),
   );

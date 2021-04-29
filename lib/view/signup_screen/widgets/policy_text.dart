@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 
-Widget policyAndTerms() {
+Widget policyAndTerms(context) {
   return Container(
     alignment: Alignment.center,
     padding: EdgeInsets.only(top: 20),

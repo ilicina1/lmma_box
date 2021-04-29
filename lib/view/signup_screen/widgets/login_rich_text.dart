@@ -8,7 +8,10 @@ Widget loginRichText(context) {
     children: [
       Container(
         alignment: Alignment.topLeft,
-        padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
+        padding: EdgeInsets.only(
+            top: MediaQuery.of(context).size.width < 380
+                ? MediaQuery.of(context).size.height * 0.08
+                : MediaQuery.of(context).size.height * 0.15),
         child: Center(
           child: Text.rich(
             TextSpan(

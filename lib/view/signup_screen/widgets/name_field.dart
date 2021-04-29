@@ -14,7 +14,9 @@ class _NameFieldState extends State<NameField> {
       children: [
         Text(
           "Name",
-          style: labelaStyle,
+          style: MediaQuery.of(context).size.width < 380
+              ? labelaStyleSmall
+              : labelaStyle,
         ),
         TextFormField(
           decoration: InputDecoration(

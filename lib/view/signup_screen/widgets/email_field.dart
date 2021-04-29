@@ -10,13 +10,17 @@ class _EmailFieldState extends State<EmailField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
+      padding: MediaQuery.of(context).size.width < 380
+          ? const EdgeInsets.only(top: 10.0)
+          : const EdgeInsets.only(top: 20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Email",
-            style: labelaStyle,
+            style: MediaQuery.of(context).size.width < 470
+                ? labelaStyleSmall
+                : labelaStyle,
           ),
           TextFormField(
             decoration: InputDecoration(
