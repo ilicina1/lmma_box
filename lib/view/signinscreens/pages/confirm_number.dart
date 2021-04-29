@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/shared/size_config.dart';
 import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
 class ConfirmNumberPage extends StatelessWidget {
   @override
@@ -54,20 +56,40 @@ class ConfirmNumberPage extends StatelessWidget {
                   width: double.infinity,
                   child: Column(
                     children: <Widget>[
-                      TextFormField(
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                            labelText: "Email",
-                            labelStyle: TextStyle(
-                                color: Color(0xFF373737),
-                                fontWeight: FontWeight.w700,
-                                fontSize: 14,
-                                fontFamily: "Averta"),
-                            hintStyle: TextStyle(fontSize: 16),
-                            hintText: "Enter your Email"),
-                        style: TextStyle(fontSize: 20),
+                      PinCodeTextField(
+                        appContext: context,
+                        length: 4,
+                        onChanged: (value) {},
+                        keyboardType: TextInputType.number,
+                        pinTheme: PinTheme(
+                          shape: PinCodeFieldShape.underline,
+                          inactiveColor: Colors.black38,
+                          fieldWidth: 80,
+                        ),
                       ),
                     ],
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: RichText(
+                    textAlign: TextAlign.justify,
+                    text: TextSpan(
+                      text: 'Didn’t get a code?',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                          color: Colors.black),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: ' Try again ',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16,
+                              color: Colors.green),
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],
