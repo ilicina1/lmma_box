@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/providers/form_notifier.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:provider/provider.dart';
 
 class PasswordField extends StatefulWidget {
   @override
@@ -16,6 +18,8 @@ class _PasswordFieldState extends State<PasswordField> {
       });
     }
 
+    var controllers = context.watch<FormNotifier>();
+
     return Padding(
       padding: MediaQuery.of(context).size.width < 380
           ? const EdgeInsets.only(top: 10.0)
@@ -30,6 +34,7 @@ class _PasswordFieldState extends State<PasswordField> {
                 : labelaStyle,
           ),
           TextFormField(
+            controller: controllers.passwordController,
             obscureText: _isHidden,
             decoration: InputDecoration(
               hintText: 'Enter your password',

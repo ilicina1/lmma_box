@@ -11,14 +11,19 @@ import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_b
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_social_row.dart';
 
 class FormList extends StatefulWidget {
+  var _scaffoldKey;
+  FormList(this._scaffoldKey);
   @override
   _FormListState createState() => _FormListState();
 }
 
 class _FormListState extends State<FormList> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
         child: Column(
@@ -41,7 +46,7 @@ class _FormListState extends State<FormList> {
             PhoneNumberField(),
             PasswordField(),
             policyAndTerms(context),
-            signUpButton(context),
+            signUpButton(_formKey, widget._scaffoldKey),
             dividerOr(context),
             signUpSocialRow(context),
             loginRichText(context),
