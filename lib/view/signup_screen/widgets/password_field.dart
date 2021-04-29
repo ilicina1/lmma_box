@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/signup_screen_style.dart';
 
 class PasswordField extends StatefulWidget {
   @override
@@ -7,14 +8,14 @@ class PasswordField extends StatefulWidget {
 
 class _PasswordFieldState extends State<PasswordField> {
   bool _isHidden = true;
-  void togglePasswordView() {
-    setState(() {
-      _isHidden = !_isHidden;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    void togglePasswordView() {
+      setState(() {
+        _isHidden = !_isHidden;
+      });
+    }
+
     return Padding(
       padding: const EdgeInsets.only(top: 20.0),
       child: Column(
@@ -22,34 +23,22 @@ class _PasswordFieldState extends State<PasswordField> {
         children: [
           Text(
             "Password",
-            style: TextStyle(
-              color: Color(0xff373737),
-              fontWeight: FontWeight.bold,
-            ),
+            style: labelaStyle,
           ),
           TextFormField(
             obscureText: _isHidden,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               hintText: 'Enter your password',
               suffix: InkWell(
-                // onTap: togglePasswordView,
-                child: Icon(Icons.visibility),
-              ),
-              hintStyle: TextStyle(
-                color: Color(0xFFBABABA),
-              ),
-              focusedBorder: UnderlineInputBorder(
-                borderSide: const BorderSide(
-                  color: Color(0xFFFFDF36),
-                  width: 2.0,
+                onTap: togglePasswordView,
+                child: Icon(
+                  Icons.visibility,
+                  color: Color(0xFF8B8B8B),
                 ),
               ),
-              border: UnderlineInputBorder(
-                borderSide: const BorderSide(
-                  color: Color(0xFFE0E0E0),
-                  width: 1.0,
-                ),
-              ),
+              hintStyle: hintStyle,
+              focusedBorder: focused,
+              border: border,
             ),
           ),
         ],

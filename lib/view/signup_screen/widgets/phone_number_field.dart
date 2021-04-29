@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:international_phone_input/international_phone_input.dart';
+import 'package:lmma_box/utils/style/signup_screen_style.dart';
 
 class PhoneNumberField extends StatefulWidget {
   @override
@@ -16,20 +17,13 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
         children: [
           Text(
             "Phone number",
-            style: TextStyle(
-              color: Color(0xff373737),
-              fontWeight: FontWeight.bold,
-            ),
+            style: labelaStyle,
           ),
           InternationalPhoneInput(
-            decoration: const InputDecoration(
+            initialSelection: "+387",
+            decoration: InputDecoration(
               hintText: 'Ex: 3452323423',
-              border: UnderlineInputBorder(
-                borderSide: const BorderSide(
-                  color: Color(0xFFE0E0E0),
-                  width: 1.0,
-                ),
-              ),
+              border: border,
             ),
             hintText: "Ex: 3452323423",
             showCountryFlags: true,

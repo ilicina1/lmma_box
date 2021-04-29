@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/signup_screen_style.dart';
 
 class NameField extends StatefulWidget {
   @override
@@ -13,29 +14,14 @@ class _NameFieldState extends State<NameField> {
       children: [
         Text(
           "Name",
-          style: TextStyle(
-            color: Color(0xff373737),
-            fontWeight: FontWeight.bold,
-          ),
+          style: labelaStyle,
         ),
         TextFormField(
-          decoration: const InputDecoration(
+          decoration: InputDecoration(
             hintText: 'Enter your Name',
-            hintStyle: TextStyle(
-              color: Color(0xFFBABABA),
-            ),
-            focusedBorder: UnderlineInputBorder(
-              borderSide: const BorderSide(
-                color: Color(0xFFFFDF36),
-                width: 2.0,
-              ),
-            ),
-            border: UnderlineInputBorder(
-              borderSide: const BorderSide(
-                color: Color(0xFFE0E0E0),
-                width: 1.0,
-              ),
-            ),
+            hintStyle: hintStyle,
+            focusedBorder: focused,
+            border: border,
           ),
         ),
       ],

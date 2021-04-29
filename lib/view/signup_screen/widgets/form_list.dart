@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:lmma_box/view/signup_screen/widgets/divider.dart';
 import 'package:lmma_box/view/signup_screen/widgets/email_field.dart';
 import 'package:lmma_box/view/signup_screen/widgets/name_field.dart';
 import 'package:lmma_box/view/signup_screen/widgets/password_field.dart';
 import 'package:lmma_box/view/signup_screen/widgets/phone_number_field.dart';
+import 'package:lmma_box/view/signup_screen/widgets/policy_text.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_button.dart';
 
 class FormList extends StatefulWidget {
   @override
@@ -30,6 +33,9 @@ class _FormListState extends State<FormList> {
             EmailField(),
             PhoneNumberField(),
             PasswordField(),
+            policyAndTerms(),
+            signUpButton(context),
+            dividerOr(),
           ],
         ),
       ),
