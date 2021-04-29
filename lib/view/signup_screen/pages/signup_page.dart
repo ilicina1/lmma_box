@@ -11,12 +11,13 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Container(
         child: Column(
           children: [
             SafeArea(
-              child: appBarWidget(),
+              child: appBarWidget(context),
             ),
             FormList(),
           ],
