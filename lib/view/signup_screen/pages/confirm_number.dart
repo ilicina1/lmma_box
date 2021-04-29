@@ -5,6 +5,9 @@ import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/potvr
 import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/rich_text.dart';
 
 class ConfirmNumberPage extends StatelessWidget {
+  var _formKey;
+  var _scaffoldKey;
+  ConfirmNumberPage(this._formKey, this._scaffoldKey);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +30,11 @@ class ConfirmNumberPage extends StatelessWidget {
           children: <Widget>[
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[InfoText(), PinContainer(), TextRich()],
+              children: <Widget>[
+                InfoText(),
+                PinContainer(_formKey, _scaffoldKey),
+                TextRich(_formKey, _scaffoldKey),
+              ],
             )
           ],
         ),

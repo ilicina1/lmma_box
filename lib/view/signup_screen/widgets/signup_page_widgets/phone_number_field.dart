@@ -38,6 +38,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
             decoration: InputDecoration(
               hintText: 'Ex: 3452323423',
               border: border,
+              focusedBorder: focused,
             ),
             hintText: "Ex: 3452323423",
             showCountryFlags: true,

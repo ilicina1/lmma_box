@@ -16,6 +16,7 @@ class PageScroller extends StatelessWidget {
     return Consumer<ScreenScrollProvider>(
       builder: (context, screenScroll, child) {
         return Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: Colors.white,
           body: Column(
             children: [
