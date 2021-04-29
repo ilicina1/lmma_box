@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signinscreens/widgets/buton_reset.dart';
+import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/buton_reset.dart';
 
 class ContainerColored extends StatelessWidget {
   const ContainerColored({
