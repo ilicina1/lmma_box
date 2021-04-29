@@ -1,4 +1,7 @@
+import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
+import 'package:amplify_flutter/amplify.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_login/flutter_login.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lmma_box/view/signin_screen/widgets/login_widgets/bottom_text.dart';
 import 'package:lmma_box/view/signin_screen/widgets/login_widgets/divider.dart';
@@ -18,7 +21,6 @@ class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool rememberMe = false;
 
- 
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +32,10 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
             child: Column(
-              children: [
-              WelcomeText(),
-              LoginForm(_formKey)
-               
-              ],
+              children: [WelcomeText(), LoginForm(_formKey)],
             ),
           ),
-         RememberButton(rememberMe),
+          RememberButton(rememberMe),
           LoginButton(_formKey),
           LoginDivider(),
           SocialMediaIcons(),
