@@ -23,12 +23,17 @@ class FormNotifier extends ChangeNotifier {
       final email = _emailController.text.trim();
       final password = _passwordController.text;
 
+      // try {
+      //   final result = await Amplify.Auth.signUp(
+      //     username: email,
+      //     password: password,
+      //     options: CognitoSignUpOptions(userAttributes: userAttributes),
+      //   );
       /// In this user attribute you can define the custom fields associated with the user.
       /// For example birthday, telephone number, etc
       Map<String, String> userAttributes = {
-        "name": name,
+        // "name": "name",
         "email": email,
-        "phone": phoneNumber,
       };
 
       try {
@@ -38,7 +43,7 @@ class FormNotifier extends ChangeNotifier {
           options: CognitoSignUpOptions(userAttributes: userAttributes),
         );
         if (result.isSignUpComplete) {
-          _gotToEmailConfirmationScreen(context, email);
+          _gotToEmailConfirmationScreen(context, "email");
         }
       } on AuthException catch (e) {
         _scaffoldKey.currentState.showSnackBar(
