@@ -15,11 +15,14 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   bool rememberMe = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Colors.white,
       body: Column(
         children: [
@@ -27,11 +30,11 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
             child: Column(
-              children: [WelcomeText(), LoginForm(_formKey)],
+              children: [WelcomeText(), LoginForm(_formKey, _scaffoldKey)],
             ),
           ),
           RememberButton(rememberMe),
-          LoginButton(_formKey),
+          // LoginButton(_formKey),
           LoginDivider(),
           SocialMediaIcons(),
           Spacer(),

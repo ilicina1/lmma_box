@@ -4,7 +4,8 @@ import 'package:amplify_flutter/amplify.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lmma_box/amplifyconfiguration.dart';
-import 'package:lmma_box/providers/form_notifier.dart';
+import 'package:lmma_box/providers/form_signin_notifier.dart';
+import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/providers/screen_scroll.dart';
 import 'package:lmma_box/view/loading_screen/pages/splash_screen.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +15,8 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider.value(value: FormNotifier()),
+        ChangeNotifierProvider.value(value: FormSignUpNotifier()),
+        ChangeNotifierProvider.value(value: FormSignInNotifier()),
         ChangeNotifierProvider.value(value: ScreenScrollProvider(0)),
       ],
       child: MyApp(),

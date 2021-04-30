@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:lmma_box/providers/form_notifier.dart';
+import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
@@ -11,7 +11,7 @@ class TextRich extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var controllers = context.watch<FormNotifier>();
+    var controllers = context.watch<FormSignUpNotifier>();
 
     return Padding(
       padding: const EdgeInsets.only(top: 20.0),

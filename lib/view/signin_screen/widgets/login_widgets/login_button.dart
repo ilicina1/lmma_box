@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/providers/form_signin_notifier.dart';
+import 'package:provider/provider.dart';
 
 class LoginButton extends StatelessWidget {
   final GlobalKey<FormState> _formKey;
-
-  LoginButton(this._formKey);
+  final GlobalKey<ScaffoldState> _scaffoldKey;
+  LoginButton(this._formKey, this._scaffoldKey);
 
   @override
   Widget build(BuildContext context) {
+    var controllers = context.watch<FormSignInNotifier>();
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 0, vertical: 20),
       width: 315,
@@ -19,11 +23,12 @@ class LoginButton extends StatelessWidget {
               ),
               primary: Color(0xFFFFDF36)),
           onPressed: () {
+            controllers.loginButtonOnPressed(context, _formKey, _scaffoldKey);
             // Validate will return true if the form is valid, or false if
             // the form is invalid.
-            if (_formKey.currentState.validate()) {
-              // Process data.
-            }
+            // if (_formKey.currentState.validate()) {
+            //   // Process data.
+            // }
           },
           child: Text('Login', style: TextStyle(color: Color(0xFF68572d)))),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/providers/form_notifier.dart';
+import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
@@ -11,7 +11,7 @@ class EmailField extends StatefulWidget {
 class _EmailFieldState extends State<EmailField> {
   @override
   Widget build(BuildContext context) {
-    var controllers = context.watch<FormNotifier>();
+    var controllers = context.watch<FormSignUpNotifier>();
 
     return Padding(
       padding: MediaQuery.of(context).size.width < 380
@@ -27,6 +27,10 @@ class _EmailFieldState extends State<EmailField> {
                 : labelaStyle,
           ),
           TextFormField(
+            validator: (value) {
+              if (value.contains('@') && value.length > 8) return null;
+              return "Please enter your email";
+            },
             controller: controllers.emailController,
             decoration: InputDecoration(
               hintText: 'Enter your Email',

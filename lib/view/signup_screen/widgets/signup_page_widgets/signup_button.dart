@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/providers/form_notifier.dart';
+import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +14,7 @@ class signUpButton extends StatefulWidget {
 class _signUpButtonState extends State<signUpButton> {
   @override
   Widget build(BuildContext context) {
-    var controllers = context.watch<FormNotifier>();
+    var controllers = context.watch<FormSignUpNotifier>();
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
       child: Container(
@@ -33,8 +33,14 @@ class _signUpButtonState extends State<signUpButton> {
             'Sign Up',
             style: signUpText,
           ),
-          onPressed: () => controllers.createAccountOnPressed(
-              context, widget._formKey, widget._scaffoldKey),
+          onPressed: () => widget._formKey.currentState.validate()
+              ? controllers.createAccountOnPressed(
+                  context, widget._formKey, widget._scaffoldKey)
+              : ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Processing Data'),
+                  ),
+                ),
         ),
       ),
     );

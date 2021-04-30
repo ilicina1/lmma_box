@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/providers/form_notifier.dart';
+import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +18,7 @@ class _PasswordFieldState extends State<PasswordField> {
       });
     }
 
-    var controllers = context.watch<FormNotifier>();
+    var controllers = context.watch<FormSignUpNotifier>();
 
     return Padding(
       padding: MediaQuery.of(context).size.width < 380
@@ -34,6 +34,13 @@ class _PasswordFieldState extends State<PasswordField> {
                 : labelaStyle,
           ),
           TextFormField(
+            validator: (value) {
+              String pattern =
+                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+              RegExp regExp = new RegExp(pattern);
+              if (regExp.hasMatch(value) == true) return null;
+              return "Please enter your password.";
+            },
             controller: controllers.passwordController,
             obscureText: _isHidden,
             decoration: InputDecoration(
