@@ -9,7 +9,9 @@ class ContainerColored extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: MediaQuery.of(context).size.width < 380
+          ? MediaQuery.of(context).size.height * 0.05
+          : 45,
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
         gradient: LinearGradient(

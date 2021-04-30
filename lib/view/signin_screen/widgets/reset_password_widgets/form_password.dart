@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
-import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
-class FormaEmail extends StatelessWidget {
-  const FormaEmail({
-    Key key,
-  }) : super(key: key);
-
+class PasswordForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
@@ -21,19 +16,22 @@ class FormaEmail extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Email",
+            "New password",
             style: MediaQuery.of(context).size.width < 470
                 ? labelaStyleSmall
                 : labelaStyle,
           ),
           TextFormField(
             validator: (value) {
-              if (value.contains('@') && value.length > 8) return null;
-              return "Please enter your email";
+              String pattern =
+                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+              RegExp regExp = new RegExp(pattern);
+              if (regExp.hasMatch(value) == true) return null;
+              return "Please enter your new password.";
             },
-            controller: controllers.emailController,
+            controller: controllers.passwordController,
             decoration: InputDecoration(
-              hintText: 'Enter your Email',
+              hintText: 'Enter your new password',
               hintStyle: hintStyle,
               focusedBorder: focused,
               border: border,
