@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
 import 'package:lmma_box/view/signinscreens/widgets/icon_back.dart';
 import 'package:lmma_box/view/signinscreens/widgets/main_container.dart';
 import 'package:lmma_box/view/signinscreens/widgets/text_info.dart';

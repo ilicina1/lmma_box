@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/signup_screen_style.dart';
 
 class InfoText extends StatelessWidget {
   const InfoText({
@@ -15,10 +16,7 @@ class InfoText extends StatelessWidget {
           ),
           Text(
             "Enter the 4-digit code Lmmaa just sent to +971 23423523",
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-            ),
+            style: infoText,
             textAlign: TextAlign.justify,
           )
         ],

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/shared/size_config.dart';
-import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
-import 'package:lmma_box/view/signinscreens/widgets/info_text.dart';
-import 'package:lmma_box/view/signinscreens/widgets/pin_container.dart';
-import 'package:lmma_box/view/signinscreens/widgets/potvrda.dart';
-import 'package:lmma_box/view/signinscreens/widgets/rich_text.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/info_text.dart';
+import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/pin_container.dart';
+import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/potvrda.dart';
+import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/rich_text.dart';
 
 class ConfirmNumberPage extends StatelessWidget {
   @override

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/signup_screen_style.dart';
 
 class PotvrdaDart extends StatelessWidget {
   const PotvrdaDart({
@@ -9,12 +10,7 @@ class PotvrdaDart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       "Confirm number",
-      style: TextStyle(
-        fontSize: 26,
-        fontWeight: FontWeight.w700,
-        fontFamily: "Averta",
-        color: Colors.black,
-      ),
+      style: confirmHeader,
     );
   }
 }

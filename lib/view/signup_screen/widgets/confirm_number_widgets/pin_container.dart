@@ -20,7 +20,7 @@ class PinContainer extends StatelessWidget {
             pinTheme: PinTheme(
               shape: PinCodeFieldShape.underline,
               inactiveColor: Colors.black38,
-              fieldWidth: 80,
+              fieldWidth: MediaQuery.of(context).size.width < 380 ? 40 : 70,
             ),
           ),
         ],
