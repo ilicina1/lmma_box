@@ -53,23 +53,23 @@ class _LoginFormState extends State<LoginForm> {
                     alignment: Alignment.topLeft,
                     child: Text('Password')),
                 TextFormField(
-                  controller: controllers.passwordController,
-                  obscureText: _obscureText,
-                  decoration: InputDecoration(
-                    hintText: '**********',
-                    suffixIcon: IconButton(
-                        icon: FaIcon(_obscureText
-                            ? FontAwesomeIcons.eye
-                            : FontAwesomeIcons.eyeSlash),
-                        onPressed: _toggle),
-                  ),
-                  validator: (String value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter password';
-                    }
-                    return null;
-                  },
-                ),
+                    controller: controllers.passwordController,
+                    obscureText: _obscureText,
+                    decoration: InputDecoration(
+                      hintText: '**********',
+                      suffixIcon: IconButton(
+                          icon: FaIcon(_obscureText
+                              ? FontAwesomeIcons.eye
+                              : FontAwesomeIcons.eyeSlash),
+                          onPressed: _toggle),
+                    ),
+                    validator: (value) {
+                      String pattern =
+                          r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+                      RegExp regExp = new RegExp(pattern);
+                      if (regExp.hasMatch(value) == true) return null;
+                      return "Please enter your password.";
+                    }),
                 LoginButton(widget._formKey, widget._scaffoldKey),
               ],
             )),
