@@ -5,7 +5,7 @@ import 'package:lmma_box/utils/dummyData/dummyData.dart';
 import 'package:lmma_box/view/signup_screen/pages/confirm_number.dart';
 import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 
-class FormNotifier extends ChangeNotifier {
+class FormSignUpNotifier extends ChangeNotifier {
   TextEditingController _nameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _phoneController = TextEditingController();
@@ -48,7 +48,7 @@ class FormNotifier extends ChangeNotifier {
         _scaffoldKey.currentState.showSnackBar(
           SnackBar(
             content: e.message == "Username already exists in the system."
-                ? Text("Email already exists in the system")
+                ? Text("Account already exists. Try again or Sign in.")
                 : Text(e.message),
           ),
         );
