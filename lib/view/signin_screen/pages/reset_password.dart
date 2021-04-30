@@ -3,7 +3,6 @@ import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/icon_
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/main_container.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/text_info.dart';
 
-
 class ResetPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
