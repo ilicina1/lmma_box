@@ -1,15 +1,10 @@
 import 'dart:async';
-import 'dart:convert';
 
-import 'package:amazon_cognito_identity_dart_2/cognito.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/shared/strings.dart';
 import 'package:lmma_box/viewModel/signinViewModel.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:http/http.dart' as http;
-
-import 'welcomescreen.dart';
 
 class WebViewGoogleFacebook extends StatefulWidget {
   String idendity_provider;

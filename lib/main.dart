@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/viewModel/facebooksigninViewModel.dart';
+import 'package:lmma_box/viewModel/googlesigninViewModel.dart';
 
 import 'buttons.dart';
-import 'googlefacebook-signin.dart';
 
 void main() {
   runApp(MyApp());
@@ -55,32 +56,15 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 SizedBox(
                     width: double.infinity,
-                    child: GoogleButton(onGoogleSignIn)),
+                    child: GoogleButton(
+                        GoogleSignInViewModel().onGoogleSignIn(context))),
                 SizedBox(
                     width: double.infinity,
-                    child: FacebookButton(facebookLogin)),
+                    child: FacebookButton(
+                        FacebookSignInViewModel().facebookLogin(context))),
               ],
             ),
           ),
         ));
-  }
-
-  void facebookLogin() async {
-    idendity_provider = "Facebook";
-    // web_view_enable=1;
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => WebViewGoogleFacebook(idendity_provider)),
-    );
-  }
-
-  void onGoogleSignIn() async {
-    idendity_provider = "Google";
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => WebViewGoogleFacebook(idendity_provider)),
-    );
   }
 }
