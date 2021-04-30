@@ -1,14 +1,18 @@
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_flutter/amplify.dart';
 import 'package:flutter/material.dart';
+import 'package:lmma_box/view/signin_screen/pages/confirm_code.dart';
 import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 
 class FormSignInNotifier extends ChangeNotifier {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+  TextEditingController _confirmationCodeController = TextEditingController();
 
   TextEditingController get emailController => _emailController;
   TextEditingController get passwordController => _passwordController;
+  TextEditingController get confirmationCodeController =>
+      _confirmationCodeController;
 
   Future<void> signOut() async {
     try {
@@ -48,6 +52,39 @@ class FormSignInNotifier extends ChangeNotifier {
           ),
         );
       }
+    }
+    notifyListeners();
+  }
+
+  Future<void> resetPassword(context) async {
+    try {
+      ResetPasswordResult res = await Amplify.Auth.resetPassword(
+        username: _emailController.text.trim(),
+      );
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => ConfirmCodePage(),
+        ),
+      );
+    } on AuthException catch (e) {
+      print(e.message);
+    }
+    notifyListeners();
+  }
+
+  Future<void> submitResetCode(context) async {
+    try {
+      await Amplify.Auth.confirmPassword(
+        username: _emailController.text.trim(),
+        newPassword: _passwordController.text.trim(),
+        confirmationCode: _confirmationCodeController.text,
+      );
+      Navigator.pop(
+        context,
+      );
+    } on AuthException catch (e) {
+      print(e);
     }
     notifyListeners();
   }

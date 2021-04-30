@@ -35,7 +35,7 @@ class ConfirmCodePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text("Enter a 6-digit code Lmma just sent to +97123423523"),
-                PinContainer(),
+                PinContainer2(),
                 TextRich(),
               ],
             )

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/providers/form_signin_notifier.dart';
+import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
 import 'package:lmma_box/view/signin_screen/pages/confirm_code.dart';
+import 'package:provider/provider.dart';
 
 class ButtonReset extends StatelessWidget {
   const ButtonReset({
@@ -9,6 +12,8 @@ class ButtonReset extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controllers = context.watch<FormSignInNotifier>();
+
     return Container(
       width: double.infinity,
       height: MediaQuery.of(context).size.width < 380
@@ -22,16 +27,11 @@ class ButtonReset extends StatelessWidget {
             ),
             primary: Color(0xFFFFDF36)),
         child: Text(
-          'Send reset Link',
+          'Send confirmation code',
           style: twoButtonsStyle,
         ),
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => ConfirmCodePage(),
-            ),
-          );
+          controllers.resetPassword(context);
         },
       ),
     );
