@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
+import 'package:lmma_box/view/signin_screen/pages/confirm_code.dart';
 
 class ButtonReset extends StatelessWidget {
   const ButtonReset({
@@ -24,7 +25,14 @@ class ButtonReset extends StatelessWidget {
           'Send reset Link',
           style: twoButtonsStyle,
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => ConfirmCodePage(),
+            ),
+          );
+        },
       ),
     );
   }
