@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
-import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
-import 'package:lmma_box/view/signin_screen/pages/confirm_code.dart';
 import 'package:provider/provider.dart';
 
 class ButtonReset extends StatelessWidget {

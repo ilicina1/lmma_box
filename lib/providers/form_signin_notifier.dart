@@ -58,7 +58,7 @@ class FormSignInNotifier extends ChangeNotifier {
 
   Future<void> resetPassword(context) async {
     try {
-      ResetPasswordResult res = await Amplify.Auth.resetPassword(
+      await Amplify.Auth.resetPassword(
         username: _emailController.text.trim(),
       );
       Navigator.push(
