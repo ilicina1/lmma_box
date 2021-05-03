@@ -10,6 +10,7 @@ import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/policy_t
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_button.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_social_row.dart';
 
+// ignore: must_be_immutable
 class FormList extends StatefulWidget {
   var _scaffoldKey;
   FormList(this._scaffoldKey);

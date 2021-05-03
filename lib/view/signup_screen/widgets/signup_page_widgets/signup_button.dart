@@ -3,6 +3,7 @@ import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class signUpButton extends StatefulWidget {
   var _formKey;
   var _scaffoldKey;
@@ -36,11 +37,7 @@ class _signUpButtonState extends State<signUpButton> {
           onPressed: () => widget._formKey.currentState.validate()
               ? controllers.createAccountOnPressed(
                   context, widget._formKey, widget._scaffoldKey)
-              : ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Processing Data'),
-                  ),
-                ),
+              : print("processing data"),
         ),
       ),
     );

@@ -3,6 +3,7 @@ import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class PinContainer extends StatelessWidget {
   var _formKey;
   var _scaffoldKey;

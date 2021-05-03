@@ -4,6 +4,7 @@ import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/pin_c
 import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/potvrda.dart';
 import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/rich_text.dart';
 
+// ignore: must_be_immutable
 class ConfirmNumberPage extends StatelessWidget {
   var _formKey;
   var _scaffoldKey;

@@ -9,6 +9,7 @@ import 'package:lmma_box/view/welcome_screen/widgets/shared_widgets/app_bar_widg
 import 'package:lmma_box/view/welcome_screen/widgets/shared_widgets/welcome_screen_pagination.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class PageScroller extends StatelessWidget {
   PageController _pageController = PageController();
   @override

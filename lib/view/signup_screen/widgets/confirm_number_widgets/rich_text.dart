@@ -4,6 +4,7 @@ import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class TextRich extends StatelessWidget {
   var _formKey;
   var _scaffoldKey;
