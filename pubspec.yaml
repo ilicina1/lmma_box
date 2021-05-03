@@ -35,8 +35,6 @@ dependencies:
   amplify_analytics_pinpoint: '<1.0.0'
   amazon_cognito_identity_dart_2: ^0.1.15
   http: ^0.12.1
-  flutter_appauth: ^0.9.1
-  flutter_secure_storage: ^3.3.3
   webview_flutter: ^2.0.4
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
