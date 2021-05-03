@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:lmma_box/view/signin_screen/widgets/login_widgets/login_button.dart';
 import 'package:provider/provider.dart';
@@ -58,9 +57,10 @@ class _LoginFormState extends State<LoginForm> {
                     decoration: InputDecoration(
                       hintText: '**********',
                       suffixIcon: IconButton(
-                          icon: FaIcon(_obscureText
-                              ? FontAwesomeIcons.eye
-                              : FontAwesomeIcons.eyeSlash),
+                          icon: Icon(
+                            Icons.visibility,
+                            color: Color(0xFF8B8B8B),
+                          ),
                           onPressed: _toggle),
                     ),
                     validator: (value) {
