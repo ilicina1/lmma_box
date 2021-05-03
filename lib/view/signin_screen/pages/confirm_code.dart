@@ -2,12 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/pin_container2.dart';
 import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/text_rich.dart';
-import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/potvrda.dart';
 
 class ConfirmCodePage extends StatelessWidget {
-  // var _formKey;
-  // var _scaffoldKey;
-  // ConfirmCodePage(this._formKey, this._scaffoldKey);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

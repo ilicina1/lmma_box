@@ -1,12 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 
 class TextRich extends StatelessWidget {
-  // var _formKey;
-  // var _scaffoldKey;
-  // TextRich(this._formKey, this._scaffoldKey);
-
   @override
   Widget build(BuildContext context) {
     return Padding(

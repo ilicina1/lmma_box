@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/view/signin_screen/pages/linkedin_signin.dart';
 
 Widget linkedinIcon(context) {
   return Container(
@@ -8,8 +9,16 @@ Widget linkedinIcon(context) {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Container(
-          child: Image(
-            image: AssetImage('assets/images/linkedinLog.png'),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => getWebView(context)),
+              );
+            }, // handle your image tap here
+            child: Image(
+              image: AssetImage('assets/images/linkedinLog.png'),
+            ),
           ),
         ),
       ],

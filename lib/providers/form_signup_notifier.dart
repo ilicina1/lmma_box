@@ -24,6 +24,7 @@ class FormSignUpNotifier extends ChangeNotifier {
       final name = _nameController.text.trim();
       final email = _emailController.text.trim();
       final password = _passwordController.text;
+      // print(phoneNumber);
 
       phoneNumber = phoneNumber.substring(1);
 
@@ -41,6 +42,7 @@ class FormSignUpNotifier extends ChangeNotifier {
           password: password,
           options: CognitoSignUpOptions(userAttributes: userAttributes),
         );
+
         if (result.isSignUpComplete) {
           _gotToEmailConfirmationScreen(context, _formKey, _scaffoldKey);
         }

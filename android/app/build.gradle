@@ -40,6 +40,9 @@ android {
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        manifestPlaceholders = [
+                'appAuthRedirectScheme': 'https://lmma-linkedin.auth.us-east-1.amazoncognito.com/oauth2/idpresponse'
+        ]
     }
 
     buildTypes {
@@ -61,6 +64,7 @@ flutter {
 }
 
 dependencies {
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     
 }
