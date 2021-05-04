@@ -39,9 +39,10 @@ class FirstPageStyles {
 }
 
 TextStyle skipButtonStyle = TextStyle(
-  color: Colors.black,
-  fontSize: 15,
-  fontWeight: FontWeight.w500,
+  color: Color(0x373737),
+  fontFamily: "Averta CY",
+  fontSize: 12,
+  fontWeight: FontWeight.w600,
 );
 
 TextStyle textLmmaBox = TextStyle(

@@ -35,7 +35,12 @@ class _LoginFormState extends State<LoginForm> {
                 Container(
                     margin: EdgeInsets.only(top: 30),
                     alignment: Alignment.topLeft,
-                    child: Text('Email')),
+                    child: Text('Email',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14,
+                            fontFamily: "Averta CY",
+                            fontStyle: FontStyle.normal))),
                 TextFormField(
                   controller: controllers.emailController,
                   decoration: const InputDecoration(
@@ -51,7 +56,12 @@ class _LoginFormState extends State<LoginForm> {
                 Container(
                     margin: EdgeInsets.only(top: 30),
                     alignment: Alignment.topLeft,
-                    child: Text('Password')),
+                    child: Text('Password',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14,
+                            fontFamily: "Averta CY",
+                            fontStyle: FontStyle.normal))),
                 TextFormField(
                     controller: controllers.passwordController,
                     obscureText: _obscureText,
