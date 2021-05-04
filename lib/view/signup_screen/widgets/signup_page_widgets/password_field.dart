@@ -51,6 +51,7 @@ class _PasswordFieldState extends State<PasswordField> {
                 },
                 controller: controllers.passwordController,
                 obscureText: _isHidden,
+                obscuringCharacter: '•',
                 decoration: InputDecoration(
                   hintText: 'Enter your password',
                   suffix: Stack(
@@ -61,7 +62,6 @@ class _PasswordFieldState extends State<PasswordField> {
                         onPressed: () {
                           _focusNode.unfocus();
                           _focusNode.canRequestFocus = false;
-
                           setState(() {
                             _isHidden = !_isHidden;
                           });

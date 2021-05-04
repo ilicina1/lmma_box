@@ -56,7 +56,7 @@ class _LoginFormState extends State<LoginForm> {
                     controller: controllers.passwordController,
                     obscureText: _obscureText,
                     decoration: InputDecoration(
-                      hintText: '**********',
+                      hintText: '••••••••••',
                       suffixIcon: IconButton(
                           icon: Icon(
                             Icons.visibility,
