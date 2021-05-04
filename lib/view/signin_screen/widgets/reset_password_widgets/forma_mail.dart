@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/providers/form_signup_notifier.dart';
+import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
-class EmailField extends StatefulWidget {
-  @override
-  _EmailFieldState createState() => _EmailFieldState();
-}
+class FormaEmail extends StatelessWidget {
+  const FormaEmail({
+    Key key,
+  }) : super(key: key);
 
-class _EmailFieldState extends State<EmailField> {
   @override
   Widget build(BuildContext context) {
-    var controllers = context.watch<FormSignUpNotifier>();
+    var controllers = context.watch<FormSignInNotifier>();
 
     return Padding(
       padding: MediaQuery.of(context).size.width < 380

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signinscreens/widgets/container_colored.dart';
-import 'package:lmma_box/view/signinscreens/widgets/forma_mail.dart';
+import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/container_colored.dart';
+import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/form_password.dart';
+import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/forma_mail.dart';
 
 class MainContainer extends StatelessWidget {
   const MainContainer({
@@ -14,6 +15,7 @@ class MainContainer extends StatelessWidget {
       child: Column(
         children: <Widget>[
           FormaEmail(),
+          PasswordForm(),
           SizedBox(
             height: 20,
           ),

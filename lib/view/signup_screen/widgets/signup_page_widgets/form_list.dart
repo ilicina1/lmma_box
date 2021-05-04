@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/KeyboardVisibilityBuilder.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/divider.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/email_field.dart';
@@ -9,45 +10,107 @@ import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/phone_nu
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/policy_text.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_button.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_social_row.dart';
+import 'package:keyboard_visibility/keyboard_visibility.dart';
 
+// ignore: must_be_immutable
 class FormList extends StatefulWidget {
+  var _scaffoldKey;
+  FormList(this._scaffoldKey);
   @override
   _FormListState createState() => _FormListState();
 }
 
 class _FormListState extends State<FormList> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-    return Form(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Padding(
-              padding: MediaQuery.of(context).size.width < 380
-                  ? const EdgeInsets.fromLTRB(0, 10, 0, 15)
-                  : const EdgeInsets.fromLTRB(0, 30, 0, 30),
-              child: Text(
-                "Create Account",
-                style: MediaQuery.of(context).size.width < 380
-                    ? createAccountSmall
-                    : createAccount,
-              ),
+    return KeyboardVisibilityBuilder(
+      builder: (context, child, isKeyboardVisible) {
+        if (isKeyboardVisible) {
+          // build layout for visible keyboard
+          return SizedBox(
+            height: 300,
+            child: ListView(
+              children: [
+                Form(
+                  key: _formKey,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Padding(
+                          padding: MediaQuery.of(context).size.width < 380
+                              ? const EdgeInsets.fromLTRB(0, 10, 0, 15)
+                              : const EdgeInsets.fromLTRB(0, 30, 0, 30),
+                          child: Text(
+                            "Create Account",
+                            style: MediaQuery.of(context).size.width < 380
+                                ? createAccountSmall
+                                : createAccount,
+                          ),
+                        ),
+                        NameField(),
+                        EmailField(),
+                        PhoneNumberField(),
+                        PasswordField(),
+                        policyAndTerms(context),
+                        signUpButton(_formKey, widget._scaffoldKey),
+                        dividerOr(context),
+                        signUpSocialRow(context),
+                        loginRichText(context),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-            NameField(),
-            EmailField(),
-            PhoneNumberField(),
-            PasswordField(),
-            policyAndTerms(context),
-            signUpButton(context),
-            dividerOr(context),
-            signUpSocialRow(context),
-            loginRichText(context),
-          ],
-        ),
-      ),
+          );
+        } else {
+          // build layout for invisible keyboard
+          return SizedBox(
+            height: 600,
+            child: ListView(
+              children: [
+                Form(
+                  key: _formKey,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Padding(
+                          padding: MediaQuery.of(context).size.width < 380
+                              ? const EdgeInsets.fromLTRB(0, 10, 0, 15)
+                              : const EdgeInsets.fromLTRB(0, 30, 0, 30),
+                          child: Text(
+                            "Create Account",
+                            style: MediaQuery.of(context).size.width < 380
+                                ? createAccountSmall
+                                : createAccount,
+                          ),
+                        ),
+                        NameField(),
+                        EmailField(),
+                        PhoneNumberField(),
+                        PasswordField(),
+                        policyAndTerms(context),
+                        signUpButton(_formKey, widget._scaffoldKey),
+                        dividerOr(context),
+                        signUpSocialRow(context),
+                        loginRichText(context),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+      },
     );
   }
 }

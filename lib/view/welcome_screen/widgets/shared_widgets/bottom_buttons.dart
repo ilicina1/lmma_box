@@ -5,6 +5,7 @@ import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/next_bu
 import 'package:lmma_box/view/welcome_screen/widgets/second_page_widgets/previous_button.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class BottomButtons extends StatelessWidget {
   final PageController _pageController;
   var screenScroll;

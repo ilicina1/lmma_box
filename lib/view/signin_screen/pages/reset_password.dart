@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signinscreens/widgets/icon_back.dart';
-import 'package:lmma_box/view/signinscreens/widgets/main_container.dart';
-import 'package:lmma_box/view/signinscreens/widgets/text_info.dart';
+import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/icon_back.dart';
+import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/main_container.dart';
+import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/text_info.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   @override

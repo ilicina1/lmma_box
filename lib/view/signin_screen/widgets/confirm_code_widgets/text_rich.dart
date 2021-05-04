@@ -1,19 +1,9 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
-import 'package:provider/provider.dart';
 
-// ignore: must_be_immutable
 class TextRich extends StatelessWidget {
-  var _formKey;
-  var _scaffoldKey;
-  TextRich(this._formKey, this._scaffoldKey);
-
   @override
   Widget build(BuildContext context) {
-    var controllers = context.watch<FormSignUpNotifier>();
-
     return Padding(
       padding: const EdgeInsets.only(top: 20.0),
       child: Container(
@@ -26,9 +16,9 @@ class TextRich extends StatelessWidget {
             children: [
               TextSpan(
                 text: ' Try again ',
-                recognizer: new TapGestureRecognizer()
-                  ..onTap = () =>
-                      controllers.submitCode(context, _formKey, _scaffoldKey),
+                // recognizer: new TapGestureRecognizer()
+                //   ..onTap = () =>
+                //       controllers.submitCode(context, _formKey, _scaffoldKey),
                 style: privacyBlueConf,
               ),
             ],

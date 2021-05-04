@@ -6,6 +6,7 @@ import 'package:lmma_box/utils/shared/strings.dart';
 import 'package:lmma_box/viewModel/signinViewModel.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+// ignore: must_be_immutable
 class WebViewGoogleFacebook extends StatefulWidget {
   String idendity_provider;
   WebViewGoogleFacebook(this.idendity_provider);
