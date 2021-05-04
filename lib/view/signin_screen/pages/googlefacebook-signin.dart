@@ -37,17 +37,11 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
       widget.idendity_provider = facebook;
     }
     var signin = 0;
+
     var url =
-        "https://meelz.auth.us-east-1.amazoncognito.com/login?identity_provider=" +
+        "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?identity_provider=" +
             widget.idendity_provider +
-            "&client_id=31goilt5aaqpbo84acs1abfket&response_type=code&scope=email+openid+profile&redirect_uri=https://www.google.ba/";
-// https://meelz.auth.us-east-1.amazoncognito.com/login?identity_provider=Facebook&client_id=31goilt5aaqpbo84acs1abfket&response_type=code&scope=email+openid+profile&redirect_uri=https://www.google.ba/
-    // "https://${COGNITO_POOL_URL}" +
-    //     ".amazoncognito.com/oauth2/authorize?identity_provider=" +
-    //     widget.idendity_provider +
-    //     "&redirect_uri=" +
-    //     "myapp://&response_type=CODE&client_id=${COGNITO_CLIENT_ID}" +
-    //     "&scope=email%20openid%20profile%20aws.cognito.signin.user.admin";
+            "&redirect_uri=https://www.google.ba/&response_type=CODE&client_id=31goilt5aaqpbo84acs1abfket&scope=email+openid+profile";
 
     return WebView(
       initialUrl: url,
@@ -58,8 +52,10 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
         _webViewController.complete(webViewController);
       },
       navigationDelegate: (NavigationRequest request) {
-        if (request.url.startsWith("myapp://?code=") && signin == 0) {
-          String code = request.url.substring("myapp://?code=".length);
+        if (request.url.startsWith("https://www.google.ba/?code=") &&
+            signin == 0) {
+          String code =
+              request.url.substring("https://www.google.ba/?code=".length);
           SignInViewModel().signUserInWithAuthCode(code, context);
           signin = 1;
           return NavigationDecision.prevent;
