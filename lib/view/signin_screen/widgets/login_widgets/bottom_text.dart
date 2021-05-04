@@ -30,7 +30,6 @@ class BottomText extends StatelessWidget {
                   fontSize: 16,
                   fontFamily: "Averta CY",
                   fontWeight: FontWeight.w400),
-              //TO DO ovdje prebaci na SignUpPage
             ),
           )
         ],
