@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/view/signin_screen/pages/twitter_signin.dart';
 
 Widget twitterIcon(context) {
   return Container(
@@ -8,8 +9,16 @@ Widget twitterIcon(context) {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Container(
-          child: Image(
-            image: AssetImage('assets/images/twitterLog.png'),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => getWebView(context)),
+              );
+            }, // handle your image tap here
+            child: Image(
+              image: AssetImage('assets/images/twitterLog.png'),
+            ),
           ),
         ),
       ],

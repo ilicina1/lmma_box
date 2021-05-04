@@ -33,7 +33,12 @@ class SocialMediaIcons extends StatelessWidget {
         IconButton(
             icon: Image.asset('assets/images/twitterLog.png', height: 24),
             color: Colors.lightBlue,
-            onPressed: () {}),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => getWebView(context)),
+              );
+            }),
         IconButton(
             icon: Image.asset('assets/images/linkedinLog.png', height: 24),
             color: Colors.blue[700],

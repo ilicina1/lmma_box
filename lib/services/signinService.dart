@@ -18,7 +18,7 @@ class SignInService implements SignInInterface {
         ".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id=" +
         "${COGNITO_CLIENT_ID}&client_secret=${CLIENT_SECRET}&code=" +
         authCode +
-        "&redirect_uri=myapp://";
+        "&redirect_uri=https://google.ba";
     final response = await http.post(Uri.parse(url),
         body: {},
         headers: {'Content-Type': 'application/x-www-form-urlencoded'});

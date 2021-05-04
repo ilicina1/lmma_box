@@ -27,7 +27,7 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
   final COGNITO_CLIENT_ID = cognitoKlijentId;
   final COGNITO_Pool_ID = cognitoPoolId;
   final COGNITO_POOL_URL = cognitoPoolURL;
-  final CLIENT_SECRET = clientSecret;
+  // final CLIENT_SECRET = clientSecret;
   var web_view_enable = 0;
 
   Widget getWebView() {
@@ -37,13 +37,17 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
       widget.idendity_provider = facebook;
     }
     var signin = 0;
-
-    var url = "https://${COGNITO_POOL_URL}" +
-        ".amazoncognito.com/oauth2/authorize?identity_provider=" +
-        widget.idendity_provider +
-        "&redirect_uri=" +
-        "myapp://&response_type=CODE&client_id=${COGNITO_CLIENT_ID}" +
-        "&scope=email%20openid%20profile%20aws.cognito.signin.user.admin";
+    var url =
+        "https://meelz.auth.us-east-1.amazoncognito.com/login?identity_provider=" +
+            widget.idendity_provider +
+            "&client_id=31goilt5aaqpbo84acs1abfket&response_type=code&scope=email+openid+profile&redirect_uri=https://www.google.ba/";
+// https://meelz.auth.us-east-1.amazoncognito.com/login?identity_provider=Facebook&client_id=31goilt5aaqpbo84acs1abfket&response_type=code&scope=email+openid+profile&redirect_uri=https://www.google.ba/
+    // "https://${COGNITO_POOL_URL}" +
+    //     ".amazoncognito.com/oauth2/authorize?identity_provider=" +
+    //     widget.idendity_provider +
+    //     "&redirect_uri=" +
+    //     "myapp://&response_type=CODE&client_id=${COGNITO_CLIENT_ID}" +
+    //     "&scope=email%20openid%20profile%20aws.cognito.signin.user.admin";
 
     return WebView(
       initialUrl: url,
