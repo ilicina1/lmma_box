@@ -18,7 +18,7 @@ Widget getWebView(context) {
       _webViewController.complete(webViewController);
     },
     navigationDelegate: (NavigationRequest request) async {
-      if (request.url.startsWith("https://www.google.ba/?code=")) {
+      if (request.url.startsWith("http://localhost:4200/callback?code=")) {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => TestSignUp()),

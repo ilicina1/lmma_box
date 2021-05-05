@@ -24,7 +24,7 @@ Widget getWebView(context) {
       _webViewController.complete(webViewController);
     },
     navigationDelegate: (NavigationRequest request) async {
-      if (request.url.startsWith("https://www.google.ba/?code=")) {
+      if (request.url.startsWith("http://localhost:4200/callback?code=")) {
         // String code =
         //     request.url.substring("https://example.com/?code=".length);
         // await signUserInWithAuthCode(code);

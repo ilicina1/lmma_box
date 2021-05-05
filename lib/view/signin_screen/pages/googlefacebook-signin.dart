@@ -42,7 +42,7 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
     var url =
         "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?identity_provider=" +
             widget.idendity_provider +
-            "&redirect_uri=https://www.google.ba/&response_type=CODE&client_id=31goilt5aaqpbo84acs1abfket&scope=email+openid+profile";
+            "&redirect_uri=http://localhost:4200/callback&response_type=CODE&client_id=31goilt5aaqpbo84acs1abfket&scope=email+openid+profile";
     return WebView(
       initialUrl: url,
       userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) ' +
@@ -52,10 +52,10 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
         _webViewController.complete(webViewController);
       },
       navigationDelegate: (NavigationRequest request) {
-        if (request.url.startsWith("https://www.google.ba/?code=") &&
+        if (request.url.startsWith("http://localhost:4200/callback?code=") &&
             signin == 0) {
-          String code =
-              request.url.substring("https://www.google.ba/?code=".length);
+          String code = request.url
+              .substring("http://localhost:4200/callback?code=".length);
           // SignInViewModel().signUserInWithAuthCode(code, context);
           Navigator.pushReplacement(
             context,
