@@ -71,7 +71,7 @@ class _FormListState extends State<FormList> {
         } else {
           // build layout for invisible keyboard
           return SizedBox(
-            height: MediaQuery.of(context).size.height * 0.9,
+            height: MediaQuery.of(context).size.height * 0.86,
             child: ListView(
               children: [
                 Form(

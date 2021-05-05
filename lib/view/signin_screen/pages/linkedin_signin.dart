@@ -14,7 +14,7 @@ final Completer<WebViewController> _webViewController =
     Completer<WebViewController>();
 Widget getWebView(context) {
   var url =
-      "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?response_type=code&identity_provider=LinkedIn&client_id=31goilt5aaqpbo84acs1abfket&connection=linkedin&redirect_uri=http://localhost:4200/callback&scope=email+openid+profile";
+      "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?response_type=code&identity_provider=LinkedIn&client_id=31goilt5aaqpbo84acs1abfket&connection=linkedin&redirect_uri=http://localhost:4200/callback/&scope=email+openid+profile";
   return WebView(
     initialUrl: url,
     userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) ' +
@@ -24,7 +24,7 @@ Widget getWebView(context) {
       _webViewController.complete(webViewController);
     },
     navigationDelegate: (NavigationRequest request) async {
-      if (request.url.startsWith("http://localhost:4200/callback?code=")) {
+      if (request.url.startsWith("http://localhost:4200/callback/?code=")) {
         // String code =
         //     request.url.substring("https://example.com/?code=".length);
         // await signUserInWithAuthCode(code);
