@@ -30,7 +30,13 @@ class LoginButton extends StatelessWidget {
             //   // Process data.
             // }
           },
-          child: Text('Login', style: TextStyle(color: Color(0xFF68572d)))),
+          child: Text('Login',
+              style: TextStyle(
+                  fontFamily: "Averta CY",
+                  fontSize: 16,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w700,
+                  color: Color(0xFF68572d)))),
     );
   }
 }

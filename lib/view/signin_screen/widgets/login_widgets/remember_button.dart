@@ -30,7 +30,13 @@ class _RememberButtonState extends State<RememberButton> {
                     this.rememberMe = value;
                   });
                 }),
-            Text('Remember')
+            Text('Remember',
+                style: TextStyle(
+                    fontFamily: "Averta CY",
+                    fontSize: 16,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFF373737)))
           ],
         ),
         InkWell(
@@ -41,7 +47,12 @@ class _RememberButtonState extends State<RememberButton> {
           },
           child: Text(
             'Forgot Password?',
-            style: TextStyle(color: Color(0xFF1CBD8D)),
+            style: TextStyle(
+                fontFamily: "Averta CY",
+                fontSize: 16,
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                color: Color(0xFF1CBD8D)),
             // Prebaci na reset password To Do
           ),
         )
