@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signup_notifier.dart';
+import 'package:lmma_box/services/validate_password.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
@@ -37,20 +38,8 @@ class _PasswordFieldState extends State<PasswordField> {
           ),
           TextFormField(
             validator: (value) {
-              String pattern =
-                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-              RegExp regExp = new RegExp(pattern);
-              if (regExp.hasMatch(value) == true)
-                return null;
-              else {
-                widget._scaffoldKey.currentState.showSnackBar(
-                  SnackBar(
-                    content: Text(
-                        "Password should be at least 8 characters long and should include at least one lower and upper case characters, one number and one symbol"),
-                  ),
-                );
-              }
-              return "Please enter your password.";
+              if (validatePassword(value, widget._scaffoldKey) == false)
+                return "Please enter your password.";
             },
             controller: controllers.passwordController,
             obscureText: _isHidden,

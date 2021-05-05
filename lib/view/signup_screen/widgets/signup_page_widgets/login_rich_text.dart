@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:lmma_box/view/signin_screen/pages/login_screen.dart';
 
 Widget loginRichText(context) {
   return Row(
@@ -13,21 +14,25 @@ Widget loginRichText(context) {
                 ? MediaQuery.of(context).size.height * 0.08
                 : MediaQuery.of(context).size.height * 0.05),
         child: Center(
-          child: Text.rich(
-            TextSpan(
-              text: 'Already have an account? ',
-              style: privacy,
-              children: <TextSpan>[
-                TextSpan(
-                  text: 'Log In',
-                  style: privacyBlue,
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      // code to open / launch terms of service link here
-                    },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text('Already have an account? '),
+              SizedBox(
+                width: 10,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                },
+                child: Text(
+                  'Log in',
+                  style: TextStyle(color: Color(0xFF1CBD8D)),
+                  //TO DO ovdje prebaci na SignUpPage
                 ),
-              ],
-            ),
+              )
+            ],
           ),
         ),
       ),

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
+import 'package:lmma_box/services/validate_password.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/password_field.dart';
 import 'package:provider/provider.dart';
 
 class PasswordForm extends StatelessWidget {
+  var _scaffoldKey;
+  PasswordForm(this._scaffoldKey);
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
@@ -23,11 +27,9 @@ class PasswordForm extends StatelessWidget {
           ),
           TextFormField(
             validator: (value) {
-              String pattern =
-                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-              RegExp regExp = new RegExp(pattern);
-              if (regExp.hasMatch(value) == true) return null;
-              return "Please enter your new password.";
+              if (validatePassword(value, _scaffoldKey) == false)
+                return "Please enter your password.";
+              return "Please";
             },
             controller: controllers.passwordController,
             decoration: InputDecoration(

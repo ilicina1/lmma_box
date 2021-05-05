@@ -15,7 +15,7 @@ class SocialMediaIcons extends StatelessWidget {
               height: 24,
             ),
             onPressed: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                     builder: (context) => WebViewGoogleFacebook("Facebook")),
@@ -24,7 +24,7 @@ class SocialMediaIcons extends StatelessWidget {
         IconButton(
             icon: Image.asset('assets/images/googleLog.png', height: 24),
             onPressed: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                     builder: (context) => WebViewGoogleFacebook("Google")),
@@ -34,7 +34,7 @@ class SocialMediaIcons extends StatelessWidget {
             icon: Image.asset('assets/images/twitterLog.png', height: 24),
             color: Colors.lightBlue,
             onPressed: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => getWebView(context)),
               );
@@ -43,7 +43,7 @@ class SocialMediaIcons extends StatelessWidget {
             icon: Image.asset('assets/images/linkedinLog.png', height: 24),
             color: Colors.blue[700],
             onPressed: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => getWebView(context)),
               );

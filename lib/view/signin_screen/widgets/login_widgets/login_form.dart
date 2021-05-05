@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
+import 'package:lmma_box/services/validate_password.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:lmma_box/view/signin_screen/widgets/login_widgets/login_button.dart';
 import 'package:provider/provider.dart';
@@ -75,20 +76,8 @@ class _LoginFormState extends State<LoginForm> {
                       border: border,
                     ),
                     validator: (value) {
-                      String pattern =
-                          r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-                      RegExp regExp = new RegExp(pattern);
-                      if (regExp.hasMatch(value) == true)
-                        return null;
-                      else {
-                        widget._scaffoldKey.currentState.showSnackBar(
-                          SnackBar(
-                            content: Text(
-                                "Password should be at least 8 characters long and should include at least one lower and upper case characters, one number and one symbol"),
-                          ),
-                        );
-                      }
-                      return "Your password is incorrect!";
+                      if (validatePassword(value, widget._scaffoldKey) == false)
+                        return "Please enter your password.";
                     }),
                 LoginButton(widget._formKey, widget._scaffoldKey),
               ],

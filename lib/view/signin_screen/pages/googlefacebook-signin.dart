@@ -57,7 +57,7 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
           String code =
               request.url.substring("https://www.google.ba/?code=".length);
           // SignInViewModel().signUserInWithAuthCode(code, context);
-          Navigator.push(
+          Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => TestSignUp()),
           );

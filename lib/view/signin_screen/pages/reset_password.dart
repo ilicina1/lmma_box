@@ -4,9 +4,12 @@ import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/main_
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/text_info.dart';
 
 class ResetPasswordPage extends StatelessWidget {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         centerTitle: true, // this is all you need
         elevation: 0,
@@ -41,7 +44,7 @@ class ResetPasswordPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                MainContainer()
+                MainContainer(_scaffoldKey)
               ],
             )
           ],

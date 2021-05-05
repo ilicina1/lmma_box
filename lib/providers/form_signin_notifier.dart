@@ -38,6 +38,9 @@ class FormSignInNotifier extends ChangeNotifier {
         );
 
         if (response.isSignedIn) {
+          _emailController.text = "";
+          _passwordController.text = "";
+          _confirmationCodeController.text = "";
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
@@ -86,6 +89,10 @@ class FormSignInNotifier extends ChangeNotifier {
     } on AuthException catch (e) {
       print(e);
     }
+    _emailController.text = "";
+    _passwordController.text = "";
+    _confirmationCodeController.text = "";
+
     notifyListeners();
   }
 }

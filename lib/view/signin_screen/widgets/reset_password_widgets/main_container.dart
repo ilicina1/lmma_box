@@ -4,10 +4,8 @@ import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/form_
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/forma_mail.dart';
 
 class MainContainer extends StatelessWidget {
-  const MainContainer({
-    Key key,
-  }) : super(key: key);
-
+  var _scaffoldKey;
+  MainContainer(this._scaffoldKey);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,7 +13,7 @@ class MainContainer extends StatelessWidget {
       child: Column(
         children: <Widget>[
           FormaEmail(),
-          PasswordForm(),
+          PasswordForm(_scaffoldKey),
           SizedBox(
             height: 20,
           ),
