@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/providers/form_signup_notifier.dart';
+import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
-class EmailField extends StatefulWidget {
-  @override
-  _EmailFieldState createState() => _EmailFieldState();
-}
-
-class _EmailFieldState extends State<EmailField> {
+class PasswordForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var controllers = context.watch<FormSignUpNotifier>();
+    var controllers = context.watch<FormSignInNotifier>();
 
     return Padding(
       padding: MediaQuery.of(context).size.width < 380
@@ -21,19 +16,22 @@ class _EmailFieldState extends State<EmailField> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Email",
+            "New password",
             style: MediaQuery.of(context).size.width < 470
                 ? labelaStyleSmall
                 : labelaStyle,
           ),
           TextFormField(
             validator: (value) {
-              if (value.contains('@') && value.length > 8) return null;
-              return "Please enter your email";
+              String pattern =
+                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+              RegExp regExp = new RegExp(pattern);
+              if (regExp.hasMatch(value) == true) return null;
+              return "Please enter your new password.";
             },
-            controller: controllers.emailController,
+            controller: controllers.passwordController,
             decoration: InputDecoration(
-              hintText: 'Enter your Email',
+              hintText: 'Enter your new password',
               hintStyle: hintStyle,
               focusedBorder: focused,
               border: border,

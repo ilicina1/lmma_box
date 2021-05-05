@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/info_text.dart';
-import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/pin_container.dart';
-import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/potvrda.dart';
-import 'package:lmma_box/view/signup_screen/widgets/confirm_number_widgets/rich_text.dart';
+import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/pin_container2.dart';
+import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/text_rich.dart';
 
-// ignore: must_be_immutable
-class ConfirmNumberPage extends StatelessWidget {
-  var _formKey;
-  var _scaffoldKey;
-  ConfirmNumberPage(this._formKey, this._scaffoldKey);
+class ConfirmCodePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +17,10 @@ class ConfirmNumberPage extends StatelessWidget {
           color: Colors.black38,
           onPressed: () => Navigator.pop(context, false),
         ),
-        title: PotvrdaDart(),
+        title: Text(
+          "Confirm code",
+          style: confirmHeader,
+        ),
       ),
       body: Container(
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
@@ -32,9 +30,9 @@ class ConfirmNumberPage extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                InfoText(),
-                PinContainer(_formKey, _scaffoldKey),
-                TextRich(_formKey, _scaffoldKey),
+                Text("Enter a 6-digit code Lmma just sent to +97123423523"),
+                PinContainer2(),
+                TextRich(),
               ],
             )
           ],

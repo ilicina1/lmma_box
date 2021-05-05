@@ -4,8 +4,7 @@ import 'package:amazon_cognito_identity_dart_2/cognito.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/interface/signinInterface.dart';
 import 'package:lmma_box/utils/shared/strings.dart';
-
-import '../welcomescreen.dart';
+import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 
 class SignInService implements SignInInterface {
   @override
@@ -52,7 +51,7 @@ class SignInService implements SignInInterface {
     print("login successfully.");
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => WelcomeScreen()),
+      MaterialPageRoute(builder: (context) => TestSignUp()),
     );
 
     return user;

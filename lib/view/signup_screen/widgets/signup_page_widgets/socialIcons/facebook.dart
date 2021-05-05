@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/view/signin_screen/pages/googlefacebook-signin.dart';
 
 Widget facebookIcon(context) {
   return Container(
@@ -8,8 +9,17 @@ Widget facebookIcon(context) {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Container(
-          child: Image(
-            image: AssetImage('assets/images/facebookLog.png'),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => WebViewGoogleFacebook("Facebook")),
+              );
+            }, // handle your image tap here
+            child: Image(
+              image: AssetImage('assets/images/facebookLog.png'),
+            ),
           ),
         ),
       ],

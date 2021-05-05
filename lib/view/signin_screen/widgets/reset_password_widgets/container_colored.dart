@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signinscreens/widgets/buton_reset.dart';
+import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/buton_reset.dart';
 
 class ContainerColored extends StatelessWidget {
   const ContainerColored({
@@ -9,7 +9,9 @@ class ContainerColored extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: MediaQuery.of(context).size.width < 380
+          ? MediaQuery.of(context).size.height * 0.05
+          : 45,
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
         gradient: LinearGradient(
