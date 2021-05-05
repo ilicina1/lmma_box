@@ -8,7 +8,7 @@ final Completer<WebViewController> _webViewController =
     Completer<WebViewController>();
 Widget getWebView(context) {
   var url =
-      "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?response_type=code&identity_provider=Twitter&client_id=31goilt5aaqpbo84acs1abfket&redirect_uri=https://www.google.ba/&scope=openid";
+      "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?response_type=code&identity_provider=Twitter&client_id=31goilt5aaqpbo84acs1abfket&redirect_uri=http://localhost:4200/callback/&scope=openid";
   return WebView(
     initialUrl: url,
     userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) ' +

@@ -1,6 +1,7 @@
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_flutter/amplify.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_session/flutter_session.dart';
 import 'package:lmma_box/view/signin_screen/pages/confirm_code.dart';
 import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 
@@ -41,6 +42,7 @@ class FormSignInNotifier extends ChangeNotifier {
           _emailController.text = "";
           _passwordController.text = "";
           _confirmationCodeController.text = "";
+          await FlutterSession().set("isSignedIn", true);
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(

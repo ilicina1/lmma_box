@@ -12,8 +12,7 @@ class SignInService implements SignInInterface {
     final COGNITO_CLIENT_ID = cognitoKlijentId;
     final COGNITO_Pool_ID = cognitoPoolId;
     final COGNITO_POOL_URL = cognitoPoolURL;
-    final CLIENT_SECRET = clientSecret;
-    print("s1");
+
     String url = "https://${COGNITO_POOL_URL}" +
         ".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id=" +
         "${COGNITO_CLIENT_ID}&code=" +
@@ -28,7 +27,7 @@ class SignInService implements SignInInterface {
           "; body: " +
           response.body);
     }
-    print("s2");
+
     final tokenData = json.decode(response.body);
 
     final idToken = new CognitoIdToken(tokenData['id_token']);
