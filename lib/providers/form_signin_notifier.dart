@@ -51,9 +51,13 @@ class FormSignInNotifier extends ChangeNotifier {
       } on AuthException catch (e) {
         _scaffoldKey.currentState.showSnackBar(
           SnackBar(
-            content: Text(e.message),
-          ),
+              content: e.message == "User not confirmed in the system."
+                  ? Text(
+                      "${e.message} Please verify your email before loging in.")
+                  : Text(e.message)),
         );
+        if (e.message == "User not confirmed in the system.") print("ss");
+        print("s");
       }
     }
     notifyListeners();

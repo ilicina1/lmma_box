@@ -23,12 +23,11 @@ class LoginButton extends StatelessWidget {
               ),
               primary: Color(0xFFFFDF36)),
           onPressed: () {
-            controllers.loginButtonOnPressed(context, _formKey, _scaffoldKey);
             // Validate will return true if the form is valid, or false if
             // the form is invalid.
-            // if (_formKey.currentState.validate()) {
-            //   // Process data.
-            // }
+            if (_formKey.currentState.validate()) {
+              controllers.loginButtonOnPressed(context, _formKey, _scaffoldKey);
+            }
           },
           child: Text('Login',
               style: TextStyle(
