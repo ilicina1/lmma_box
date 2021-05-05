@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 TextStyle createAccount = TextStyle(
-  color: Color(0xff373737),
-  fontWeight: FontWeight.bold,
-  fontSize: 24,
-);
+    color: Color(0xff373737),
+    fontWeight: FontWeight.w700,
+    fontSize: 24,
+    fontFamily: "Averta CY");
 
 TextStyle createAccountSmall = TextStyle(
   color: Color(0xff373737),
@@ -14,15 +14,18 @@ TextStyle createAccountSmall = TextStyle(
 
 TextStyle labelaStyle = TextStyle(
   color: Color(0xff373737),
-  fontWeight: FontWeight.bold,
+  fontWeight: FontWeight.w700,
   height: 0.5,
+  fontFamily: "Averta CY",
+  fontSize: 14,
 );
 
 TextStyle labelaStyleSmall = TextStyle(
   color: Color(0xff373737),
-  fontWeight: FontWeight.bold,
+  fontWeight: FontWeight.w700,
   height: 0.5,
-  fontSize: 12,
+  fontFamily: "Averta CY",
+  fontSize: 7,
 );
 
 UnderlineInputBorder border = UnderlineInputBorder(
@@ -45,11 +48,15 @@ TextStyle hintStyle = TextStyle(
 
 TextStyle privacy = TextStyle(
   fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: "Averta CY",
   color: Color(0xFF373737),
 );
 
 TextStyle privacyBlue = TextStyle(
   fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: "Averta CY",
   color: Color(0xFF1CBD8D),
 );
 
@@ -63,21 +70,26 @@ TextStyle infoText = TextStyle(
   color: Color(0xFF373737),
   fontSize: 16,
   fontWeight: FontWeight.w400,
+  fontFamily: "Averta CY",
 );
 
 TextStyle confirmHeader = TextStyle(
   fontSize: 26,
   fontWeight: FontWeight.w700,
-  fontFamily: "Averta",
+  fontFamily: "Averta CY",
   color: Color(0xFF373737),
 );
 
 TextStyle privacyConf = TextStyle(
-  fontSize: 17,
+  fontSize: 16,
+  fontFamily: "Averta CY",
+  fontWeight: FontWeight.w400,
   color: Color(0xFF373737),
 );
 
 TextStyle privacyBlueConf = TextStyle(
-  fontSize: 17,
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+  fontFamily: "Averta CY",
   color: Color(0xFF1CBD8D),
 );
