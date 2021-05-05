@@ -4,6 +4,8 @@ import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
 class PasswordField extends StatefulWidget {
+  var _scaffoldKey;
+  PasswordField(this._scaffoldKey);
   @override
   _PasswordFieldState createState() => _PasswordFieldState();
 }
@@ -38,7 +40,16 @@ class _PasswordFieldState extends State<PasswordField> {
               String pattern =
                   r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
               RegExp regExp = new RegExp(pattern);
-              if (regExp.hasMatch(value) == true) return null;
+              if (regExp.hasMatch(value) == true)
+                return null;
+              else {
+                widget._scaffoldKey.currentState.showSnackBar(
+                  SnackBar(
+                    content: Text(
+                        "Password should be at least 8 characters long and should include at least one lower and upper case characters, one number and one symbol"),
+                  ),
+                );
+              }
               return "Please enter your password.";
             },
             controller: controllers.passwordController,
@@ -47,10 +58,15 @@ class _PasswordFieldState extends State<PasswordField> {
               hintText: 'Enter your password',
               suffix: InkWell(
                 onTap: togglePasswordView,
-                child: Icon(
-                  Icons.visibility,
-                  color: Color(0xFF8B8B8B),
-                ),
+                child: _isHidden
+                    ? Icon(
+                        Icons.visibility,
+                        color: Color(0xFF8B8B8B),
+                      )
+                    : Icon(
+                        Icons.visibility_off,
+                        color: Color(0xFF8B8B8B),
+                      ),
               ),
               hintStyle: hintStyle,
               focusedBorder: focused,

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/shared/strings.dart';
+import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 import 'package:lmma_box/viewModel/signinViewModel.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -37,12 +38,11 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
       widget.idendity_provider = facebook;
     }
     var signin = 0;
-
+// https://meelz.auth.us-east-1.amazoncognito.com/logout?response_type=code&identity_provider=Google&client_id=31goilt5aaqpbo84acs1abfket&redirect_uri=https://www.google.ba/&state=STATE&scope=email+openid+profile
     var url =
         "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?identity_provider=" +
             widget.idendity_provider +
             "&redirect_uri=https://www.google.ba/&response_type=CODE&client_id=31goilt5aaqpbo84acs1abfket&scope=email+openid+profile";
-
     return WebView(
       initialUrl: url,
       userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) ' +
@@ -56,7 +56,11 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
             signin == 0) {
           String code =
               request.url.substring("https://www.google.ba/?code=".length);
-          SignInViewModel().signUserInWithAuthCode(code, context);
+          // SignInViewModel().signUserInWithAuthCode(code, context);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => TestSignUp()),
+          );
           signin = 1;
           return NavigationDecision.prevent;
         }

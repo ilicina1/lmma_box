@@ -13,10 +13,10 @@ class SignInService implements SignInInterface {
     final COGNITO_Pool_ID = cognitoPoolId;
     final COGNITO_POOL_URL = cognitoPoolURL;
     final CLIENT_SECRET = clientSecret;
-
+    print("s1");
     String url = "https://${COGNITO_POOL_URL}" +
         ".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id=" +
-        "${COGNITO_CLIENT_ID}&client_secret=${CLIENT_SECRET}&code=" +
+        "${COGNITO_CLIENT_ID}&code=" +
         authCode +
         "&redirect_uri=https://google.ba";
     final response = await http.post(Uri.parse(url),
@@ -28,7 +28,7 @@ class SignInService implements SignInInterface {
           "; body: " +
           response.body);
     }
-
+    print("s2");
     final tokenData = json.decode(response.body);
 
     final idToken = new CognitoIdToken(tokenData['id_token']);
@@ -39,7 +39,7 @@ class SignInService implements SignInInterface {
 
     final userPool = new CognitoUserPool(COGNITO_Pool_ID, COGNITO_CLIENT_ID);
     final user = new CognitoUser(null, userPool, signInUserSession: session);
-
+    print("s3");
     final attributes = await user.getUserAttributes();
     for (CognitoUserAttribute attribute in attributes) {
       if (attribute.getName() == "email") {
