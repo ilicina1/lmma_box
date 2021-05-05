@@ -10,7 +10,6 @@ import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/phone_nu
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/policy_text.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_button.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_social_row.dart';
-import 'package:keyboard_visibility/keyboard_visibility.dart';
 
 // ignore: must_be_immutable
 class FormList extends StatefulWidget {

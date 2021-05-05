@@ -3,6 +3,7 @@ import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/conta
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/form_password.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/forma_mail.dart';
 
+// ignore: must_be_immutable
 class MainContainer extends StatelessWidget {
   var _scaffoldKey;
   MainContainer(this._scaffoldKey);

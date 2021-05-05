@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:lmma_box/services/validate_password.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
-import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/password_field.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class PasswordForm extends StatelessWidget {
   var _scaffoldKey;
   PasswordForm(this._scaffoldKey);

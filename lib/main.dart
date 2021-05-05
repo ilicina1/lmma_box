@@ -9,8 +9,6 @@ import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/providers/screen_scroll.dart';
 import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 import 'package:provider/provider.dart';
-
-import 'view/welcome_screen/pages/first_page.dart';
 import 'view/welcome_screen/pages/page_scroller.dart';
 
 void main() {

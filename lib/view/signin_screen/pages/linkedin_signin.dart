@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:amazon_cognito_identity_dart_2/cognito.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 import 'package:webview_flutter/webview_flutter.dart';

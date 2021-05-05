@@ -1,6 +1,4 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:lmma_box/view/signin_screen/pages/login_screen.dart';
 
 Widget loginRichText(context) {

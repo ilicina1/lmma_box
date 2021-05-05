@@ -88,6 +88,7 @@ class _LoginFormState extends State<LoginForm> {
                     validator: (value) {
                       if (validatePassword(value, widget._scaffoldKey) == false)
                         return "Please enter your password.";
+                      return null;
                     }),
                 LoginButton(widget._formKey, widget._scaffoldKey),
               ],
