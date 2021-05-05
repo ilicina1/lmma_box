@@ -36,6 +36,8 @@ dependencies:
   http: ^0.12.1
   webview_flutter: ^1.0.7
   keyboard_visibility: ^0.5.2
+  simpleprogressdialog: ^1.0.8
+
 
   # webview_flutter: ^2.0.4
   # http: ^0.13.2
