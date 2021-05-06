@@ -11,7 +11,6 @@ class SignInService implements SignInInterface {
   Future signUserInWithAuthCode(String authCode, BuildContext context) async {
     final COGNITO_CLIENT_ID = cognitoKlijentId;
     final COGNITO_Pool_ID = cognitoPoolId;
-    final COGNITO_POOL_URL = cognitoPoolURL;
 
     String url = "https://meelz.auth.us-east-1" +
         ".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id=" +
@@ -42,14 +41,14 @@ class SignInService implements SignInInterface {
     final user = new CognitoUser(null, userPool, signInUserSession: session);
     final attributes = await user.getUserAttributes();
 
+    await user.signOut();
+
     for (CognitoUserAttribute attribute in attributes) {
       if (attribute.getName() == "email") {
         user.username = attribute.getValue();
         break;
       }
     }
-
-    print("stiglo ${user.username}");
 
     Navigator.push(
       context,

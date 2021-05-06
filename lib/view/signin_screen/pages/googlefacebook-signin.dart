@@ -50,8 +50,12 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
       javascriptMode: JavascriptMode.unrestricted,
       onWebViewCreated: (WebViewController webViewController) {
         _webViewController.complete(webViewController);
+        // webViewController.clearCache();
+        // final cookieManager = CookieManager();
+        // cookieManager.clearCookies();
       },
       navigationDelegate: (NavigationRequest request) {
+        print("dostiglo");
         if (request.url
                 .startsWith("http://localhost:4200/ouath2/idpresponse?code=") &&
             signin == 0) {
