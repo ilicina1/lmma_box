@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:provider/provider.dart';
-import 'package:simpleprogressdialog/builders/material_dialog_builder.dart';
-import 'package:simpleprogressdialog/simpleprogressdialog.dart';
 
 class LoginButton extends StatefulWidget {
   final GlobalKey<FormState> _formKey;
