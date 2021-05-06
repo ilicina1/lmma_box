@@ -38,6 +38,9 @@ dependencies:
   cool_alert: ^1.0.3
   keyboard_visibility: ^0.5.2
   flutter_session: ^0.1.1
+  simpleprogressdialog: ^1.0.8
+
+
   # webview_flutter: ^2.0.4
   # http: ^0.13.2
   # amazon_cognito_identity_dart_2: ^1.0.1
