@@ -23,11 +23,9 @@ class PasswordForm extends StatelessWidget {
           ),
           TextFormField(
             validator: (value) {
-              String pattern =
-                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-              RegExp regExp = new RegExp(pattern);
-              if (regExp.hasMatch(value) == true) return null;
-              return "Please enter your new password.";
+              if (validatePassword(value, _scaffoldKey) == false)
+                return "Please enter your password.";
+              return null;
             },
             controller: controllers.passwordController,
             decoration: InputDecoration(
