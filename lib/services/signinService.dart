@@ -17,10 +17,13 @@ class SignInService implements SignInInterface {
         ".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id=" +
         "${COGNITO_CLIENT_ID}&code=" +
         authCode +
-        "&redirect_uri=https://google.ba";
+        "&redirect_uri=http://localhost:4200/callback/";
+    print("$url neki url");
+
     final response = await http.post(Uri.parse(url),
         body: {},
         headers: {'Content-Type': 'application/x-www-form-urlencoded'});
+    print("bambam");
     if (response.statusCode != 200) {
       throw Exception("Received bad status code from Cognito for auth code:" +
           response.statusCode.toString() +

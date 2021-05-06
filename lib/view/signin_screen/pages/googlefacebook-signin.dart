@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/shared/strings.dart';
 import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
+import 'package:lmma_box/viewModel/signinViewModel.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 // ignore: must_be_immutable
@@ -36,7 +37,7 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
       widget.idendity_provider = facebook;
     }
     var signin = 0;
-// https://meelz.auth.us-east-1.amazoncognito.com/logout?response_type=code&identity_provider=Google&client_id=31goilt5aaqpbo84acs1abfket&redirect_uri=https://www.google.ba/&state=STATE&scope=email+openid+profile
+
     var url =
         "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?identity_provider=" +
             widget.idendity_provider +
@@ -50,11 +51,11 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
         _webViewController.complete(webViewController);
       },
       navigationDelegate: (NavigationRequest request) {
-        if (request.url.startsWith("http://localhost:4200/callback?code=") &&
+        if (request.url.startsWith("http://localhost:4200/callback/?code=") &&
             signin == 0) {
           String code = request.url
-              .substring("http://localhost:4200/callback?code=".length);
-          // SignInViewModel().signUserInWithAuthCode(code, context);
+              .substring("http://localhost:4200/callback/?code=".length);
+          SignInViewModel().signUserInWithAuthCode(code, context);
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => TestSignUp()),
@@ -62,7 +63,6 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
           signin = 1;
           return NavigationDecision.prevent;
         }
-
         return NavigationDecision.navigate;
       },
       gestureNavigationEnabled: true,
