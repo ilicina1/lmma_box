@@ -26,10 +26,11 @@ class PasswordForm extends StatelessWidget {
                 : labelaStyle,
           ),
           TextFormField(
+            obscureText: true,
             validator: (value) {
               if (validatePassword(value, _scaffoldKey) == false)
                 return "Please enter your password.";
-              return "Please";
+              return null;
             },
             controller: controllers.passwordController,
             decoration: InputDecoration(

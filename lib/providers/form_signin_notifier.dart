@@ -47,7 +47,7 @@ class FormSignInNotifier extends ChangeNotifier {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (_) => TestSignUp(),
+              builder: (_) => TestSignUp(email),
             ),
           );
         }

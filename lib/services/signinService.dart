@@ -13,17 +13,16 @@ class SignInService implements SignInInterface {
     final COGNITO_Pool_ID = cognitoPoolId;
     final COGNITO_POOL_URL = cognitoPoolURL;
 
-    String url = "https://${COGNITO_POOL_URL}" +
+    String url = "https://meelz.auth.us-east-1" +
         ".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id=" +
         "${COGNITO_CLIENT_ID}&code=" +
         authCode +
-        "&redirect_uri=http://localhost:4200/callback/";
-    print("$url neki url");
+        "&redirect_uri=http://localhost:4200/ouath2/idpresponse";
 
     final response = await http.post(Uri.parse(url),
         body: {},
         headers: {'Content-Type': 'application/x-www-form-urlencoded'});
-    print("bambam");
+
     if (response.statusCode != 200) {
       throw Exception("Received bad status code from Cognito for auth code:" +
           response.statusCode.toString() +
@@ -41,8 +40,8 @@ class SignInService implements SignInInterface {
 
     final userPool = new CognitoUserPool(COGNITO_Pool_ID, COGNITO_CLIENT_ID);
     final user = new CognitoUser(null, userPool, signInUserSession: session);
-    print("s3");
     final attributes = await user.getUserAttributes();
+
     for (CognitoUserAttribute attribute in attributes) {
       if (attribute.getName() == "email") {
         user.username = attribute.getValue();
@@ -50,10 +49,11 @@ class SignInService implements SignInInterface {
       }
     }
 
-    print("login successfully.");
+    print("stiglo ${user.username}");
+
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => TestSignUp()),
+      MaterialPageRoute(builder: (context) => TestSignUp(user.username)),
     );
 
     return user;

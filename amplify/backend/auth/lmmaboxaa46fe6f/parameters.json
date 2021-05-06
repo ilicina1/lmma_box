@@ -45,10 +45,20 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
+    "useDefault": "defaultSocial",
     "usernameAttributes": [
         "email, phone_number"
     ],
     "userPoolGroupList": [],
-    "dependsOn": []
+    "dependsOn": [],
+    "hostedUI": true,
+    "hostedUIDomainName": "lmmabox09c2830e-09c2830e",
+    "authProvidersUserPool": [
+        "Facebook",
+        "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "serviceName": "Cognito",
+    "authProviders": [],
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"myapp://\"],\"LogoutURLs\":[\"myapp://\"]}"
 }
