@@ -26,7 +26,7 @@ class PasswordForm extends StatelessWidget {
                 : labelaStyle,
           ),
           TextFormField(
-            obscureText: true,
+            obscureText: controllers.obscureText,
             validator: (value) {
               if (validatePasswordModel(value, _scaffoldKey) == false)
                 return "Please enter your password.";
@@ -34,6 +34,18 @@ class PasswordForm extends StatelessWidget {
             },
             controller: controllers.passwordController,
             decoration: InputDecoration(
+              suffix: InkWell(
+                onTap: controllers.togglePasswordView,
+                child: controllers.obscureText
+                    ? Icon(
+                        Icons.visibility,
+                        color: Color(0xFF8B8B8B),
+                      )
+                    : Icon(
+                        Icons.visibility_off,
+                        color: Color(0xFF8B8B8B),
+                      ),
+              ),
               hintText: 'Enter your new password',
               hintStyle: hintStyle,
               focusedBorder: focused,

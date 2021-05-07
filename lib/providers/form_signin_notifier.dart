@@ -110,15 +110,13 @@ class FormSignInNotifier extends ChangeNotifier {
         newPassword: _passwordController.text.trim(),
         confirmationCode: _confirmationCodeController.text,
       );
-      Navigator.pop(
-        context,
-      );
+      _emailController.text = "";
+      _passwordController.text = "";
+      _confirmationCodeController.text = "";
+      Navigator.pop(context, true);
     } on AuthException catch (e) {
       print(e);
     }
-    _emailController.text = "";
-    _passwordController.text = "";
-    _confirmationCodeController.text = "";
 
     notifyListeners();
   }
