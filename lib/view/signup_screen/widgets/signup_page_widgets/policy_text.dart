@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/privacy_policy_screen/pages/privacy_policy_layout.dart';
 
 Widget policyAndTerms(context) {

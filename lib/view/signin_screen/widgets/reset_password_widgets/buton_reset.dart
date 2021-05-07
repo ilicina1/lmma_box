@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
-import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
 import 'package:provider/provider.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 
 // ignore: must_be_immutable
 class ButtonReset extends StatelessWidget {

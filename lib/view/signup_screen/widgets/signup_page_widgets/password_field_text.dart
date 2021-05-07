@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 
 Widget passwordText(context) {
   return Text(

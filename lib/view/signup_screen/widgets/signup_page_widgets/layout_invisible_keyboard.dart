@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/divider.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/email_field.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/login_rich_text.dart';

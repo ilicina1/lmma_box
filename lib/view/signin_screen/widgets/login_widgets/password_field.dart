@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:lmma_box/services/validate_password.dart';
-import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 
 class passwordField extends StatefulWidget {
   var _scaffoldKey;

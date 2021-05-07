@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:international_phone_input/international_phone_input.dart';
 import 'package:lmma_box/utils/dummyData/dummyData.dart';
-import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 
 class PhoneNumberField extends StatefulWidget {
   @override
