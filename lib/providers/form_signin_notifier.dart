@@ -9,11 +9,25 @@ class FormSignInNotifier extends ChangeNotifier {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _confirmationCodeController = TextEditingController();
+  bool _obscureText = true;
+  bool _isChecked = false;
 
   TextEditingController get emailController => _emailController;
   TextEditingController get passwordController => _passwordController;
   TextEditingController get confirmationCodeController =>
       _confirmationCodeController;
+  bool get obscureText => _obscureText;
+  bool get isChecked => _isChecked;
+
+  void changeStateChecked() {
+    _isChecked = !_isChecked;
+    notifyListeners();
+  }
+
+  void togglePasswordView() {
+    _obscureText = !_obscureText;
+    notifyListeners();
+  }
 
   Future<void> signOut() async {
     try {

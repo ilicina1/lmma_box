@@ -25,11 +25,9 @@ class _RememberButtonState extends State<RememberButton> {
           children: [
             Checkbox(
                 activeColor: Color(0xFF1CBD8D),
-                value: rememberMe,
+                value: controllers.isChecked,
                 onChanged: (bool value) {
-                  setState(() {
-                    this.rememberMe = value;
-                  });
+                  controllers.changeStateChecked();
                 }),
             Text(
               'Remember',

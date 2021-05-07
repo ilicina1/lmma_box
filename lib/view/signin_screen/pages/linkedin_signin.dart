@@ -3,12 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:lmma_box/viewModel/signinViewModel.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-// final userPool =
-//     CognitoUserPool('us-east-1_HkX5v5uaY', '31goilt5aaqpbo84acs1abfket');
-// final cognitoUser = CognitoUser('ilhan.licina@outlook.com', userPool);
-
-// CognitoUserSession session;
-
 final Completer<WebViewController> _webViewController =
     Completer<WebViewController>();
 Widget getWebView(context) {

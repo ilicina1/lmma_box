@@ -13,6 +13,7 @@ class FormSignUpNotifier extends ChangeNotifier {
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _confirmController = TextEditingController();
   bool _isHidden = true;
+
   TextEditingController get nameController => _nameController;
   TextEditingController get emailController => _emailController;
   TextEditingController get phoneController => _phoneController;

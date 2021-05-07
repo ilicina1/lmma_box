@@ -41,19 +41,15 @@ class _LoginButtonState extends State<LoginButton> {
                   setState(() {
                     isLoading = true;
                   });
-
-                  // Validate will return true if the form is valid, or false if
-                  // the form is invalid.
-                  // if (_formKey.currentState.validate()) {
-                  //   // Process data.
-                  // }
                 },
                 child: Text(
                   'Login',
                   style: twoButtonsStyle,
                 ),
               )
-            : Center(child: CircularProgressIndicator()),
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
     );
   }
