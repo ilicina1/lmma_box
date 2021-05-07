@@ -1,9 +1,10 @@
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_flutter/amplify.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_session/flutter_session.dart';
 import 'package:lmma_box/utils/dummyData/dummyData.dart';
-import 'package:lmma_box/view/signup_screen/pages/confirm_number.dart';
-import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
+import 'package:lmma_box/view/signin_screen/pages/login_screen.dart';
+import 'package:cool_alert/cool_alert.dart';
 
 class FormSignUpNotifier extends ChangeNotifier {
   TextEditingController _nameController = TextEditingController();
@@ -44,7 +45,7 @@ class FormSignUpNotifier extends ChangeNotifier {
         );
 
         if (result.isSignUpComplete) {
-          _gotToEmailConfirmationScreen(context, _formKey, _scaffoldKey);
+          _goToLoginScreen(context, _formKey, _scaffoldKey);
         }
       } on AuthException catch (e) {
         _scaffoldKey.currentState.showSnackBar(
@@ -59,42 +60,21 @@ class FormSignUpNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  void _gotToEmailConfirmationScreen(
-      BuildContext context, _formKey, _scaffoldKey) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => ConfirmNumberPage(_formKey, _scaffoldKey),
-      ),
-    );
-    notifyListeners();
-  }
-
-  Future<void> submitCode(BuildContext context, _formKey, _scaffoldKey) async {
-    if (_formKey.currentState.validate()) {
-      final confirmationCode = _confirmController.text;
-      final email = _emailController.text.trim();
-
-      try {
-        final SignUpResult response = await Amplify.Auth.confirmSignUp(
-          username: email,
-          confirmationCode: confirmationCode,
-        );
-        if (response.isSignUpComplete) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (_) => TestSignUp(),
-            ),
-          );
-        }
-      } on AuthException catch (e) {
-        _scaffoldKey.currentState.showSnackBar(
-          SnackBar(
-            content: Text(e.message),
+  void _goToLoginScreen(BuildContext context, _formKey, _scaffoldKey) {
+    CoolAlert.show(
+      onConfirmBtnTap: () async {
+        await FlutterSession().set("isSignedIn", true);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (_) => LoginScreen(),
           ),
         );
-      }
-    }
+      },
+      context: context,
+      title: "You have successfully signed up!",
+      type: CoolAlertType.success,
+    );
+    notifyListeners();
   }
 }

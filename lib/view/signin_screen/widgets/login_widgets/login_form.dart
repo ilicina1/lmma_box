@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
+import 'package:lmma_box/services/validate_password.dart';
+import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:lmma_box/view/signin_screen/widgets/login_widgets/login_button.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +19,7 @@ class _LoginFormState extends State<LoginForm> {
   bool _obscureText = true;
 
   // Toggles the password show status
-  void _toggle() {
+  void togglePasswordView() {
     setState(() {
       _obscureText = !_obscureText;
     });
@@ -67,19 +69,26 @@ class _LoginFormState extends State<LoginForm> {
                     obscureText: _obscureText,
                     decoration: InputDecoration(
                       hintText: '••••••••••',
-                      suffixIcon: IconButton(
-                          icon: Icon(
-                            Icons.visibility,
-                            color: Color(0xFF8B8B8B),
-                          ),
-                          onPressed: _toggle),
+                      suffix: InkWell(
+                        onTap: togglePasswordView,
+                        child: _obscureText
+                            ? Icon(
+                                Icons.visibility,
+                                color: Color(0xFF8B8B8B),
+                              )
+                            : Icon(
+                                Icons.visibility_off,
+                                color: Color(0xFF8B8B8B),
+                              ),
+                      ),
+                      hintStyle: hintStyle,
+                      focusedBorder: focused,
+                      border: border,
                     ),
                     validator: (value) {
-                      String pattern =
-                          r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-                      RegExp regExp = new RegExp(pattern);
-                      if (regExp.hasMatch(value) == true) return null;
-                      return "Please enter your password.";
+                      if (validatePassword(value, widget._scaffoldKey) == false)
+                        return "Please enter your password.";
+                      return null;
                     }),
                 LoginButton(widget._formKey, widget._scaffoldKey),
               ],

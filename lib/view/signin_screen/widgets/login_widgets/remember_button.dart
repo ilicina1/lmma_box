@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:lmma_box/view/signin_screen/pages/reset_password.dart';
+import 'package:provider/provider.dart';
 
 class RememberButton extends StatefulWidget {
   final bool rememberMe;
@@ -13,6 +15,8 @@ class _RememberButtonState extends State<RememberButton> {
   _RememberButtonState(this.rememberMe);
   @override
   Widget build(BuildContext context) {
+    var controllers = context.watch<FormSignInNotifier>();
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -37,6 +41,7 @@ class _RememberButtonState extends State<RememberButton> {
         ),
         InkWell(
           onTap: () {
+            controllers.passwordController.text = "";
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => ResetPasswordPage()));
           },
