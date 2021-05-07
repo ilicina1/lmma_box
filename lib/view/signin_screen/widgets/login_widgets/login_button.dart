@@ -30,12 +30,12 @@ class _LoginButtonState extends State<LoginButton> {
                     ),
                     primary: Color(0xFFFFDF36)),
                 onPressed: () async {
-                  controllers.changeStateLoading(false);
+                  controllers.changeStateLoading();
 
                   await controllers.loginButtonOnPressed(
                       context, widget._formKey, widget._scaffoldKey);
 
-                  controllers.changeStateLoading(true);
+                  controllers.changeStateLoading();
                 },
                 child: Text(
                   'Login',
