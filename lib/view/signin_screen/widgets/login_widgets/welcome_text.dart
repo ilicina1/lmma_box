@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
+import 'package:lmma_box/utils/style/signup_screen_style.dart';
 
 class WelcomeText extends StatelessWidget {
   @override
@@ -9,7 +9,9 @@ class WelcomeText extends StatelessWidget {
         alignment: Alignment.topLeft,
         child: Text(
           'Welcome Back!',
-          style: headerNewText,
+          style: MediaQuery.of(context).size.width < 380
+              ? createAccountSmall
+              : createAccount,
         ));
   }
 }

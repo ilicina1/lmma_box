@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_session/flutter_session.dart';
 import 'package:lmma_box/view/signin_screen/pages/confirm_code.dart';
 import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
-import 'package:simpleprogressdialog/simpleprogressdialog.dart';
 
 class FormSignInNotifier extends ChangeNotifier {
   TextEditingController _emailController = TextEditingController();

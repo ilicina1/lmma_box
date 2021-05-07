@@ -35,35 +35,38 @@ class _LoginFormState extends State<LoginForm> {
             child: Column(
               children: [
                 Container(
-                    margin: EdgeInsets.only(top: 30),
-                    alignment: Alignment.topLeft,
-                    child: Text('Email',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
-                            fontFamily: "Averta CY",
-                            fontStyle: FontStyle.normal))),
+                  margin: EdgeInsets.only(top: 30),
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'Email',
+                    style: MediaQuery.of(context).size.width < 470
+                        ? labelaStyleSmall
+                        : labelaStyle,
+                  ),
+                ),
                 TextFormField(
                   controller: controllers.emailController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     hintText: 'example@email.test',
+                    hintStyle: hintStyle,
+                    focusedBorder: focused,
+                    border: border,
                   ),
-                  validator: (String value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter email';
-                    }
-                    return null;
+                  validator: (value) {
+                    if (value.contains('@') && value.length > 8) return null;
+                    return "Please enter your email";
                   },
                 ),
                 Container(
-                    margin: EdgeInsets.only(top: 30),
-                    alignment: Alignment.topLeft,
-                    child: Text('Password',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
-                            fontFamily: "Averta CY",
-                            fontStyle: FontStyle.normal))),
+                  margin: EdgeInsets.only(top: 30),
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'Password',
+                    style: MediaQuery.of(context).size.width < 380
+                        ? labelaStyleSmall
+                        : labelaStyle,
+                  ),
+                ),
                 TextFormField(
                     controller: controllers.passwordController,
                     obscureText: _obscureText,

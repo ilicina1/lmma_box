@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/shared/strings.dart';
-import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 import 'package:lmma_box/viewModel/signinViewModel.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -50,12 +49,11 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
       javascriptMode: JavascriptMode.unrestricted,
       onWebViewCreated: (WebViewController webViewController) {
         _webViewController.complete(webViewController);
-        // webViewController.clearCache();
-        // final cookieManager = CookieManager();
-        // cookieManager.clearCookies();
+        webViewController.clearCache();
+        final cookieManager = CookieManager();
+        cookieManager.clearCookies();
       },
       navigationDelegate: (NavigationRequest request) {
-        print("dostiglo");
         if (request.url
                 .startsWith("http://localhost:4200/ouath2/idpresponse?code=") &&
             signin == 0) {

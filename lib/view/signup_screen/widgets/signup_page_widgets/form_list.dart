@@ -31,6 +31,7 @@ class _FormListState extends State<FormList> {
           return SizedBox(
             height: MediaQuery.of(context).size.height * 0.5,
             child: ListView(
+              physics: ClampingScrollPhysics(),
               children: [
                 Form(
                   key: _formKey,
@@ -42,7 +43,7 @@ class _FormListState extends State<FormList> {
                       children: [
                         Padding(
                           padding: MediaQuery.of(context).size.width < 380
-                              ? const EdgeInsets.fromLTRB(0, 10, 0, 15)
+                              ? const EdgeInsets.fromLTRB(0, 0, 0, 15)
                               : const EdgeInsets.fromLTRB(0, 30, 0, 30),
                           child: Text(
                             "Create Account",
@@ -70,8 +71,9 @@ class _FormListState extends State<FormList> {
         } else {
           // build layout for invisible keyboard
           return SizedBox(
-            height: MediaQuery.of(context).size.height * 0.86,
+            height: MediaQuery.of(context).size.height * 0.87,
             child: ListView(
+              physics: ClampingScrollPhysics(),
               children: [
                 Form(
                   key: _formKey,

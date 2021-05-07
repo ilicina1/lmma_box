@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
+import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
 import 'package:provider/provider.dart';
 
 class LoginButton extends StatefulWidget {
@@ -18,43 +19,42 @@ class _LoginButtonState extends State<LoginButton> {
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
 
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 0, vertical: 20),
-      width: 315,
-      height: 45,
-      child: isLoading
-          ? ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  elevation: 0.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  primary: Color(0xFFFFDF36)),
-              onPressed: () async {
-                setState(() {
-                  isLoading = false;
-                });
-                await controllers.loginButtonOnPressed(
-                    context, widget._formKey, widget._scaffoldKey);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+      child: Container(
+        width: double.infinity,
+        child: isLoading
+            ? ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    elevation: 0.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    primary: Color(0xFFFFDF36)),
+                onPressed: () async {
+                  setState(() {
+                    isLoading = false;
+                  });
+                  await controllers.loginButtonOnPressed(
+                      context, widget._formKey, widget._scaffoldKey);
 
-                setState(() {
-                  isLoading = true;
-                });
+                  setState(() {
+                    isLoading = true;
+                  });
 
-                // Validate will return true if the form is valid, or false if
-                // the form is invalid.
-                // if (_formKey.currentState.validate()) {
-                //   // Process data.
-                // }
-              },
-              child: Text('Login',
-                  style: TextStyle(
-                      fontFamily: "Averta CY",
-                      fontSize: 16,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.w700,
-                      color: Color(0xFF68572d))))
-          : Center(child: CircularProgressIndicator()),
+                  // Validate will return true if the form is valid, or false if
+                  // the form is invalid.
+                  // if (_formKey.currentState.validate()) {
+                  //   // Process data.
+                  // }
+                },
+                child: Text(
+                  'Login',
+                  style: twoButtonsStyle,
+                ),
+              )
+            : Center(child: CircularProgressIndicator()),
+      ),
     );
   }
 }

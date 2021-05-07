@@ -53,6 +53,13 @@ TextStyle privacy = TextStyle(
   color: Color(0xFF373737),
 );
 
+TextStyle dividerText = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w600,
+  fontFamily: "Averta CY",
+  color: Color(0xFF373737),
+);
+
 TextStyle privacyBlue = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.w400,

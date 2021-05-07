@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/facebook.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/google.dart';
-import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/instagram.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/linkedin.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/twitter.dart';
 
@@ -17,7 +16,6 @@ Widget signUpSocialRow(context) {
         googleIcon(context),
         twitterIcon(context),
         linkedinIcon(context),
-        instagramIcon(context),
       ],
     ),
   );
