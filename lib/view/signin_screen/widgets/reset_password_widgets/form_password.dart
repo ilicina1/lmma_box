@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
-import 'package:lmma_box/services/validate_password.dart';
+import 'package:lmma_box/viewModel/validate_password_viewModel.dart';
 import 'package:provider/provider.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 
@@ -28,7 +28,7 @@ class PasswordForm extends StatelessWidget {
           TextFormField(
             obscureText: true,
             validator: (value) {
-              if (validatePassword(value, _scaffoldKey) == false)
+              if (validatePasswordModel(value, _scaffoldKey) == false)
                 return "Please enter your password.";
               return null;
             },

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:international_phone_input/international_phone_input.dart';
-import 'package:lmma_box/utils/dummyData/dummyData.dart';
+import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/utils/style/styles.dart';
+import 'package:provider/provider.dart';
 
 class PhoneNumberField extends StatefulWidget {
   @override
@@ -11,12 +12,10 @@ class PhoneNumberField extends StatefulWidget {
 class _PhoneNumberFieldState extends State<PhoneNumberField> {
   @override
   Widget build(BuildContext context) {
+    var phone = context.watch<FormSignUpNotifier>();
     void onPhoneNumberChange(
         String number, String internationalizedPhoneNumber, String isoCode) {
-      setState(() {
-        phoneNumber = number;
-        phoneIsoCode = isoCode;
-      });
+      phone.changePhone(number);
     }
 
     return Padding(

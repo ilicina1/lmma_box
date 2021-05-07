@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signup_notifier.dart';
-import 'package:lmma_box/services/validate_password.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/password_field_text.dart';
+import 'package:lmma_box/viewModel/validate_password_viewModel.dart';
 import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
@@ -28,7 +28,7 @@ class _PasswordFieldState extends State<PasswordField> {
           passwordText(context),
           TextFormField(
             validator: (value) {
-              if (validatePassword(value, widget._scaffoldKey) == false)
+              if (validatePasswordModel(value, widget._scaffoldKey) == false)
                 return "Please enter your password.";
               return null;
             },

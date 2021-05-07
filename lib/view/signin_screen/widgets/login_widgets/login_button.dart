@@ -13,8 +13,6 @@ class LoginButton extends StatefulWidget {
 }
 
 class _LoginButtonState extends State<LoginButton> {
-  bool isLoading = true;
-
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
@@ -23,7 +21,7 @@ class _LoginButtonState extends State<LoginButton> {
       padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
       child: Container(
         width: double.infinity,
-        child: isLoading
+        child: controllers.isLoading
             ? ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     elevation: 0.0,
@@ -32,15 +30,12 @@ class _LoginButtonState extends State<LoginButton> {
                     ),
                     primary: Color(0xFFFFDF36)),
                 onPressed: () async {
-                  setState(() {
-                    isLoading = false;
-                  });
+                  controllers.changeStateLoading(false);
+
                   await controllers.loginButtonOnPressed(
                       context, widget._formKey, widget._scaffoldKey);
 
-                  setState(() {
-                    isLoading = true;
-                  });
+                  controllers.changeStateLoading(true);
                 },
                 child: Text(
                   'Login',

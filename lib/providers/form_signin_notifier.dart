@@ -11,6 +11,7 @@ class FormSignInNotifier extends ChangeNotifier {
   TextEditingController _confirmationCodeController = TextEditingController();
   bool _obscureText = true;
   bool _isChecked = false;
+  bool _isLoading = false;
 
   TextEditingController get emailController => _emailController;
   TextEditingController get passwordController => _passwordController;
@@ -18,6 +19,12 @@ class FormSignInNotifier extends ChangeNotifier {
       _confirmationCodeController;
   bool get obscureText => _obscureText;
   bool get isChecked => _isChecked;
+  bool get isLoading => _isLoading;
+
+  void changeStateLoading(value) {
+    _isLoading = value;
+    notifyListeners();
+  }
 
   void changeStateChecked() {
     _isChecked = !_isChecked;

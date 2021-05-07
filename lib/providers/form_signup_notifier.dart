@@ -13,6 +13,7 @@ class FormSignUpNotifier extends ChangeNotifier {
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _confirmController = TextEditingController();
   bool _isHidden = true;
+  String _phoneNumber = "";
 
   TextEditingController get nameController => _nameController;
   TextEditingController get emailController => _emailController;
@@ -20,6 +21,12 @@ class FormSignUpNotifier extends ChangeNotifier {
   TextEditingController get passwordController => _passwordController;
   TextEditingController get confirmController => _confirmController;
   bool get isHidden => _isHidden;
+  String get phoneNumber => _phoneNumber;
+
+  void changePhone(number) {
+    _phoneNumber = number;
+    notifyListeners();
+  }
 
   void togglePasswordView() {
     _isHidden = !_isHidden;
@@ -34,10 +41,9 @@ class FormSignUpNotifier extends ChangeNotifier {
       final password = _passwordController.text;
       // print(phoneNumber);
 
-      phoneNumber = phoneNumber.substring(1);
+      _phoneNumber = phoneNumber.substring(1);
 
       /// In this user attribute you can define the custom fields associated with the user.
-      /// For example birthday, telephone number, etc
       Map<String, String> userAttributes = {
         "name": name,
         "email": email,
