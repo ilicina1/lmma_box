@@ -26,7 +26,6 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
   final COGNITO_CLIENT_ID = cognitoKlijentId;
   final COGNITO_Pool_ID = cognitoPoolId;
   final COGNITO_POOL_URL = cognitoPoolURL;
-  // final CLIENT_SECRET = clientSecret;
   var web_view_enable = 0;
 
   Widget getWebView() {

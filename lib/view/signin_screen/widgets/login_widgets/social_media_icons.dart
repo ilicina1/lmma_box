@@ -9,8 +9,8 @@ class SocialMediaIcons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: MediaQuery.of(context).size.width < 380
-          ? const EdgeInsets.only(top: 10)
-          : const EdgeInsets.only(top: 20),
+          ? const EdgeInsets.only(top: 10, left: 30, right: 30)
+          : const EdgeInsets.only(top: 20, left: 30, right: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
