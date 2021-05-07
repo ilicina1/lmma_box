@@ -6,7 +6,8 @@ import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/forma
 // ignore: must_be_immutable
 class MainContainer extends StatelessWidget {
   var _scaffoldKey;
-  MainContainer(this._scaffoldKey);
+  var _formKey;
+  MainContainer(this._scaffoldKey, this._formKey);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +19,7 @@ class MainContainer extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          ContainerColored(),
+          ContainerColored(_formKey),
           SizedBox(
             height: 20,
           ),

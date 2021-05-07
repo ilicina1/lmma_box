@@ -9,6 +9,8 @@ class ResetPasswordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _formKey = GlobalKey<FormState>();
+
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -23,26 +25,32 @@ class ResetPasswordPage extends StatelessWidget {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.only(top: 60, left: 40, right: 40),
+        padding: EdgeInsets.only(top: 60),
         color: Colors.white,
         child: ListView(
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 10,
+          children: [
+            Form(
+              key: _formKey,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Container(
+                      child: Column(
+                        children: <Widget>[
+                          SizedBox(
+                            height: 10,
+                          ),
+                          TextInfo()
+                        ],
                       ),
-                      TextInfo()
-                    ],
-                  ),
+                    ),
+                    MainContainer(_scaffoldKey, _formKey),
+                  ],
                 ),
-                MainContainer(_scaffoldKey)
-              ],
-            )
+              ),
+            ),
           ],
         ),
       ),
