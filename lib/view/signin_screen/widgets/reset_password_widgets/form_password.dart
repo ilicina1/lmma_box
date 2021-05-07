@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
+import 'package:lmma_box/services/validate_password.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class PasswordForm extends StatelessWidget {
+  var _scaffoldKey;
+  PasswordForm(this._scaffoldKey);
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
-
+//aa
     return Padding(
       padding: MediaQuery.of(context).size.width < 380
           ? const EdgeInsets.only(top: 10.0)
@@ -22,12 +26,11 @@ class PasswordForm extends StatelessWidget {
                 : labelaStyle,
           ),
           TextFormField(
+            obscureText: true,
             validator: (value) {
-              String pattern =
-                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-              RegExp regExp = new RegExp(pattern);
-              if (regExp.hasMatch(value) == true) return null;
-              return "Please enter your new password.";
+              if (validatePassword(value, _scaffoldKey) == false)
+                return "Please enter your password.";
+              return null;
             },
             controller: controllers.passwordController,
             decoration: InputDecoration(

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/icon_back.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/main_container.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/text_info.dart';
 
 class ResetPasswordPage extends StatelessWidget {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         centerTitle: true, // this is all you need
         elevation: 0,
@@ -15,12 +19,7 @@ class ResetPasswordPage extends StatelessWidget {
         leading: IconBack(),
         title: Text(
           "Reset password",
-          style: TextStyle(
-            fontSize: 26,
-            fontWeight: FontWeight.w700,
-            fontFamily: "Averta",
-            color: Colors.black,
-          ),
+          style: headerNewText,
         ),
       ),
       body: Container(
@@ -41,7 +40,7 @@ class ResetPasswordPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                MainContainer()
+                MainContainer(_scaffoldKey)
               ],
             )
           ],

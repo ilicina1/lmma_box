@@ -10,7 +10,6 @@ import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/phone_nu
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/policy_text.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_button.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_social_row.dart';
-import 'package:keyboard_visibility/keyboard_visibility.dart';
 
 // ignore: must_be_immutable
 class FormList extends StatefulWidget {
@@ -30,7 +29,7 @@ class _FormListState extends State<FormList> {
         if (isKeyboardVisible) {
           // build layout for visible keyboard
           return SizedBox(
-            height: 300,
+            height: MediaQuery.of(context).size.height * 0.5,
             child: ListView(
               children: [
                 Form(
@@ -55,7 +54,7 @@ class _FormListState extends State<FormList> {
                         NameField(),
                         EmailField(),
                         PhoneNumberField(),
-                        PasswordField(),
+                        PasswordField(widget._scaffoldKey),
                         policyAndTerms(context),
                         signUpButton(_formKey, widget._scaffoldKey),
                         dividerOr(context),
@@ -71,7 +70,7 @@ class _FormListState extends State<FormList> {
         } else {
           // build layout for invisible keyboard
           return SizedBox(
-            height: 600,
+            height: MediaQuery.of(context).size.height * 0.86,
             child: ListView(
               children: [
                 Form(
@@ -96,7 +95,7 @@ class _FormListState extends State<FormList> {
                         NameField(),
                         EmailField(),
                         PhoneNumberField(),
-                        PasswordField(),
+                        PasswordField(widget._scaffoldKey),
                         policyAndTerms(context),
                         signUpButton(_formKey, widget._scaffoldKey),
                         dividerOr(context),

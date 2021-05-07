@@ -38,6 +38,13 @@ class FirstPageStyles {
   }
 }
 
+TextStyle headerNewText = TextStyle(
+  fontSize: 26,
+  fontWeight: FontWeight.w700,
+  fontFamily: "Averta",
+  color: Color(0xFF373737),
+);
+
 TextStyle skipButtonStyle = TextStyle(
   color: Color(0xff373737),
   fontFamily: "Averta CY",
@@ -55,13 +62,15 @@ TextStyle textLmmaBox = TextStyle(
 TextStyle getStartedStyle = TextStyle(
   fontFamily: "Averta CY",
   fontStyle: FontStyle.normal,
-  color: Colors.grey[800],
-  fontWeight: FontWeight.w600,
+  color: Color(0xFF68572D),
+  fontWeight: FontWeight.w500,
   fontSize: 16,
 );
 
 TextStyle twoButtonsStyle = TextStyle(
+  fontFamily: "Averta CY",
+  fontStyle: FontStyle.normal,
   fontSize: 16,
-  color: Colors.grey[800],
-  fontWeight: FontWeight.normal,
+  color: Color(0xFF68572D),
+  fontWeight: FontWeight.w500,
 );

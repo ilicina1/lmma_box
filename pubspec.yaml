@@ -35,7 +35,9 @@ dependencies:
   amazon_cognito_identity_dart_2: ^0.1.15
   http: ^0.12.1
   webview_flutter: ^1.0.7
+  cool_alert: ^1.0.3
   keyboard_visibility: ^0.5.2
+  flutter_session: ^0.1.1
   simpleprogressdialog: ^1.0.8
 
 
@@ -72,6 +74,7 @@ flutter:
     - assets/images/
     - assets/images/logo1.png
     - assets/images/logothirdpage.png
+    - assets/lmmaa_box.png
   #   - images/a_dot_ham.jpeg
     
 

@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signup_notifier.dart';
+import 'package:lmma_box/services/validate_password.dart';
 import 'package:lmma_box/utils/style/signup_screen_style.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter/services.dart';
 
+// ignore: must_be_immutable
 class PasswordField extends StatefulWidget {
+  var _scaffoldKey;
+  PasswordField(this._scaffoldKey);
   @override
   _PasswordFieldState createState() => _PasswordFieldState();
 }
 
 class _PasswordFieldState extends State<PasswordField> {
   bool _isHidden = true;
-  bool _isShown = false;
-  final _focusNode = FocusNode();
-
   @override
   Widget build(BuildContext context) {
     void togglePasswordView() {
       setState(() {
         _isHidden = !_isHidden;
-        FocusScope.of(context).unfocus();
       });
     }
 
@@ -38,43 +37,32 @@ class _PasswordFieldState extends State<PasswordField> {
                 ? labelaStyleSmall
                 : labelaStyle,
           ),
-          Stack(
-            children: <Widget>[
-              TextFormField(
-                focusNode: _focusNode,
-                validator: (value) {
-                  String pattern =
-                      r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-                  RegExp regExp = new RegExp(pattern);
-                  if (regExp.hasMatch(value) == true) return null;
-                  return "Please enter your password.";
-                },
-                controller: controllers.passwordController,
-                obscureText: _isHidden,
-                obscuringCharacter: '•',
-                decoration: InputDecoration(
-                  hintText: 'Enter your password',
-                  suffix: Stack(
-                    alignment: Alignment.centerRight,
-                    children: <Widget>[
-                      IconButton(
-                        icon: Icon(Icons.visibility),
-                        onPressed: () {
-                          _focusNode.unfocus();
-                          _focusNode.canRequestFocus = false;
-                          setState(() {
-                            _isHidden = !_isHidden;
-                          });
-                        },
+          TextFormField(
+            validator: (value) {
+              if (validatePassword(value, widget._scaffoldKey) == false)
+                return "Please enter your password.";
+              return null;
+            },
+            controller: controllers.passwordController,
+            obscureText: _isHidden,
+            decoration: InputDecoration(
+              hintText: 'Enter your password',
+              suffix: InkWell(
+                onTap: togglePasswordView,
+                child: _isHidden
+                    ? Icon(
+                        Icons.visibility,
+                        color: Color(0xFF8B8B8B),
+                      )
+                    : Icon(
+                        Icons.visibility_off,
+                        color: Color(0xFF8B8B8B),
                       ),
-                    ],
-                  ),
-                  hintStyle: hintStyle,
-                  focusedBorder: focused,
-                  border: border,
-                ),
               ),
-            ],
+              hintStyle: hintStyle,
+              focusedBorder: focused,
+              border: border,
+            ),
           ),
         ],
       ),

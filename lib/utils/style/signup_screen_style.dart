@@ -9,7 +9,7 @@ TextStyle createAccount = TextStyle(
 TextStyle createAccountSmall = TextStyle(
   color: Color(0xff373737),
   fontWeight: FontWeight.bold,
-  fontSize: 17,
+  fontSize: 20,
 );
 
 TextStyle labelaStyle = TextStyle(
@@ -25,7 +25,7 @@ TextStyle labelaStyleSmall = TextStyle(
   fontWeight: FontWeight.w700,
   height: 0.5,
   fontFamily: "Averta CY",
-  fontSize: 7,
+  fontSize: 10,
 );
 
 UnderlineInputBorder border = UnderlineInputBorder(
