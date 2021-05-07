@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 
 Widget dividerOr(context) {
   return Padding(
     padding: MediaQuery.of(context).size.width < 380
-        ? const EdgeInsets.fromLTRB(0, 10, 0, 10)
+        ? const EdgeInsets.fromLTRB(0, 0, 0, 0)
         : const EdgeInsets.fromLTRB(0, 10, 0, 10),
     child: Row(children: <Widget>[
       Expanded(
@@ -12,7 +12,7 @@ Widget dividerOr(context) {
       ),
       Text(
         "or",
-        style: privacy,
+        style: dividerText,
       ),
       Expanded(
         child: Divider(),

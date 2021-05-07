@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signup_notifier.dart';
-import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:lmma_box/utils/style/styles.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/password_field_text.dart';
+import 'package:lmma_box/viewModel/validate_password_viewModel.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class PasswordField extends StatefulWidget {
+  var _scaffoldKey;
+  PasswordField(this._scaffoldKey);
   @override
   _PasswordFieldState createState() => _PasswordFieldState();
 }
 
 class _PasswordFieldState extends State<PasswordField> {
-  bool _isHidden = true;
   @override
   Widget build(BuildContext context) {
-    void togglePasswordView() {
-      setState(() {
-        _isHidden = !_isHidden;
-      });
-    }
-
     var controllers = context.watch<FormSignUpNotifier>();
 
     return Padding(
@@ -27,30 +25,20 @@ class _PasswordFieldState extends State<PasswordField> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Password",
-            style: MediaQuery.of(context).size.width < 380
-                ? labelaStyleSmall
-                : labelaStyle,
-          ),
+          passwordText(context),
           TextFormField(
             validator: (value) {
-              String pattern =
-                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-              RegExp regExp = new RegExp(pattern);
-              if (regExp.hasMatch(value) == true) return null;
-              return "Please enter your password.";
+              if (validatePasswordModel(value, widget._scaffoldKey) == false)
+                return "Please enter your password.";
+              return null;
             },
             controller: controllers.passwordController,
-            obscureText: _isHidden,
+            obscureText: controllers.isHidden,
             decoration: InputDecoration(
               hintText: 'Enter your password',
               suffix: InkWell(
-                onTap: togglePasswordView,
-                child: Icon(
-                  Icons.visibility,
-                  color: Color(0xFF8B8B8B),
-                ),
+                onTap: controllers.togglePasswordView,
+                child: controllers.isHidden ? iconVisible : iconInvisible,
               ),
               hintStyle: hintStyle,
               focusedBorder: focused,

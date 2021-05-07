@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signin_screen/pages/googlefacebook-signin.dart';
+import 'package:lmma_box/view/signin_screen/pages/google_facebook_signin.dart';
 
 Widget googleIcon(context) {
   return Container(
@@ -10,7 +10,7 @@ Widget googleIcon(context) {
       children: <Widget>[
         Container(
           child: GestureDetector(
-            onTap: () {
+            onTap: () async {
               Navigator.push(
                 context,
                 MaterialPageRoute(

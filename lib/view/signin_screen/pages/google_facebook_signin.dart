@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/shared/strings.dart';
@@ -27,7 +26,6 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
   final COGNITO_CLIENT_ID = cognitoKlijentId;
   final COGNITO_Pool_ID = cognitoPoolId;
   final COGNITO_POOL_URL = cognitoPoolURL;
-  final CLIENT_SECRET = clientSecret;
   var web_view_enable = 0;
 
   Widget getWebView() {
@@ -38,12 +36,10 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
     }
     var signin = 0;
 
-    var url = "https://${COGNITO_POOL_URL}" +
-        ".amazoncognito.com/oauth2/authorize?identity_provider=" +
-        widget.idendity_provider +
-        "&redirect_uri=" +
-        "myapp://&response_type=CODE&client_id=${COGNITO_CLIENT_ID}" +
-        "&scope=email%20openid%20profile%20aws.cognito.signin.user.admin";
+    var url =
+        "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?identity_provider=" +
+            widget.idendity_provider +
+            "&redirect_uri=http://localhost:4200/ouath2/idpresponse&response_type=CODE&client_id=31goilt5aaqpbo84acs1abfket&scope=email+openid+profile+aws.cognito.signin.user.admin";
 
     return WebView(
       initialUrl: url,
@@ -52,15 +48,21 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
       javascriptMode: JavascriptMode.unrestricted,
       onWebViewCreated: (WebViewController webViewController) {
         _webViewController.complete(webViewController);
+        webViewController.clearCache();
+        final cookieManager = CookieManager();
+        cookieManager.clearCookies();
       },
       navigationDelegate: (NavigationRequest request) {
-        if (request.url.startsWith("myapp://?code=") && signin == 0) {
-          String code = request.url.substring("myapp://?code=".length);
+        if (request.url
+                .startsWith("http://localhost:4200/ouath2/idpresponse?code=") &&
+            signin == 0) {
+          String code = request.url.substring(
+              "http://localhost:4200/ouath2/idpresponse?code=".length);
           SignInViewModel().signUserInWithAuthCode(code, context);
+
           signin = 1;
           return NavigationDecision.prevent;
         }
-
         return NavigationDecision.navigate;
       },
       gestureNavigationEnabled: true,

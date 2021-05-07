@@ -9,21 +9,37 @@ class BottomText extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text('New to Lmmaa?'),
-          SizedBox(
-            width: 10,
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context, 
-              MaterialPageRoute(builder: (context) => SignUpPage()));
-            },
-                      child: Text(
-              'Sign up',
-              style: TextStyle(color: Color(0xFF1CBD8D)),
-              //TO DO ovdje prebaci na SignUpPage
+          Container(
+            alignment: Alignment.topLeft,
+            padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.width < 380
+                    ? MediaQuery.of(context).size.height * 0.05
+                    : MediaQuery.of(context).size.height * 0.05),
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text('New to Lmmaa?? '),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignUpPage()));
+                    },
+                    child: Text(
+                      'Sign up',
+                      style: TextStyle(color: Color(0xFF1CBD8D)),
+                      //TO DO ovdje prebaci na SignUpPage
+                    ),
+                  )
+                ],
+              ),
             ),
-          )
+          ),
         ],
       ),
     );

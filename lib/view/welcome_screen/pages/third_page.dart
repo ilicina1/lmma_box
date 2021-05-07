@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/welcome_screen/widgets/third_page_widgets/headerTextThird.dart';
+import 'package:lmma_box/view/welcome_screen/widgets/third_page_widgets/header_text_third.dart';
 
 class ThirdPage extends StatefulWidget {
   @override

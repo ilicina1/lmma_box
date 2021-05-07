@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/buton_reset.dart';
 
+// ignore: must_be_immutable
 class ContainerColored extends StatelessWidget {
-  const ContainerColored({
-    Key key,
-  }) : super(key: key);
+  var _formKey;
+  ContainerColored(this._formKey);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class ContainerColored extends StatelessWidget {
         ),
       ),
       child: SizedBox.expand(
-        child: ButtonReset(),
+        child: ButtonReset(_formKey),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 
 class WelcomeText extends StatelessWidget {
   @override
@@ -8,7 +9,9 @@ class WelcomeText extends StatelessWidget {
         alignment: Alignment.topLeft,
         child: Text(
           'Welcome Back!',
-          style: TextStyle(fontSize: 24),
+          style: MediaQuery.of(context).size.width < 380
+              ? createAccountSmall
+              : createAccount,
         ));
   }
 }
