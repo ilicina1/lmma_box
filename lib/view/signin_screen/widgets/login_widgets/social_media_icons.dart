@@ -1,52 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signin_screen/pages/googlefacebook-signin.dart';
-import 'package:lmma_box/view/signin_screen/pages/linkedin_signin.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/facebook.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/google.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/linkedin.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/twitter.dart';
 
 class SocialMediaIcons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        IconButton(
-            icon: Image.asset(
-              'assets/images/facebookLog.png',
-              height: 24,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => WebViewGoogleFacebook("Facebook")),
-              );
-            }),
-        IconButton(
-            icon: Image.asset('assets/images/googleLog.png', height: 24),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => WebViewGoogleFacebook("Google")),
-              );
-            }),
-        IconButton(
-            icon: Image.asset('assets/images/twitterLog.png', height: 24),
-            color: Colors.lightBlue,
-            onPressed: () {}),
-        IconButton(
-            icon: Image.asset('assets/images/linkedinLog.png', height: 24),
-            color: Colors.blue[700],
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => getWebView(context)),
-              );
-            }),
-        IconButton(
-            icon: Image.asset('assets/images/instagramLog.png', height: 24),
-            onPressed: () {}),
-      ],
+    return Padding(
+      padding: MediaQuery.of(context).size.width < 380
+          ? const EdgeInsets.only(top: 10, left: 30, right: 30)
+          : const EdgeInsets.only(top: 20, left: 30, right: 30),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          facebookIcon(context),
+          googleIcon(context),
+          twitterIcon(context),
+          linkedinIcon(context),
+        ],
+      ),
     );
   }
 }

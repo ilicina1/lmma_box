@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/signup_screen/pages/signup_page.dart';
 
 Widget getStarted(context, _pageController, screenScroll) {

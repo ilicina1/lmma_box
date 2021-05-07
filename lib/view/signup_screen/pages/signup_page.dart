@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/appBarSignUp.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/app_bar_signup.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/form_list.dart';
+
+import '../widgets/signup_page_widgets/app_bar_signup.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -14,8 +16,8 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
       body: Container(
         child: Column(
           children: [

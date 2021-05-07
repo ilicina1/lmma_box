@@ -1,6 +1,7 @@
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_flutter/amplify.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_session/flutter_session.dart';
 import 'package:lmma_box/view/signin_screen/pages/confirm_code.dart';
 import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 
@@ -8,11 +9,32 @@ class FormSignInNotifier extends ChangeNotifier {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _confirmationCodeController = TextEditingController();
+  bool _obscureText = true;
+  bool _isChecked = false;
+  bool _isLoading = false;
 
   TextEditingController get emailController => _emailController;
   TextEditingController get passwordController => _passwordController;
   TextEditingController get confirmationCodeController =>
       _confirmationCodeController;
+  bool get obscureText => _obscureText;
+  bool get isChecked => _isChecked;
+  bool get isLoading => _isLoading;
+
+  void changeStateLoading(value) {
+    _isLoading = value;
+    notifyListeners();
+  }
+
+  void changeStateChecked() {
+    _isChecked = !_isChecked;
+    notifyListeners();
+  }
+
+  void togglePasswordView() {
+    _obscureText = !_obscureText;
+    notifyListeners();
+  }
 
   Future<void> signOut() async {
     try {
@@ -38,19 +60,27 @@ class FormSignInNotifier extends ChangeNotifier {
         );
 
         if (response.isSignedIn) {
+          _emailController.text = "";
+          _passwordController.text = "";
+          _confirmationCodeController.text = "";
+          await FlutterSession().set("isSignedIn", true);
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (_) => TestSignUp(),
+              builder: (_) => TestSignUp(email),
             ),
           );
         }
       } on AuthException catch (e) {
         _scaffoldKey.currentState.showSnackBar(
           SnackBar(
-            content: Text(e.message),
-          ),
+              content: e.message == "User not confirmed in the system."
+                  ? Text(
+                      "${e.message} Please verify your email before loging in.")
+                  : Text(e.message)),
         );
+        if (e.message == "User not confirmed in the system.") print("ss");
+        print("s");
       }
     }
     notifyListeners();
@@ -86,6 +116,10 @@ class FormSignInNotifier extends ChangeNotifier {
     } on AuthException catch (e) {
       print(e);
     }
+    _emailController.text = "";
+    _passwordController.text = "";
+    _confirmationCodeController.text = "";
+
     notifyListeners();
   }
 }

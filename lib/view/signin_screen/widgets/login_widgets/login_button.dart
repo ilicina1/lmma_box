@@ -1,36 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:provider/provider.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 
-class LoginButton extends StatelessWidget {
+class LoginButton extends StatefulWidget {
   final GlobalKey<FormState> _formKey;
   final GlobalKey<ScaffoldState> _scaffoldKey;
   LoginButton(this._formKey, this._scaffoldKey);
 
   @override
+  _LoginButtonState createState() => _LoginButtonState();
+}
+
+class _LoginButtonState extends State<LoginButton> {
+  @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
 
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 0, vertical: 20),
-      width: 315,
-      height: 45,
-      child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-              elevation: 0.0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+      child: Container(
+        width: double.infinity,
+        child: controllers.isLoading
+            ? ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    elevation: 0.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    primary: Color(0xFFFFDF36)),
+                onPressed: () async {
+                  controllers.changeStateLoading(false);
+
+                  await controllers.loginButtonOnPressed(
+                      context, widget._formKey, widget._scaffoldKey);
+
+                  controllers.changeStateLoading(true);
+                },
+                child: Text(
+                  'Login',
+                  style: twoButtonsStyle,
+                ),
+              )
+            : Center(
+                child: CircularProgressIndicator(),
               ),
-              primary: Color(0xFFFFDF36)),
-          onPressed: () {
-            controllers.loginButtonOnPressed(context, _formKey, _scaffoldKey);
-            // Validate will return true if the form is valid, or false if
-            // the form is invalid.
-            // if (_formKey.currentState.validate()) {
-            //   // Process data.
-            // }
-          },
-          child: Text('Login', style: TextStyle(color: Color(0xFF68572d)))),
+      ),
     );
   }
 }

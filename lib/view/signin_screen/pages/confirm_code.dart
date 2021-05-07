@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/signup_screen_style.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/pin_container2.dart';
 import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/text_rich.dart';
 
