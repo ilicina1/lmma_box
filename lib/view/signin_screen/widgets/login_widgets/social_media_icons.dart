@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signin_screen/pages/googlefacebook-signin.dart';
-import 'package:lmma_box/view/signin_screen/pages/linkedin_signin.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/facebook.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/google.dart';
-import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/instagram.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/linkedin.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/twitter.dart';
 

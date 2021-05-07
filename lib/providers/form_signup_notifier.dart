@@ -12,12 +12,18 @@ class FormSignUpNotifier extends ChangeNotifier {
   TextEditingController _phoneController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _confirmController = TextEditingController();
-
+  bool _isHidden = true;
   TextEditingController get nameController => _nameController;
   TextEditingController get emailController => _emailController;
   TextEditingController get phoneController => _phoneController;
   TextEditingController get passwordController => _passwordController;
   TextEditingController get confirmController => _confirmController;
+  bool get isHidden => _isHidden;
+
+  void togglePasswordView() {
+    _isHidden = !_isHidden;
+    notifyListeners();
+  }
 
   Future<void> createAccountOnPressed(
       BuildContext context, _formKey, _scaffoldKey) async {

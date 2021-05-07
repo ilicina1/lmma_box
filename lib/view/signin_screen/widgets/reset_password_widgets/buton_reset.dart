@@ -3,6 +3,7 @@ import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class ButtonReset extends StatelessWidget {
   var _formKey;
   ButtonReset(this._formKey);

@@ -100,3 +100,13 @@ TextStyle privacyBlueConf = TextStyle(
   fontFamily: "Averta CY",
   color: Color(0xFF1CBD8D),
 );
+
+Icon iconVisible = Icon(
+  Icons.visibility,
+  color: Color(0xFF8B8B8B),
+);
+
+Icon iconInvisible = Icon(
+  Icons.visibility_off,
+  color: Color(0xFF8B8B8B),
+);
