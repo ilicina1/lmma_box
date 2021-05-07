@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/KeyboardVisibilityBuilder.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/keyboard_visibility_builder.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/layout_invisible_keyboard.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/layout_visible_keyboard.dart';
 

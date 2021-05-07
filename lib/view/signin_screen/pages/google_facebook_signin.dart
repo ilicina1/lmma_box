@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/shared/strings.dart';
-import 'package:lmma_box/viewModel/signinViewModel.dart';
+import 'package:lmma_box/viewModel/signin_viewModel.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 // ignore: must_be_immutable
