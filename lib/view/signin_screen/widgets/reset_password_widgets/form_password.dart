@@ -14,7 +14,7 @@ class PasswordForm extends StatelessWidget {
 
     return Padding(
       padding: MediaQuery.of(context).size.width < 380
-          ? const EdgeInsets.only(top: 10.0)
+          ? const EdgeInsets.only(top: 30.0)
           : const EdgeInsets.only(top: 30.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

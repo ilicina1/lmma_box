@@ -4,6 +4,7 @@ import 'package:lmma_box/services/validate_password.dart';
 import 'package:provider/provider.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 
+// ignore: must_be_immutable
 class passwordField extends StatefulWidget {
   var _scaffoldKey;
   passwordField(this._scaffoldKey);
