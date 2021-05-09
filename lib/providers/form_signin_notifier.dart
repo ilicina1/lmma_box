@@ -11,6 +11,7 @@ class FormSignInNotifier extends ChangeNotifier {
   TextEditingController _passwordResetController = TextEditingController();
   TextEditingController _passwordConfirmController = TextEditingController();
   TextEditingController _confirmationCodeController = TextEditingController();
+
   bool _obscureText = true;
   bool _isChecked = false;
   bool _isLoading = true;
@@ -22,9 +23,15 @@ class FormSignInNotifier extends ChangeNotifier {
       _passwordConfirmController;
   TextEditingController get confirmationCodeController =>
       _confirmationCodeController;
+
   bool get obscureText => _obscureText;
   bool get isChecked => _isChecked;
   bool get isLoading => _isLoading;
+
+  void setConfController(value) {
+    _confirmationCodeController = value;
+    notifyListeners();
+  }
 
   void changeStateLoading() {
     _isLoading = !_isLoading;
@@ -67,7 +74,6 @@ class FormSignInNotifier extends ChangeNotifier {
         if (response.isSignedIn) {
           _emailController.text = "";
           _passwordController.text = "";
-          _confirmationCodeController.text = "";
           await FlutterSession().set("isSignedIn", true);
           Navigator.pushReplacement(
             context,
@@ -118,7 +124,7 @@ class FormSignInNotifier extends ChangeNotifier {
       _emailController.text = "";
       _passwordController.text = "";
       _confirmationCodeController.text = "";
-      Navigator.pop(context, true);
+      Navigator.pop(context);
     } on AuthException catch (e) {
       _scaffoldKey.currentState.showSnackBar(
         SnackBar(

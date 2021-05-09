@@ -7,16 +7,18 @@ class PinContainer2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
-
+    TextEditingController textEditingController = TextEditingController();
     return Container(
       width: double.infinity,
       child: Column(
         children: <Widget>[
           PinCodeTextField(
-            controller: controllers.confirmationCodeController,
+            controller: textEditingController,
             appContext: context,
             length: 6,
-            onChanged: (value) {},
+            onChanged: (value) {
+              controllers.setConfController(value);
+            },
             keyboardType: TextInputType.number,
             pinTheme: PinTheme(
               shape: PinCodeFieldShape.underline,
