@@ -21,7 +21,7 @@ Widget LoginRichText(context) {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.push(context,
+                  Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (context) => LoginScreen()));
                 },
                 child: Text(
