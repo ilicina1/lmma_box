@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
-import 'package:lmma_box/viewModel/validate_password_viewModel.dart';
+import 'package:lmma_box/services/validate_password.dart';
 import 'package:provider/provider.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 
 // ignore: must_be_immutable
-class PasswordForm extends StatelessWidget {
+class PasswordConfirmForm extends StatelessWidget {
   var _scaffoldKey;
-  PasswordForm(this._scaffoldKey);
+  PasswordConfirmForm(this._scaffoldKey);
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
@@ -20,7 +20,7 @@ class PasswordForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "New password",
+            "Confirm password",
             style: MediaQuery.of(context).size.width < 470
                 ? labelaStyleSmall
                 : labelaStyle,
@@ -28,11 +28,14 @@ class PasswordForm extends StatelessWidget {
           TextFormField(
             obscureText: controllers.obscureText,
             validator: (value) {
-              if (validatePasswordModel(value, _scaffoldKey) == false)
-                return "Please enter your password.";
+              if (confirmPassword(
+                      value,
+                      controllers.passwordResetController.text.trim(),
+                      _scaffoldKey) ==
+                  false) return "Please enter your password";
               return null;
             },
-            controller: controllers.passwordController,
+            controller: controllers.passwordConfirmController,
             decoration: InputDecoration(
               suffix: InkWell(
                 onTap: controllers.togglePasswordView,

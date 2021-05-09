@@ -23,6 +23,7 @@ class FormSignUpNotifier extends ChangeNotifier {
   String get phoneNumber => _phoneNumber;
 
   void changePhone(number) {
+    print("$number u metodi");
     _phoneNumber = number;
     notifyListeners();
   }
@@ -40,7 +41,9 @@ class FormSignUpNotifier extends ChangeNotifier {
       final password = _passwordController.text;
       // print(phoneNumber);
 
-      _phoneNumber = phoneNumber.substring(1);
+      // _phoneNumber = _phoneNumber.substring(1);
+
+      print("$_phoneNumber broj");
 
       /// In this user attribute you can define the custom fields associated with the user.
       Map<String, String> userAttributes = {

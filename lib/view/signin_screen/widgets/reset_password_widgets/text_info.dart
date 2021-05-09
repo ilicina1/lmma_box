@@ -8,7 +8,7 @@ class TextInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Enter the email address associated with your account, and we’ll email you a link to reset your password",
+      "Enter the email address associated with your account, and we’ll email you a code to reset your password",
       style: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w400,

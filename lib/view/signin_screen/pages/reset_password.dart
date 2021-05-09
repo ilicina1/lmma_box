@@ -25,7 +25,7 @@ class ResetPasswordPage extends StatelessWidget {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.only(top: 60),
+        padding: EdgeInsets.only(top: 20),
         color: Colors.white,
         child: ListView(
           children: [
@@ -46,7 +46,7 @@ class ResetPasswordPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    MainContainer(_scaffoldKey, _formKey),
+                    MainContainer(_formKey),
                   ],
                 ),
               ),

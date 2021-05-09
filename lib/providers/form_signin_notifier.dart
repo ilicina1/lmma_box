@@ -8,6 +8,8 @@ import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 class FormSignInNotifier extends ChangeNotifier {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+  TextEditingController _passwordResetController = TextEditingController();
+  TextEditingController _passwordConfirmController = TextEditingController();
   TextEditingController _confirmationCodeController = TextEditingController();
   bool _obscureText = true;
   bool _isChecked = false;
@@ -15,6 +17,9 @@ class FormSignInNotifier extends ChangeNotifier {
 
   TextEditingController get emailController => _emailController;
   TextEditingController get passwordController => _passwordController;
+  TextEditingController get passwordResetController => _passwordResetController;
+  TextEditingController get passwordConfirmController =>
+      _passwordConfirmController;
   TextEditingController get confirmationCodeController =>
       _confirmationCodeController;
   bool get obscureText => _obscureText;
@@ -103,11 +108,11 @@ class FormSignInNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> submitResetCode(context) async {
+  Future<void> submitResetCode(context, _scaffoldKey) async {
     try {
       await Amplify.Auth.confirmPassword(
         username: _emailController.text.trim(),
-        newPassword: _passwordController.text.trim(),
+        newPassword: _passwordResetController.text.trim(),
         confirmationCode: _confirmationCodeController.text,
       );
       _emailController.text = "";
@@ -115,7 +120,11 @@ class FormSignInNotifier extends ChangeNotifier {
       _confirmationCodeController.text = "";
       Navigator.pop(context, true);
     } on AuthException catch (e) {
-      print(e);
+      _scaffoldKey.currentState.showSnackBar(
+        SnackBar(
+          content: Text(e.message),
+        ),
+      );
     }
 
     notifyListeners();
