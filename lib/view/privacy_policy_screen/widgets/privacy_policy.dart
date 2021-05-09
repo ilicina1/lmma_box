@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget privacyPolicy() {
+Widget PrivacyPolicy() {
   return new Container(
     color: Colors.white,
     child: new Column(

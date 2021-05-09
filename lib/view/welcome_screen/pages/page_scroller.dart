@@ -22,7 +22,7 @@ class PageScroller extends StatelessWidget {
           body: Column(
             children: [
               SafeArea(
-                child: appBarWidget(context),
+                child: AppBarWidget(context),
               ),
               Expanded(
                   child: PageView(

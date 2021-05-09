@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          SafeArea(child: appBarWidget(context)),
+          SafeArea(child: AppBarWidget(context)),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
             child: Column(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget centerImage(context) {
+Widget CenterImage(context) {
   return Padding(
     padding: MediaQuery.of(context).size.width < 380
         ? const EdgeInsets.only(bottom: 0.0)

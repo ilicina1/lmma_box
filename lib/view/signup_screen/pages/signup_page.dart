@@ -22,7 +22,7 @@ class _SignUpPageState extends State<SignUpPage> {
         child: Column(
           children: [
             SafeArea(
-              child: appBarSignUp(context),
+              child: AppBarSignUp(context),
             ),
             FormList(_scaffoldKey),
           ],

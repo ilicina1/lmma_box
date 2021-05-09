@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/signin_screen/pages/login_screen.dart';
 
-Widget loginRichText(context) {
+Widget LoginRichText(context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [

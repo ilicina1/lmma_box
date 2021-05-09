@@ -16,8 +16,8 @@ class BottomButtons extends StatelessWidget {
       child: Provider.of<ScreenScrollProvider>(context).page == 3
           ? Column(
               children: [
-                previousButton(context, _pageController, screenScroll),
-                getStarted(context, _pageController, screenScroll),
+                PreviousButton(context, _pageController, screenScroll),
+                GetStarted(context, _pageController, screenScroll),
               ],
             )
           : Provider.of<ScreenScrollProvider>(context).page == 0
@@ -26,14 +26,14 @@ class BottomButtons extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.width < 380 ? 71 : 85,
                     ),
-                    nextButton(context, _pageController, screenScroll),
+                    NextButton(context, _pageController, screenScroll),
                   ],
                 )
               : Container(
                   child: Column(
                     children: [
-                      previousButton(context, _pageController, screenScroll),
-                      nextButton(context, _pageController, screenScroll),
+                      PreviousButton(context, _pageController, screenScroll),
+                      NextButton(context, _pageController, screenScroll),
                     ],
                   ),
                 ),

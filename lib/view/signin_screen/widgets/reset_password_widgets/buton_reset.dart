@@ -30,15 +30,9 @@ class ButtonReset extends StatelessWidget {
           style: twoButtonsStyle,
         ),
         onPressed: () {
-          // _formKey.currentState.validate()
-          //     ? controllers.resetPassword(context)
-          //     : print("processing data");
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => ConfirmCodePage(),
-            ),
-          );
+          _formKey.currentState.validate()
+              ? controllers.resetPassword(context)
+              : print("processing data");
         },
       ),
     );
