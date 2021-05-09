@@ -4,9 +4,10 @@ import 'package:provider/provider.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 
 // ignore: must_be_immutable
-class ButtonReset extends StatelessWidget {
+class ButtonConfirm extends StatelessWidget {
   var _formKey;
-  ButtonReset(this._formKey);
+  var _scaffoldKey;
+  ButtonConfirm(this._formKey, this._scaffoldKey);
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +26,19 @@ class ButtonReset extends StatelessWidget {
             ),
             primary: Color(0xFFFFDF36)),
         child: Text(
-          'Send confirmation code',
+          'Confirm new password',
           style: twoButtonsStyle,
         ),
         onPressed: () {
           _formKey.currentState.validate()
-              ? controllers.resetPassword(context)
+              ? controllers.submitResetCode(context, _scaffoldKey)
               : print("processing data");
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (_) => ConfirmCodePage(),
+          //   ),
+          // );
         },
       ),
     );

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 import 'package:lmma_box/viewModel/signinViewModel.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -17,6 +16,9 @@ Widget getWebView(context) {
     javascriptMode: JavascriptMode.unrestricted,
     onWebViewCreated: (WebViewController webViewController) {
       _webViewController.complete(webViewController);
+      webViewController.clearCache();
+      final cookieManager = CookieManager();
+      cookieManager.clearCookies();
     },
     navigationDelegate: (NavigationRequest request) async {
       if (request.url

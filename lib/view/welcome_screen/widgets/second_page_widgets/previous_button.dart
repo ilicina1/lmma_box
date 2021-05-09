@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/welcome_screen_text_styles.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/viewModel/welcome_screen.dart';
 
 Widget previousButton(context, _pageController, screenScroll) {
