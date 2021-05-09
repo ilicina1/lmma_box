@@ -15,6 +15,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
     var phone = context.watch<FormSignUpNotifier>();
     void onPhoneNumberChange(
         String number, String internationalizedPhoneNumber, String isoCode) {
+      // print("$internationalizedPhoneNumber ovo je drugi broj");
       phone.changePhone(number);
     }
 

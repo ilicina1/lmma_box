@@ -16,11 +16,7 @@ class PinContainer2 extends StatelessWidget {
             controller: controllers.confirmationCodeController,
             appContext: context,
             length: 6,
-            onChanged: (value) {
-              if (value.length == 6) {
-                controllers.submitResetCode(context);
-              }
-            },
+            onChanged: (value) {},
             keyboardType: TextInputType.number,
             pinTheme: PinTheme(
               shape: PinCodeFieldShape.underline,

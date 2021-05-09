@@ -16,3 +16,17 @@ bool validatePassword(value, _scaffoldKey) {
   }
   return false;
 }
+
+bool confirmPassword(value1, value2, _scaffoldKey) {
+  print("$value1 and $value2");
+  if (value1 == value2)
+    return null;
+  else {
+    _scaffoldKey.currentState.showSnackBar(
+      SnackBar(
+        content: Text("Passwords not matching"),
+      ),
+    );
+  }
+  return false;
+}
