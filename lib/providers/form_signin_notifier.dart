@@ -102,7 +102,7 @@ class FormSignInNotifier extends ChangeNotifier {
       await Amplify.Auth.resetPassword(
         username: _emailController.text.trim(),
       );
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (_) => ConfirmCodePage(),
