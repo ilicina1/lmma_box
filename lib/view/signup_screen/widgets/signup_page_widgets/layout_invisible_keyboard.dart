@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/styles.dart';
-import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/divider.dart';
+import 'package:lmma_box/view/signin_screen/widgets/login_widgets/divider.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/email_field.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/name_field.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/password_field.dart';
@@ -40,7 +40,7 @@ Widget layoutInvisibleKeyboard(context, _formKey, _scaffoldKey) {
                 PasswordField(_scaffoldKey),
                 PolicyAndTerms(context),
                 SignUpButton(_formKey, _scaffoldKey),
-                DividerOr(context),
+                LoginDivider(),
                 SignUpSocialRow(context),
               ],
             ),
