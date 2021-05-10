@@ -12,9 +12,9 @@ import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_s
 
 Widget layoutInvisibleKeyboard(context, _formKey, _scaffoldKey) {
   return SizedBox(
-    height: MediaQuery.of(context).size.height * 0.87,
+    height: MediaQuery.of(context).size.height * 0.78,
     child: ListView(
-      physics: ClampingScrollPhysics(),
+      physics: BouncingScrollPhysics(),
       children: [
         Form(
           key: _formKey,
@@ -43,12 +43,6 @@ Widget layoutInvisibleKeyboard(context, _formKey, _scaffoldKey) {
                 SignUpButton(_formKey, _scaffoldKey),
                 DividerOr(context),
                 SignUpSocialRow(context),
-                Stack(
-                  alignment: Alignment.bottomLeft,
-                  children: [
-                    LoginRichText(context),
-                  ],
-                ),
               ],
             ),
           ),

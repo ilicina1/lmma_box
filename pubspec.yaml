@@ -41,6 +41,10 @@ dependencies:
   simpleprogressdialog: ^1.0.8
   flutter_launcher_icons: ^0.8.1
 
+flutter_icons:
+  android: true
+  ios: false
+  image_path: "assets/lmma_box.png"
 
   # webview_flutter: ^2.0.4
   # http: ^0.13.2
@@ -57,12 +61,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.8.1
 
-flutter_icons:
-  android: true
-  ios: false
-  image_path: "assets/lmma_box.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
