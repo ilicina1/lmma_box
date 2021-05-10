@@ -43,7 +43,13 @@ Widget layoutInvisibleKeyboard(context, _formKey, _scaffoldKey) {
                 SignUpButton(_formKey, _scaffoldKey),
                 DividerOr(context),
                 SignUpSocialRow(context),
-                LoginRichText(context),
+                Stack(
+                  alignment: Alignment.bottomLeft,
+                  children: [
+                    Spacer(),
+                    LoginRichText(context),
+                  ],
+                ),
               ],
             ),
           ),

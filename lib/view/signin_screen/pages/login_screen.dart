@@ -38,7 +38,13 @@ class _LoginScreenState extends State<LoginScreen> {
           LoginDivider(),
           SocialMediaIcons(),
           Spacer(),
-          BottomText()
+          Stack(
+            alignment: Alignment.bottomLeft,
+            children: [
+              Spacer(),
+              BottomText(),
+            ],
+          ),
         ],
       ),
     );
