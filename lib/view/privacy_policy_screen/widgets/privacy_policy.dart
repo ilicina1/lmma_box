@@ -1,39 +1,71 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/styles.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/app_bar_signup.dart';
 
-Widget PrivacyPolicy() {
-  return new Container(
-    color: Colors.white,
-    child: new Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        new Padding(
-          padding: const EdgeInsets.fromLTRB(0.0, 24.0, 0.0, 0.0),
-          child: Center(
-            child: Image.asset(
-              'assets/lmmaa_box.png',
+class PrivacyContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: true, // this is all you need
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        automaticallyImplyLeading: true,
+        leading: RawMaterialButton(
+          elevation: 0,
+          fillColor: Color(0xffF9F9F9),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+            size: 35.0,
+          ),
+          onPressed: () => Navigator.pop(context, true),
+        ),
+
+        title: Text(
+          "Privacy policy",
+          style: confirmHeader,
+        ),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            child: Center(
+              child: Image.asset(
+                'assets/lmmaa_box.png',
+              ),
             ),
           ),
-        ),
-        new Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: new Text(
-            "Privacy policy",
-            style: new TextStyle(
-                fontSize: 28.0,
+          SizedBox(
+            height: 30,
+          ),
+          Container(
+            child: Text(
+              "Privacy policy",
+              style: TextStyle(
+                  fontSize: 28.0,
+                  color: Colors.black87,
+                  fontWeight: FontWeight.w600),
+            ),
+          ),
+          SingleChildScrollView(
+            child: Text(
+              "Description that is too long in text format(Here Data is coming from API)",
+              style: TextStyle(
+                fontSize: 16.0,
                 color: Colors.black87,
-                fontWeight: FontWeight.w600),
-          ),
-        ),
-        new SingleChildScrollView(
-          child: new Text(
-            "Description that is too long in text format(Here Data is coming from API)",
-            style: new TextStyle(
-              fontSize: 16.0,
-              color: Colors.black87,
+              ),
             ),
           ),
-        ),
-      ],
-    ),
-  );
+        ],
+      ),
+    );
+  }
 }

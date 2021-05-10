@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/styles.dart';
-import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/icon_back.dart';
+import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/app_bar_resetpw.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/main_container.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/text_info.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/app_bar_signup.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -13,22 +13,17 @@ class ResetPasswordPage extends StatelessWidget {
 
     return Scaffold(
       key: _scaffoldKey,
-      appBar: AppBar(
-        centerTitle: true, // this is all you need
-        elevation: 0,
-        backgroundColor: Colors.white,
-        automaticallyImplyLeading: true,
-        leading: IconBack(),
-        title: Text(
-          "Reset password",
-          style: headerNewText,
-        ),
-      ),
       body: Container(
         padding: EdgeInsets.only(top: 20),
         color: Colors.white,
         child: ListView(
           children: [
+            SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: AppBarResetpw(context),
+              ),
+            ),
             Form(
               key: _formKey,
               child: Padding(

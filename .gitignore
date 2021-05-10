@@ -21,6 +21,8 @@ doc/api/
 *.js.deps
 *.js.map
 *.flutter-plugins-dependencies
+.flutter-plugins
+.flutter-plugins-dependencies
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
