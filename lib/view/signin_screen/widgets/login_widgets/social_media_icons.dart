@@ -14,10 +14,10 @@ class SocialMediaIcons extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          facebookIcon(context),
-          googleIcon(context),
-          twitterIcon(context),
-          linkedinIcon(context),
+          FacebookIcon(context),
+          GoogleIcon(context),
+          TwitterIcon(context),
+          LinkedinIcon(context),
         ],
       ),
     );

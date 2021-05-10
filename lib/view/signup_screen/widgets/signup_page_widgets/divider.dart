@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 
-Widget dividerOr(context) {
+Widget DividerOr(context) {
   return Padding(
     padding: MediaQuery.of(context).size.width < 380
         ? const EdgeInsets.fromLTRB(0, 0, 0, 0)

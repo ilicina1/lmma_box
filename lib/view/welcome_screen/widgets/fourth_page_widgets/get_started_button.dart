@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/signup_screen/pages/signup_page.dart';
 
-Widget getStarted(context, _pageController, screenScroll) {
+Widget GetStarted(context, _pageController, screenScroll) {
   return Padding(
     padding: const EdgeInsets.fromLTRB(50, 0, 50, 20),
     child: Container(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/signin_screen/pages/twitter_signin.dart';
 
-Widget twitterIcon(context) {
+Widget TwitterIcon(context) {
   return Container(
     height: MediaQuery.of(context).size.width < 380 ? 18 : 24,
     child: Row(

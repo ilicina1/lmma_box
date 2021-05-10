@@ -39,7 +39,7 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
     var url =
         "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?identity_provider=" +
             widget.idendity_provider +
-            "&redirect_uri=http://localhost:4200/ouath2/idpresponse&response_type=CODE&client_id=31goilt5aaqpbo84acs1abfket&scope=email+openid+profile+aws.cognito.signin.user.admin";
+            "&redirect_uri=http://localhost:4200/callback/&response_type=CODE&client_id=31goilt5aaqpbo84acs1abfket&scope=email+openid+profile+aws.cognito.signin.user.admin";
 
     return WebView(
       initialUrl: url,
@@ -53,11 +53,10 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
         cookieManager.clearCookies();
       },
       navigationDelegate: (NavigationRequest request) {
-        if (request.url
-                .startsWith("http://localhost:4200/ouath2/idpresponse?code=") &&
+        if (request.url.startsWith("http://localhost:4200/callback/?code=") &&
             signin == 0) {
-          String code = request.url.substring(
-              "http://localhost:4200/ouath2/idpresponse?code=".length);
+          String code = request.url
+              .substring("http://localhost:4200/callback/?code=".length);
           SignInViewModel().signUserInWithAuthCode(code, context);
 
           signin = 1;

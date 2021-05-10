@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/signin_screen/pages/linkedin_signin.dart';
 
-Widget linkedinIcon(context) {
+Widget LinkedinIcon(context) {
   return Container(
     height: MediaQuery.of(context).size.width < 380 ? 18 : 24,
     child: Row(

@@ -4,7 +4,7 @@ import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIc
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/linkedin.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/socialIcons/twitter.dart';
 
-Widget signUpSocialRow(context) {
+Widget SignUpSocialRow(context) {
   return Padding(
     padding: MediaQuery.of(context).size.width < 380
         ? const EdgeInsets.only(top: 10)
@@ -12,10 +12,10 @@ Widget signUpSocialRow(context) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        facebookIcon(context),
-        googleIcon(context),
-        twitterIcon(context),
-        linkedinIcon(context),
+        FacebookIcon(context),
+        GoogleIcon(context),
+        TwitterIcon(context),
+        LinkedinIcon(context),
       ],
     ),
   );

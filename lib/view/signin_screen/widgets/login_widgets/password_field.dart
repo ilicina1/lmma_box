@@ -5,14 +5,14 @@ import 'package:provider/provider.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 
 // ignore: must_be_immutable
-class passwordField extends StatefulWidget {
+class PasswordField extends StatefulWidget {
   var _scaffoldKey;
-  passwordField(this._scaffoldKey);
+  PasswordField(this._scaffoldKey);
   @override
   _passwordFieldState createState() => _passwordFieldState();
 }
 
-class _passwordFieldState extends State<passwordField> {
+class _passwordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
@@ -38,7 +38,7 @@ class _passwordFieldState extends State<passwordField> {
         border: border,
       ),
       validator: (value) {
-        if (validatePasswordModel(value, widget._scaffoldKey) == false)
+        if (ValidatePasswordModel(value, widget._scaffoldKey) == false)
           return "Please enter your password.";
         return null;
       },

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/signin_screen/pages/login_screen.dart';
 
-Widget loginRichText(context) {
+Widget LoginRichText(context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
@@ -10,7 +10,7 @@ Widget loginRichText(context) {
         padding: EdgeInsets.only(
             top: MediaQuery.of(context).size.width < 380
                 ? MediaQuery.of(context).size.height * 0.03
-                : MediaQuery.of(context).size.height * 0.05),
+                : MediaQuery.of(context).size.height * 0.07),
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -21,7 +21,7 @@ Widget loginRichText(context) {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.push(context,
+                  Navigator.pushReplacement(context,
                       MaterialPageRoute(builder: (context) => LoginScreen()));
                 },
                 child: Text(

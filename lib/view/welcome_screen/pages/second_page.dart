@@ -18,7 +18,7 @@ class _SecondPageState extends State<SecondPage> {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            centerImage(context),
+            CenterImage(context),
             HeaderText(),
           ],
         ),

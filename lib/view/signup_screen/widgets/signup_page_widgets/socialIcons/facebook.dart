@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/view/signin_screen/pages/google_facebook_signin.dart';
 
-Widget facebookIcon(context) {
+Widget FacebookIcon(context) {
   return Container(
     height: MediaQuery.of(context).size.width < 380 ? 18 : 24,
     child: Row(

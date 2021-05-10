@@ -3,12 +3,12 @@ import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 import 'package:provider/provider.dart';
 
-class emailField extends StatefulWidget {
+class EmailField extends StatefulWidget {
   @override
-  _emailFieldState createState() => _emailFieldState();
+  _EmailFieldState createState() => _EmailFieldState();
 }
 
-class _emailFieldState extends State<emailField> {
+class _EmailFieldState extends State<EmailField> {
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
