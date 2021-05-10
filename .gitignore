@@ -20,7 +20,7 @@ doc/api/
 *.js.deps
 *.js.map
 *.flutter-plugins-dependencies
-*.generated_plugin_registrant.dart
+generated_plugin_registrant.dart
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
