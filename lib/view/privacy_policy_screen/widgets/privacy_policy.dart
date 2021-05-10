@@ -9,27 +9,41 @@ class PrivacyContainer extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true, // this is all you need
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         automaticallyImplyLeading: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          color: Colors.black38,
+        leading: RawMaterialButton(
+          elevation: 0,
+          fillColor: Color(0xffF9F9F9),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          child: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+            size: 35.0,
+          ),
           onPressed: () => Navigator.pop(context, true),
         ),
+
         title: Text(
-          "Confirm code",
+          "Privacy policy",
           style: confirmHeader,
         ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          SizedBox(
+            height: 10,
+          ),
           Container(
             child: Center(
               child: Image.asset(
                 'assets/lmmaa_box.png',
               ),
             ),
+          ),
+          SizedBox(
+            height: 30,
           ),
           Container(
             child: Text(
