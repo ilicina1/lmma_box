@@ -17,6 +17,8 @@ class FormSignInNotifier extends ChangeNotifier {
   String _controller = "";
 
   bool _obscureText = true;
+  bool _obscureTextSecond = true;
+
   bool _isChecked = false;
   bool _isLoading = true;
 
@@ -31,6 +33,8 @@ class FormSignInNotifier extends ChangeNotifier {
   String get controller => _controller;
 
   bool get obscureText => _obscureText;
+  bool get obscureTextSecond => _obscureTextSecond;
+
   bool get isChecked => _isChecked;
   bool get isLoading => _isLoading;
 
@@ -53,6 +57,11 @@ class FormSignInNotifier extends ChangeNotifier {
 
   void togglePasswordView() {
     _obscureText = !_obscureText;
+    notifyListeners();
+  }
+
+  void togglePasswordViewsecond() {
+    _obscureTextSecond = !_obscureTextSecond;
     notifyListeners();
   }
 

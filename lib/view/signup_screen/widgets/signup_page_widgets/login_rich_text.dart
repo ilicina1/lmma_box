@@ -7,10 +7,7 @@ Widget LoginRichText(context) {
     children: [
       Container(
         alignment: Alignment.topLeft,
-        padding: EdgeInsets.only(
-            top: MediaQuery.of(context).size.width < 380
-                ? MediaQuery.of(context).size.height * 0.03
-                : MediaQuery.of(context).size.height * 0.07),
+        padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,

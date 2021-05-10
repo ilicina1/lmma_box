@@ -68,7 +68,7 @@ class _MyAppState extends State<MyApp> {
       home: FutureBuilder(
         future: FlutterSession().get('mail'),
         builder: (context, snapshot) {
-          return snapshot.data != false
+          return snapshot.data != false && snapshot.data != null
               ? TestSignUp(snapshot.data)
               : PageScroller();
         },

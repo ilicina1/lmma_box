@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/styles.dart';
-import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/divider.dart';
+import 'package:lmma_box/view/signin_screen/widgets/login_widgets/divider.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/email_field.dart';
-import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/login_rich_text.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/name_field.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/password_field.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/phone_number_field.dart';
@@ -12,9 +11,9 @@ import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_s
 
 Widget layoutVisibleKeyboard(context, _formKey, _scaffoldKey) {
   return SizedBox(
-    height: MediaQuery.of(context).size.height * 0.43,
+    height: MediaQuery.of(context).size.height * 0.6,
     child: ListView(
-      physics: ClampingScrollPhysics(),
+      physics: BouncingScrollPhysics(),
       children: [
         Form(
           key: _formKey,
@@ -41,15 +40,8 @@ Widget layoutVisibleKeyboard(context, _formKey, _scaffoldKey) {
                 PasswordField(_scaffoldKey),
                 PolicyAndTerms(context),
                 SignUpButton(_formKey, _scaffoldKey),
-                DividerOr(context),
+                LoginDivider(),
                 SignUpSocialRow(context),
-                Stack(
-                  alignment: Alignment.bottomLeft,
-                  children: [
-                    Spacer(),
-                    LoginRichText(context),
-                  ],
-                ),
               ],
             ),
           ),
