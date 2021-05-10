@@ -12,8 +12,8 @@ class IconBack extends StatelessWidget {
     var controllers = context.watch<FormSignInNotifier>();
 
     return IconButton(
-        icon: Icon(Icons.arrow_back),
-        color: Colors.black38,
+        icon: Icon(Icons.arrow_back_ios_rounded),
+        color: Color(0xFF373737),
         onPressed: () {
           controllers.emailController.text = "";
           controllers.passwordController.text = "";

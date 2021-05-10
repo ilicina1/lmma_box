@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
+import 'package:lmma_box/viewModel/validate_password_viewModel.dart';
 import 'package:provider/provider.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 
-class FormaEmail extends StatelessWidget {
-  const FormaEmail({
-    Key key,
-  }) : super(key: key);
-
+// ignore: must_be_immutable
+class PasswordForm extends StatelessWidget {
+  var _scaffoldKey;
+  PasswordForm(this._scaffoldKey);
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
@@ -20,19 +20,33 @@ class FormaEmail extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Email",
+            "New password",
             style: MediaQuery.of(context).size.width < 470
                 ? labelaStyleSmall
                 : labelaStyle,
           ),
           TextFormField(
+            obscureText: controllers.obscureText,
             validator: (value) {
-              if (value.contains('@') && value.length > 8) return null;
-              return "Please enter your email";
+              if (validatePasswordModel(value, _scaffoldKey) == false)
+                return "Please enter your password.";
+              return null;
             },
-            controller: controllers.emailController,
+            controller: controllers.passwordResetController,
             decoration: InputDecoration(
-              hintText: 'Enter your Email',
+              suffix: InkWell(
+                onTap: controllers.togglePasswordView,
+                child: controllers.obscureText
+                    ? Icon(
+                        Icons.visibility,
+                        color: Color(0xFF8B8B8B),
+                      )
+                    : Icon(
+                        Icons.visibility_off,
+                        color: Color(0xFF8B8B8B),
+                      ),
+              ),
+              hintText: 'Enter your new password',
               hintStyle: hintStyle,
               focusedBorder: focused,
               border: border,

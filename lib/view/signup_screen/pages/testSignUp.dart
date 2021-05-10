@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_session/flutter_session.dart';
 import 'package:lmma_box/view/signin_screen/pages/login_screen.dart';
 
+// ignore: must_be_immutable
 class TestSignUp extends StatefulWidget {
   dynamic mail;
   TestSignUp(this.mail);

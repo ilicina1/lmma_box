@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/shared/strings.dart';
-import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 import 'package:lmma_box/viewModel/signinViewModel.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -27,7 +26,6 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
   final COGNITO_CLIENT_ID = cognitoKlijentId;
   final COGNITO_Pool_ID = cognitoPoolId;
   final COGNITO_POOL_URL = cognitoPoolURL;
-  // final CLIENT_SECRET = clientSecret;
   var web_view_enable = 0;
 
   Widget getWebView() {
@@ -50,6 +48,9 @@ class WebViewGoogleFacebookState extends State<WebViewGoogleFacebook> {
       javascriptMode: JavascriptMode.unrestricted,
       onWebViewCreated: (WebViewController webViewController) {
         _webViewController.complete(webViewController);
+        webViewController.clearCache();
+        final cookieManager = CookieManager();
+        cookieManager.clearCookies();
       },
       navigationDelegate: (NavigationRequest request) {
         if (request.url

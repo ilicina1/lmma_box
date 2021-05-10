@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/interface/facebooksigninInterface.dart';
-import 'package:lmma_box/view/signin_screen/pages/googlefacebook-signin.dart';
+import 'package:lmma_box/interface/facebook_signin_interface.dart';
+import 'package:lmma_box/view/signin_screen/pages/google_facebook_signin.dart';
 
 class FacebookSignInService implements FacebookSignInInterface {
   @override

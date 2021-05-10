@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:amazon_cognito_identity_dart_2/cognito.dart';
 import 'package:flutter/material.dart';
-import 'package:lmma_box/interface/signinInterface.dart';
+import 'package:lmma_box/interface/signin_interface.dart';
 import 'package:lmma_box/utils/shared/strings.dart';
 import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 
@@ -11,12 +11,18 @@ class SignInService implements SignInInterface {
   Future signUserInWithAuthCode(String authCode, BuildContext context) async {
     final COGNITO_CLIENT_ID = cognitoKlijentId;
     final COGNITO_Pool_ID = cognitoPoolId;
-    final COGNITO_POOL_URL = cognitoPoolURL;
+
+    var finalCode;
+    if (authCode.contains('#')) {
+      finalCode = authCode.split('#');
+    } else {
+      finalCode = authCode;
+    }
 
     String url = "https://meelz.auth.us-east-1" +
         ".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id=" +
         "${COGNITO_CLIENT_ID}&code=" +
-        authCode +
+        finalCode[0] +
         "&redirect_uri=http://localhost:4200/ouath2/idpresponse";
 
     final response = await http.post(Uri.parse(url),
@@ -37,10 +43,11 @@ class SignInService implements SignInInterface {
     final refreshToken = new CognitoRefreshToken(tokenData['refresh_token']);
     final session = new CognitoUserSession(idToken, accessToken,
         refreshToken: refreshToken);
-
     final userPool = new CognitoUserPool(COGNITO_Pool_ID, COGNITO_CLIENT_ID);
     final user = new CognitoUser(null, userPool, signInUserSession: session);
     final attributes = await user.getUserAttributes();
+
+    await user.signOut();
 
     for (CognitoUserAttribute attribute in attributes) {
       if (attribute.getName() == "email") {
@@ -49,12 +56,12 @@ class SignInService implements SignInInterface {
       }
     }
 
-    print("stiglo ${user.username}");
-
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => TestSignUp(user.username)),
     );
+
+    print(user.username);
 
     return user;
   }
