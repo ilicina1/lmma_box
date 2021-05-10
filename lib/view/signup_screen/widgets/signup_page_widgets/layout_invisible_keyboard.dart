@@ -46,7 +46,6 @@ Widget layoutInvisibleKeyboard(context, _formKey, _scaffoldKey) {
                 Stack(
                   alignment: Alignment.bottomLeft,
                   children: [
-                    Spacer(),
                     LoginRichText(context),
                   ],
                 ),
