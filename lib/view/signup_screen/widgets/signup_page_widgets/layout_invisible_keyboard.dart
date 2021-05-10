@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/divider.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/email_field.dart';
-import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/login_rich_text.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/name_field.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/password_field.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/phone_number_field.dart';
