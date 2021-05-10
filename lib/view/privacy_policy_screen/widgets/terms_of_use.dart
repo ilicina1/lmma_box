@@ -10,19 +10,21 @@ class TermsContainer extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: true,
-        leading: ButtonTheme(
-          highlightColor: Colors.grey,
-          shape: RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(18.0),
+        leading: RawMaterialButton(
+          elevation: 0,
+          fillColor: Color(0xffF9F9F9),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          child: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+            size: 35.0,
           ),
-          child: IconButton(
-            icon: Icon(Icons.arrow_back),
-            color: Colors.black38,
-            onPressed: () => Navigator.pop(context, true),
-          ),
+          onPressed: () => Navigator.pop(context, true),
         ),
+
         title: Text(
-          "Terms of use",
+          "Privacy policy",
           style: confirmHeader,
         ),
       ),
