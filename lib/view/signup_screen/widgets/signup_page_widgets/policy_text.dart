@@ -22,7 +22,7 @@ Widget policyAndTerms(context) {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              privacyPolicyLinkAndTermsOfService("privacy")),
+                              PrivacyPolicyLinkAndTermsOfService("privacy")),
                     );
                   }),
             TextSpan(
@@ -38,7 +38,7 @@ Widget policyAndTerms(context) {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  privacyPolicyLinkAndTermsOfService("terms")),
+                                  PrivacyPolicyLinkAndTermsOfService("terms")),
                         );
                       })
               ],
