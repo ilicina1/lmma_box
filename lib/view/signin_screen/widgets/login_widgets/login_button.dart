@@ -21,6 +21,9 @@ class _LoginButtonState extends State<LoginButton> {
       padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
       child: Container(
         width: double.infinity,
+        height: MediaQuery.of(context).size.width < 380
+            ? MediaQuery.of(context).size.height * 0.05
+            : 45,
         child: controllers.isLoading
             ? ElevatedButton(
                 style: ElevatedButton.styleFrom(

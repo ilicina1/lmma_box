@@ -34,17 +34,10 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           RememberButton(rememberMe),
-          // LoginButton(_formKey),
           LoginDivider(),
           SocialMediaIcons(),
           Spacer(),
-          Stack(
-            alignment: Alignment.bottomLeft,
-            children: [
-              Spacer(),
-              BottomText(),
-            ],
-          ),
+          BottomText(),
         ],
       ),
     );
