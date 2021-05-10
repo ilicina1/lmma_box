@@ -14,7 +14,6 @@ class ResetPasswordPage extends StatelessWidget {
     return Scaffold(
       key: _scaffoldKey,
       body: Container(
-        padding: EdgeInsets.only(top: 20),
         color: Colors.white,
         child: ListView(
           children: [

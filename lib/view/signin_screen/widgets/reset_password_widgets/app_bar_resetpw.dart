@@ -6,14 +6,14 @@ Widget AppBarResetpw(context) {
   return Padding(
     padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
     child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         IconBack(),
         Text(
           "Reset password",
           style: headerNewText,
         ),
-        Text(""),
+        Text(" "),
       ],
     ),
   );
