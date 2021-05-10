@@ -22,7 +22,7 @@ class _EmailFieldState extends State<EmailField> {
         children: [
           Text(
             "Email",
-            style: MediaQuery.of(context).size.width < 470
+            style: MediaQuery.of(context).size.width < 380
                 ? labelaStyleSmall
                 : labelaStyle,
           ),

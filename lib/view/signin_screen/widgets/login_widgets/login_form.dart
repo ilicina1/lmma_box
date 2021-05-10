@@ -28,7 +28,7 @@ class _LoginFormState extends State<LoginForm> {
                 alignment: Alignment.topLeft,
                 child: Text(
                   'Email',
-                  style: MediaQuery.of(context).size.width < 470
+                  style: MediaQuery.of(context).size.width < 380
                       ? labelaStyleSmall
                       : labelaStyle,
                 ),

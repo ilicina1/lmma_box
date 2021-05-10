@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/app_bar_resetpw.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/main_container.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/text_info.dart';
-import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/app_bar_signup.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -20,7 +19,7 @@ class ResetPasswordPage extends StatelessWidget {
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: AppBarResetpw(context),
+                child: AppBarWithIconBack(context, "Reset password"),
               ),
             ),
             Form(

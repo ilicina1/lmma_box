@@ -1,34 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/styles.dart';
+import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/app_bar_resetpw.dart';
 
 class TermsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true, // this is all you need
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        automaticallyImplyLeading: true,
-        leading: ButtonTheme(
-          highlightColor: Colors.grey,
-          shape: RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(18.0),
-          ),
-          child: IconButton(
-            icon: Icon(Icons.arrow_back),
-            color: Colors.black38,
-            onPressed: () => Navigator.pop(context, true),
-          ),
-        ),
-        title: Text(
-          "Terms of use",
-          style: confirmHeader,
-        ),
-      ),
+      backgroundColor: Colors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: AppBarWithIconBack(context, "Terms of use"),
+            ),
+          ),
           SizedBox(
             height: 10,
           ),

@@ -2,18 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/icon_back.dart';
 
-Widget AppBarResetpw(context) {
+Widget AppBarWithIconBack(context, title) {
   return Padding(
-    padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+    padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
     child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        IconBack(),
-        Text(
-          "Reset password",
-          style: headerNewText,
+        Container(
+          width: 40,
+          child: IconBack(),
         ),
-        Text(" "),
+        Container(
+          // width: 32,
+          child: Text(
+            title,
+            style: headerNewText,
+          ),
+        ),
+        Container(
+          width: 40,
+          child: Text(
+            "",
+            // style: headerNewText,
+          ),
+        ),
+        // Text(" "),
       ],
     ),
   );
