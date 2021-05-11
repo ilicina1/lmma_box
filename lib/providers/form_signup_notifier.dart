@@ -13,6 +13,7 @@ class FormSignUpNotifier extends ChangeNotifier {
   TextEditingController _confirmController = TextEditingController();
   bool _isHidden = true;
   String _phoneNumber = "";
+  bool _isLoading = false;
 
   TextEditingController get nameController => _nameController;
   TextEditingController get emailController => _emailController;
@@ -21,10 +22,16 @@ class FormSignUpNotifier extends ChangeNotifier {
   TextEditingController get confirmController => _confirmController;
   bool get isHidden => _isHidden;
   String get phoneNumber => _phoneNumber;
+  bool get isLoading => _isLoading;
 
   void changePhone(number) {
     print("$number u metodi");
     _phoneNumber = number;
+    notifyListeners();
+  }
+
+  void changeStateLoading() {
+    _isLoading = !_isLoading;
     notifyListeners();
   }
 
@@ -39,6 +46,7 @@ class FormSignUpNotifier extends ChangeNotifier {
       final name = _nameController.text.trim();
       final email = _emailController.text.trim();
       final password = _passwordController.text;
+
       // print(phoneNumber);
 
       // _phoneNumber = _phoneNumber.substring(1);
@@ -63,6 +71,8 @@ class FormSignUpNotifier extends ChangeNotifier {
           _goToLoginScreen(context, _formKey, _scaffoldKey);
         }
       } on AuthException catch (e) {
+        changeStateLoading();
+
         _scaffoldKey.currentState.showSnackBar(
           SnackBar(
             content: e.message == "Username already exists in the system."
@@ -76,10 +86,11 @@ class FormSignUpNotifier extends ChangeNotifier {
   }
 
   void _goToLoginScreen(BuildContext context, _formKey, _scaffoldKey) {
-    _nameController.text = "";
+    changeStateLoading();
     CoolAlert.show(
       onConfirmBtnTap: () async {
         await FlutterSession().set("isSignedIn", true);
+
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -91,6 +102,7 @@ class FormSignUpNotifier extends ChangeNotifier {
       title: "You have successfully signed up!",
       type: CoolAlertType.success,
     );
+
     notifyListeners();
   }
 }
