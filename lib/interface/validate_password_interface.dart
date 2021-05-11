@@ -1,4 +1,4 @@
 abstract class ValidatePasswordInterface {
-  bool validatePassword(value, _scaffoldKey) {}
-  bool confirmPassword(value1, value2, _scaffoldKey) {}
+  validatePassword(value, _scaffoldKey) {}
+  confirmPassword(value1, value2, _scaffoldKey) {}
 }

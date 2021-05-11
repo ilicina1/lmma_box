@@ -24,8 +24,12 @@ void main() {
     ),
   );
 
-  SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: Colors.white));
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+          statusBarColor: Colors.white,
+          statusBarIconBrightness: Brightness.dark,
+          statusBarBrightness:
+              Brightness.dark) /* set Status bar icon color in iOS. */
+      );
 }
 
 class MyApp extends StatefulWidget {
