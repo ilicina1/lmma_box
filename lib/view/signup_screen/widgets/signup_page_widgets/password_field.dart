@@ -4,6 +4,7 @@ import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/password_field_text.dart';
 import 'package:lmma_box/viewModel/validate_password_viewModel.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/services.dart';
 
 // ignore: must_be_immutable
 class PasswordField extends StatefulWidget {
@@ -14,6 +15,8 @@ class PasswordField extends StatefulWidget {
 }
 
 class _PasswordFieldState extends State<PasswordField> {
+  // FocusNode focusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignUpNotifier>();
@@ -27,6 +30,7 @@ class _PasswordFieldState extends State<PasswordField> {
         children: [
           PasswordText(context),
           TextFormField(
+            focusNode: controllers.focusNode,
             validator: (value) {
               if (ValidatePasswordModel(value, widget._scaffoldKey) == false)
                 return "Please enter your password.";
@@ -37,7 +41,9 @@ class _PasswordFieldState extends State<PasswordField> {
             decoration: InputDecoration(
               hintText: 'Enter your password',
               suffix: InkWell(
-                onTap: controllers.togglePasswordView,
+                onTap: MediaQuery.of(context).viewInsets.bottom == 0
+                    ? controllers.togglePasswordViewInVisible
+                    : controllers.togglePasswordViewVisible,
                 child: controllers.isHidden ? iconVisible : iconInvisible,
               ),
               hintStyle: hintStyle,

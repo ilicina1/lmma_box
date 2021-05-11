@@ -17,12 +17,15 @@ class _passwordFieldState extends State<PasswordField> {
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
     return TextFormField(
+      focusNode: controllers.focusNode,
       controller: controllers.passwordController,
       obscureText: controllers.obscureText,
       decoration: InputDecoration(
         hintText: '••••••••••',
         suffix: InkWell(
-          onTap: controllers.togglePasswordView,
+          onTap: MediaQuery.of(context).viewInsets.bottom == 0
+              ? controllers.togglePasswordViewInVisible
+              : controllers.togglePasswordViewVisible,
           child: controllers.obscureText
               ? Icon(
                   Icons.visibility,

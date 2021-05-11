@@ -13,6 +13,7 @@ class FormSignUpNotifier extends ChangeNotifier {
   TextEditingController _confirmController = TextEditingController();
   bool _isHidden = true;
   String _phoneNumber = "";
+  FocusNode _focusNode = FocusNode();
 
   TextEditingController get nameController => _nameController;
   TextEditingController get emailController => _emailController;
@@ -21,6 +22,7 @@ class FormSignUpNotifier extends ChangeNotifier {
   TextEditingController get confirmController => _confirmController;
   bool get isHidden => _isHidden;
   String get phoneNumber => _phoneNumber;
+  FocusNode get focusNode => _focusNode;
 
   void changePhone(number) {
     print("$number u metodi");
@@ -28,7 +30,15 @@ class FormSignUpNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  void togglePasswordView() {
+  void togglePasswordViewInVisible() {
+    _isHidden = !_isHidden;
+    focusNode.unfocus();
+    focusNode.canRequestFocus = false;
+
+    notifyListeners();
+  }
+
+  void togglePasswordViewVisible() {
     _isHidden = !_isHidden;
     notifyListeners();
   }

@@ -78,15 +78,6 @@ class _MyAppState extends State<MyApp> {
               : PageScroller();
         },
       ),
-
-      // home: FutureBuilder(
-      //   future: FlutterSession().get('mail'),
-      //   builder: (context, snapshot) {
-      //     return snapshot.data != false && snapshot.data != null
-      //         ? TestSignUp(snapshot.data)
-      //         : PageScroller();
-      //   },
-      // ),
     );
   }
 }
