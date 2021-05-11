@@ -5,22 +5,27 @@ class TermsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true, // this is all you need
         elevation: 0,
+        leadingWidth: 80, // <-- Use this
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: true,
-        leading: RawMaterialButton(
-          elevation: 0,
-          fillColor: Color(0xffF9F9F9),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          child: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-            size: 35.0,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: RawMaterialButton(
+            elevation: 0,
+            fillColor: Color(0xffF9F9F9),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+              size: 35.0,
+            ),
+            onPressed: () => Navigator.pop(context, true),
           ),
-          onPressed: () => Navigator.pop(context, true),
         ),
 
         title: Text(
