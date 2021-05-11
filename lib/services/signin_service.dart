@@ -23,7 +23,7 @@ class SignInService implements SignInInterface {
         ".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id=" +
         "${COGNITO_CLIENT_ID}&code=" +
         finalCode[0] +
-        "&redirect_uri=http://localhost:4200/callback/";
+        "&redirect_uri=http://localhost:4200/home";
 
     final response = await http.post(Uri.parse(url),
         body: {},
