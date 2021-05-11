@@ -28,22 +28,30 @@ class TermsContainer extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          Container(
-            child: Text(
-              "Terms of use",
-              style: TextStyle(
-                  fontSize: 28.0,
-                  color: Colors.black87,
-                  fontWeight: FontWeight.w600),
-            ),
-          ),
-          SingleChildScrollView(
-            child: Text(
-              "Description that is too long in text format(Here Data is coming from API)",
-              style: TextStyle(
-                fontSize: 16.0,
-                color: Colors.black87,
-              ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  child: Text(
+                    "Terms of use",
+                    style: TextStyle(
+                        fontSize: 28.0,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+                SingleChildScrollView(
+                  child: Text(
+                    "Description that is too long in text format(Here Data is coming from API)",
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
