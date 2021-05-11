@@ -50,11 +50,17 @@ PODS:
     - Amplify (= 1.9.0)
     - AWSCore (~> 2.24.0)
   - Flutter (1.0.0)
+  - keyboard_visibility (0.5.0):
+    - Flutter
+    - Reachability
   - libphonenumber (0.0.1):
     - Flutter
     - libPhoneNumber-iOS
   - libPhoneNumber-iOS (0.9.15)
   - ObjectMapper (4.2.0)
+  - Reachability (3.2)
+  - shared_preferences (0.0.1):
+    - Flutter
   - webview_flutter (0.0.1):
     - Flutter
 
@@ -64,7 +70,9 @@ DEPENDENCIES:
   - amplify_core (from `.symlinks/plugins/amplify_core/ios`)
   - amplify_flutter (from `.symlinks/plugins/amplify_flutter/ios`)
   - Flutter (from `Flutter`)
+  - keyboard_visibility (from `.symlinks/plugins/keyboard_visibility/ios`)
   - libphonenumber (from `.symlinks/plugins/libphonenumber/ios`)
+  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
   - webview_flutter (from `.symlinks/plugins/webview_flutter/ios`)
 
 SPEC REPOS:
@@ -80,6 +88,7 @@ SPEC REPOS:
     - AWSPluginsCore
     - libPhoneNumber-iOS
     - ObjectMapper
+    - Reachability
 
 EXTERNAL SOURCES:
   amplify_analytics_pinpoint:
@@ -92,8 +101,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/amplify_flutter/ios"
   Flutter:
     :path: Flutter
+  keyboard_visibility:
+    :path: ".symlinks/plugins/keyboard_visibility/ios"
   libphonenumber:
     :path: ".symlinks/plugins/libphonenumber/ios"
+  shared_preferences:
+    :path: ".symlinks/plugins/shared_preferences/ios"
   webview_flutter:
     :path: ".symlinks/plugins/webview_flutter/ios"
 
@@ -112,10 +125,13 @@ SPEC CHECKSUMS:
   AWSPinpoint: d8a830824b7539582c3d98316d9982e0f7deafe3
   AWSPluginsCore: 34b987a116d75fb09852e2812cb53902d72c73c8
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  keyboard_visibility: 96a24de806fe6823c3ad956c01ba2ec6d056616f
   libphonenumber: bd14d5abfc5939ab0b0767234e2d8e2593af258e
   libPhoneNumber-iOS: 0a32a9525cf8744fe02c5206eb30d571e38f7d75
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
-  webview_flutter: 9f491a9b5a66f2573946a389b2677987b0ff8c0b
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
+  webview_flutter: d2b4d6c66968ad042ad94cbb791f5b72b4678a96
 
 PODFILE CHECKSUM: 7368163408c647b7eb699d0d788ba6718e18fb8d
 

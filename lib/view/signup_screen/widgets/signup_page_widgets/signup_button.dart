@@ -23,22 +23,32 @@ class _signUpButtonState extends State<SignUpButton> {
         height: MediaQuery.of(context).size.width < 380
             ? MediaQuery.of(context).size.height * 0.05
             : 45,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-              elevation: 0.0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              primary: Color(0xFFFFDF36)),
-          child: Text(
-            'Sign Up',
-            style: twoButtonsStyle,
-          ),
-          onPressed: () => widget._formKey.currentState.validate()
-              ? controllers.createAccountOnPressed(
-                  context, widget._formKey, widget._scaffoldKey)
-              : print("processing data"),
-        ),
+        child: !controllers.isLoading
+            ? ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    elevation: 0.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    primary: Color(0xFFFFDF36)),
+                child: Text(
+                  'Sign Up',
+                  style: twoButtonsStyle,
+                ),
+                onPressed: () async {
+                  controllers.changeStateLoading();
+
+                  await widget._formKey.currentState.validate()
+                      ? controllers.createAccountOnPressed(
+                          //ovdje loader staviti
+                          context,
+                          widget._formKey,
+                          widget._scaffoldKey)
+                      : controllers.changeStateLoading();
+                  ;
+                },
+              )
+            : CircularProgressIndicator(),
       ),
     );
   }
