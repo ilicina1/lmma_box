@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_session/flutter_session.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/signup_screen/pages/signup_page.dart';
 
@@ -22,7 +23,8 @@ Widget GetStarted(context, _pageController, screenScroll) {
           'Get started',
           style: getStartedStyle,
         ),
-        onPressed: () {
+        onPressed: () async {
+          await FlutterSession().set("seen", true);
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => SignUpPage()),

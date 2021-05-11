@@ -7,6 +7,7 @@ import 'package:lmma_box/utils/configurations/amplifyconfiguration.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/providers/screen_scroll.dart';
+import 'package:lmma_box/view/signup_screen/pages/signup_page.dart';
 import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 import 'package:provider/provider.dart';
 import 'view/welcome_screen/pages/page_scroller.dart';
@@ -70,10 +71,10 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       home: FutureBuilder(
-        future: FlutterSession().get('mail'),
+        future: FlutterSession().get('seen'),
         builder: (context, snapshot) {
-          return snapshot.data != false && snapshot.data != null
-              ? TestSignUp(snapshot.data)
+          return snapshot.data == true && snapshot.data != null
+              ? SignUpPage()
               : PageScroller();
         },
       ),
