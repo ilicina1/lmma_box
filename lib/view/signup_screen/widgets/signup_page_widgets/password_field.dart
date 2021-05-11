@@ -25,10 +25,10 @@ class _PasswordFieldState extends State<PasswordField> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          passwordText(context),
+          PasswordText(context),
           TextFormField(
             validator: (value) {
-              if (validatePasswordModel(value, widget._scaffoldKey) == false)
+              if (ValidatePasswordModel(value, widget._scaffoldKey) == false)
                 return "Please enter your password.";
               return null;
             },

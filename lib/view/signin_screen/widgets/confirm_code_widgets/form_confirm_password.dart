@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
-import 'package:lmma_box/services/validate_password.dart';
+import 'package:lmma_box/viewModel/validate_password_viewModel.dart';
 import 'package:provider/provider.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 
@@ -26,9 +26,9 @@ class PasswordConfirmForm extends StatelessWidget {
                 : labelaStyle,
           ),
           TextFormField(
-            obscureText: controllers.obscureText,
+            obscureText: controllers.obscureTextSecond,
             validator: (value) {
-              if (confirmPassword(
+              if (ConfirmPassword(
                       value,
                       controllers.passwordResetController.text.trim(),
                       _scaffoldKey) ==
@@ -38,8 +38,8 @@ class PasswordConfirmForm extends StatelessWidget {
             controller: controllers.passwordConfirmController,
             decoration: InputDecoration(
               suffix: InkWell(
-                onTap: controllers.togglePasswordView,
-                child: controllers.obscureText
+                onTap: controllers.togglePasswordViewsecond,
+                child: controllers.obscureTextSecond
                     ? Icon(
                         Icons.visibility,
                         color: Color(0xFF8B8B8B),

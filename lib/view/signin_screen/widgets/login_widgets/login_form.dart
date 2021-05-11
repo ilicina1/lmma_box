@@ -28,12 +28,12 @@ class _LoginFormState extends State<LoginForm> {
                 alignment: Alignment.topLeft,
                 child: Text(
                   'Email',
-                  style: MediaQuery.of(context).size.width < 470
+                  style: MediaQuery.of(context).size.width < 380
                       ? labelaStyleSmall
                       : labelaStyle,
                 ),
               ),
-              emailField(),
+              EmailField(),
               Container(
                 margin: EdgeInsets.only(top: 30),
                 alignment: Alignment.topLeft,
@@ -44,7 +44,7 @@ class _LoginFormState extends State<LoginForm> {
                       : labelaStyle,
                 ),
               ),
-              passwordField(widget._scaffoldKey),
+              PasswordField(widget._scaffoldKey),
               LoginButton(widget._formKey, widget._scaffoldKey),
             ],
           ),

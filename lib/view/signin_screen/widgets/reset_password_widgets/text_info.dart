@@ -7,13 +7,16 @@ class TextInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      "Enter the email address associated with your account, and we’ll email you a code to reset your password",
-      style: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
+    return Padding(
+      padding: const EdgeInsets.only(top: 20.0),
+      child: Text(
+        "Enter the email address associated with your account, and we’ll email you a code to reset your password",
+        style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w400,
+        ),
+        textAlign: TextAlign.justify,
       ),
-      textAlign: TextAlign.justify,
     );
   }
 }

@@ -76,6 +76,7 @@ class FormSignUpNotifier extends ChangeNotifier {
   }
 
   void _goToLoginScreen(BuildContext context, _formKey, _scaffoldKey) {
+    _nameController.text = "";
     CoolAlert.show(
       onConfirmBtnTap: () async {
         await FlutterSession().set("isSignedIn", true);

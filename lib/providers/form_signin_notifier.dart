@@ -1,8 +1,10 @@
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_flutter/amplify.dart';
+import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_session/flutter_session.dart';
 import 'package:lmma_box/view/signin_screen/pages/confirm_code.dart';
+import 'package:lmma_box/view/signin_screen/pages/login_screen.dart';
 import 'package:lmma_box/view/signup_screen/pages/testSignUp.dart';
 
 class FormSignInNotifier extends ChangeNotifier {
@@ -11,7 +13,12 @@ class FormSignInNotifier extends ChangeNotifier {
   TextEditingController _passwordResetController = TextEditingController();
   TextEditingController _passwordConfirmController = TextEditingController();
   TextEditingController _confirmationCodeController = TextEditingController();
+
+  String _controller = "";
+
   bool _obscureText = true;
+  bool _obscureTextSecond = true;
+
   bool _isChecked = false;
   bool _isLoading = true;
 
@@ -22,9 +29,21 @@ class FormSignInNotifier extends ChangeNotifier {
       _passwordConfirmController;
   TextEditingController get confirmationCodeController =>
       _confirmationCodeController;
+
+  String get controller => _controller;
+
   bool get obscureText => _obscureText;
+  bool get obscureTextSecond => _obscureTextSecond;
+
   bool get isChecked => _isChecked;
   bool get isLoading => _isLoading;
+
+  void setConfController(value) {
+    _controller = value;
+    print(_controller);
+    // _confirmationCodeController.text = value;
+    notifyListeners();
+  }
 
   void changeStateLoading() {
     _isLoading = !_isLoading;
@@ -38,6 +57,11 @@ class FormSignInNotifier extends ChangeNotifier {
 
   void togglePasswordView() {
     _obscureText = !_obscureText;
+    notifyListeners();
+  }
+
+  void togglePasswordViewsecond() {
+    _obscureTextSecond = !_obscureTextSecond;
     notifyListeners();
   }
 
@@ -67,7 +91,6 @@ class FormSignInNotifier extends ChangeNotifier {
         if (response.isSignedIn) {
           _emailController.text = "";
           _passwordController.text = "";
-          _confirmationCodeController.text = "";
           await FlutterSession().set("isSignedIn", true);
           Navigator.pushReplacement(
             context,
@@ -96,7 +119,7 @@ class FormSignInNotifier extends ChangeNotifier {
       await Amplify.Auth.resetPassword(
         username: _emailController.text.trim(),
       );
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (_) => ConfirmCodePage(),
@@ -109,16 +132,30 @@ class FormSignInNotifier extends ChangeNotifier {
   }
 
   Future<void> submitResetCode(context, _scaffoldKey) async {
+    print("$_confirmationCodeController controller");
     try {
       await Amplify.Auth.confirmPassword(
         username: _emailController.text.trim(),
         newPassword: _passwordResetController.text.trim(),
-        confirmationCode: _confirmationCodeController.text,
+        confirmationCode: _controller,
       );
       _emailController.text = "";
       _passwordController.text = "";
       _confirmationCodeController.text = "";
-      Navigator.pop(context, true);
+      CoolAlert.show(
+        onConfirmBtnTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (_) => LoginScreen(),
+            ),
+          );
+        },
+        context: context,
+        title: "You have successfully changed password!",
+        type: CoolAlertType.success,
+      );
+      // Navigator.pop(context);
     } on AuthException catch (e) {
       _scaffoldKey.currentState.showSnackBar(
         SnackBar(

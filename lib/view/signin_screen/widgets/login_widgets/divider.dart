@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lmma_box/utils/style/styles.dart';
 
 class LoginDivider extends StatelessWidget {
   @override
@@ -16,7 +17,10 @@ class LoginDivider extends StatelessWidget {
             endIndent: 20,
           ),
         ),
-        Text('or'),
+        Text(
+          'or',
+          style: dividerText,
+        ),
         Container(
           width: 150,
           child: Divider(

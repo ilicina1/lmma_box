@@ -39,6 +39,8 @@ dependencies:
   keyboard_visibility: ^0.5.2
   flutter_session: ^0.1.1
   simpleprogressdialog: ^1.0.8
+  flutter_launcher_icons: ^0.8.1
+
 
 
   # webview_flutter: ^2.0.4
@@ -56,7 +58,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

@@ -4,15 +4,15 @@ import 'package:lmma_box/utils/style/styles.dart';
 import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
-class signUpButton extends StatefulWidget {
+class SignUpButton extends StatefulWidget {
   var _formKey;
   var _scaffoldKey;
-  signUpButton(this._formKey, this._scaffoldKey);
+  SignUpButton(this._formKey, this._scaffoldKey);
   @override
   _signUpButtonState createState() => _signUpButtonState();
 }
 
-class _signUpButtonState extends State<signUpButton> {
+class _signUpButtonState extends State<SignUpButton> {
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignUpNotifier>();
@@ -20,6 +20,9 @@ class _signUpButtonState extends State<signUpButton> {
       padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
       child: Container(
         width: double.infinity,
+        height: MediaQuery.of(context).size.width < 380
+            ? MediaQuery.of(context).size.height * 0.05
+            : 45,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
               elevation: 0.0,

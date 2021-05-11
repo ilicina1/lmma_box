@@ -6,6 +6,7 @@
 build/
 # If you're building an application, you may want to check-in your pubspec.lock
 pubspec.lock
+generated_plugin_registrant.dart
 
 # Directory created by dartdoc
 # If you don't generate documentation locally you can remove this line.
@@ -20,8 +21,10 @@ doc/api/
 *.js.deps
 *.js.map
 *.flutter-plugins-dependencies
+
 .flutter-plugins
 .flutter-plugins-dependencies
+.generated_plugin_registrant.dart
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*

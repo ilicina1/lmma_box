@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/privacy_policy_screen/pages/privacy_policy_layout.dart';
 
-Widget policyAndTerms(context) {
+Widget PolicyAndTerms(context) {
   return Container(
     alignment: Alignment.center,
     padding: EdgeInsets.only(top: 20),
