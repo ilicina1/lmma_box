@@ -75,6 +75,7 @@ class FormSignUpNotifier extends ChangeNotifier {
 
         _scaffoldKey.currentState.showSnackBar(
           SnackBar(
+            margin: MediaQuery.of(context).viewInsets,
             content: e.message == "Username already exists in the system."
                 ? Text("Account already exists. Try again or Sign in.")
                 : Text(e.message),

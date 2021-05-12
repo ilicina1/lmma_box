@@ -38,7 +38,7 @@ class _passwordFieldState extends State<PasswordField> {
         border: border,
       ),
       validator: (value) {
-        if (ValidatePasswordModel(value, widget._scaffoldKey) == false)
+        if (ValidatePasswordModel(value, widget._scaffoldKey, context) == false)
           return "Please enter your password.";
         return null;
       },

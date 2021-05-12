@@ -3,7 +3,7 @@ import 'package:lmma_box/interface/validate_password_interface.dart';
 
 class ValidateService implements ValidatePasswordInterface {
   @override
-  bool validatePassword(value, _scaffoldKey) {
+  bool validatePassword(value, _scaffoldKey, context) {
     String pattern =
         r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
     RegExp regExp = new RegExp(pattern);
@@ -12,6 +12,7 @@ class ValidateService implements ValidatePasswordInterface {
     else {
       _scaffoldKey.currentState.showSnackBar(
         SnackBar(
+          margin: MediaQuery.of(context).viewInsets,
           content: Text(
               "Password should be at least 8 characters long and should include at least one lower and upper case characters, one number and one symbol"),
         ),

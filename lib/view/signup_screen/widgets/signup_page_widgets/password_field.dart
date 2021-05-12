@@ -28,8 +28,8 @@ class _PasswordFieldState extends State<PasswordField> {
           PasswordText(context),
           TextFormField(
             validator: (value) {
-              if (ValidatePasswordModel(value, widget._scaffoldKey) == false)
-                return "Please enter your password.";
+              if (ValidatePasswordModel(value, widget._scaffoldKey, context) ==
+                  false) return "Please enter your password.";
               return null;
             },
             controller: controllers.passwordController,

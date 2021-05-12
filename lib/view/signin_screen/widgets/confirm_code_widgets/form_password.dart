@@ -28,7 +28,7 @@ class PasswordForm extends StatelessWidget {
           TextFormField(
             obscureText: controllers.obscureText,
             validator: (value) {
-              if (ValidatePasswordModel(value, _scaffoldKey) == false)
+              if (ValidatePasswordModel(value, _scaffoldKey, context) == false)
                 return "Please enter your password.";
               return null;
             },

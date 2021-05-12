@@ -12,6 +12,7 @@ class _NameFieldState extends State<NameField> {
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignUpNotifier>();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

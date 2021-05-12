@@ -102,6 +102,7 @@ class FormSignInNotifier extends ChangeNotifier {
       } on AuthException catch (e) {
         _scaffoldKey.currentState.showSnackBar(
           SnackBar(
+              margin: MediaQuery.of(context).viewInsets,
               content: e.message == "User not confirmed in the system."
                   ? Text(
                       "${e.message} Please verify your email before loging in.")
@@ -159,6 +160,7 @@ class FormSignInNotifier extends ChangeNotifier {
     } on AuthException catch (e) {
       _scaffoldKey.currentState.showSnackBar(
         SnackBar(
+          margin: MediaQuery.of(context).viewInsets,
           content: Text(e.message),
         ),
       );
