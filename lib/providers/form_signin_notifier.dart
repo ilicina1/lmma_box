@@ -14,6 +14,7 @@ class FormSignInNotifier extends ChangeNotifier {
   TextEditingController _passwordConfirmController = TextEditingController();
   TextEditingController _confirmationCodeController = TextEditingController();
   FocusNode _focusNode = FocusNode();
+  // FocusNode _focusNodeConfirm = FocusNode();
   String _controller = "";
 
   bool _obscureText = true;
@@ -30,6 +31,7 @@ class FormSignInNotifier extends ChangeNotifier {
   TextEditingController get confirmationCodeController =>
       _confirmationCodeController;
   FocusNode get focusNode => _focusNode;
+  // FocusNode get focusNodeConfirm => _focusNodeConfirm;
   String get controller => _controller;
 
   bool get obscureText => _obscureText;
@@ -53,11 +55,6 @@ class FormSignInNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  // void togglePasswordView() {
-  //   _obscureText = !_obscureText;
-  //   notifyListeners();
-  // }
-
   void togglePasswordViewInVisible() {
     _obscureText = !_obscureText;
     focusNode.unfocus();
@@ -71,23 +68,23 @@ class FormSignInNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  void togglePasswordViewInVisibleSecond() {
-    _obscureTextSecond = !_obscureTextSecond;
-    focusNode.unfocus();
-    focusNode.canRequestFocus = false;
-
+  void togglePasswordView() {
+    _obscureText = !_obscureText;
     notifyListeners();
   }
 
-  void togglePasswordViewVisibleSecond() {
-    _obscureTextSecond = !_obscureTextSecond;
-    notifyListeners();
-  }
-
-  // void togglePasswordViewsecond() {
+  // void togglePasswordViewInVisibleSecond() {
   //   _obscureTextSecond = !_obscureTextSecond;
+  //   focusNodeConfirm.unfocus();
+  //   focusNodeConfirm.canRequestFocus = false;
+
   //   notifyListeners();
   // }
+
+  void togglePasswordViewSecond() {
+    _obscureTextSecond = !_obscureTextSecond;
+    notifyListeners();
+  }
 
   Future<void> signOut() async {
     try {

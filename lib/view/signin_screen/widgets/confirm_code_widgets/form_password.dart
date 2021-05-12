@@ -26,7 +26,6 @@ class PasswordForm extends StatelessWidget {
                 : labelaStyle,
           ),
           TextFormField(
-            focusNode: controllers.focusNode,
             obscureText: controllers.obscureText,
             validator: (value) {
               if (ValidatePasswordModel(value, _scaffoldKey) == false)
@@ -36,9 +35,7 @@ class PasswordForm extends StatelessWidget {
             controller: controllers.passwordResetController,
             decoration: InputDecoration(
               suffix: InkWell(
-                onTap: MediaQuery.of(context).viewInsets.bottom == 0
-                    ? controllers.togglePasswordViewInVisible
-                    : controllers.togglePasswordViewVisible,
+                onTap: controllers.togglePasswordView,
                 child: controllers.obscureText
                     ? Icon(
                         Icons.visibility,

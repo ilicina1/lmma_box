@@ -26,7 +26,6 @@ class PasswordConfirmForm extends StatelessWidget {
                 : labelaStyle,
           ),
           TextFormField(
-            focusNode: controllers.focusNode,
             obscureText: controllers.obscureTextSecond,
             validator: (value) {
               if (ConfirmPassword(
@@ -39,9 +38,7 @@ class PasswordConfirmForm extends StatelessWidget {
             controller: controllers.passwordConfirmController,
             decoration: InputDecoration(
               suffix: InkWell(
-                onTap: MediaQuery.of(context).viewInsets.bottom == 0
-                    ? controllers.togglePasswordViewInVisibleSecond
-                    : controllers.togglePasswordViewVisibleSecond,
+                onTap: controllers.togglePasswordViewSecond,
                 child: controllers.obscureTextSecond
                     ? Icon(
                         Icons.visibility,
