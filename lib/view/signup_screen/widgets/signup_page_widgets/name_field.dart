@@ -11,6 +11,8 @@ class NameField extends StatefulWidget {
 class _NameFieldState extends State<NameField> {
   @override
   Widget build(BuildContext context) {
+    var focusNode = FocusNode();
+
     var controllers = context.watch<FormSignUpNotifier>();
 
     return Column(
@@ -22,19 +24,25 @@ class _NameFieldState extends State<NameField> {
               ? labelaStyleSmall
               : labelaStyle,
         ),
-        TextFormField(
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter your name';
-            }
-            return null;
+        GestureDetector(
+          onTap: () {
+            FocusScope.of(context).requestFocus(focusNode);
           },
-          controller: controllers.nameController,
-          decoration: InputDecoration(
-            hintText: 'Enter your Name',
-            hintStyle: hintStyle,
-            focusedBorder: focused,
-            border: border,
+          child: TextFormField(
+            focusNode: focusNode,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your name';
+              }
+              return null;
+            },
+            controller: controllers.nameController,
+            decoration: InputDecoration(
+              hintText: 'Enter your Name',
+              hintStyle: hintStyle,
+              focusedBorder: focused,
+              border: border,
+            ),
           ),
         ),
       ],
