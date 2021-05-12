@@ -60,7 +60,9 @@ class SignInService implements SignInInterface {
       }
     }
 
-    Navigator.push(
+    print("tralala");
+
+    Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => TestSignUp(user.username)),
     );

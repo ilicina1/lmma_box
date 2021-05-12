@@ -9,6 +9,7 @@ class EmailField extends StatefulWidget {
 }
 
 class _EmailFieldState extends State<EmailField> {
+  var focusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignUpNotifier>();
@@ -20,11 +21,16 @@ class _EmailFieldState extends State<EmailField> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Email",
-            style: MediaQuery.of(context).size.width < 380
-                ? labelaStyleSmall
-                : labelaStyle,
+          GestureDetector(
+            onTap: () {
+              FocusScope.of(context).requestFocus(focusNode);
+            },
+            child: Text(
+              "Email",
+              style: MediaQuery.of(context).size.width < 380
+                  ? labelaStyleSmall
+                  : labelaStyle,
+            ),
           ),
           TextFormField(
             validator: (value) {

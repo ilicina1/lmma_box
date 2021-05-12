@@ -14,7 +14,7 @@ class PasswordField extends StatefulWidget {
 }
 
 class _PasswordFieldState extends State<PasswordField> {
-  // FocusNode focusNode = FocusNode();
+  FocusNode focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -28,26 +28,31 @@ class _PasswordFieldState extends State<PasswordField> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           PasswordText(context),
-          TextFormField(
-            focusNode: controllers.focusNode,
-            validator: (value) {
-              if (ValidatePasswordModel(value, widget._scaffoldKey) == false)
-                return "Please enter your password.";
-              return null;
+          GestureDetector(
+            onTap: () {
+              FocusScope.of(context).requestFocus(focusNode);
             },
-            controller: controllers.passwordController,
-            obscureText: controllers.isHidden,
-            decoration: InputDecoration(
-              hintText: 'Enter your password',
-              suffix: InkWell(
-                onTap: MediaQuery.of(context).viewInsets.bottom == 0
-                    ? controllers.togglePasswordViewInVisible
-                    : controllers.togglePasswordViewVisible,
-                child: controllers.isHidden ? iconVisible : iconInvisible,
+            child: TextFormField(
+              focusNode: controllers.focusNode,
+              validator: (value) {
+                if (ValidatePasswordModel(value, widget._scaffoldKey) == false)
+                  return "Please enter your password.";
+                return null;
+              },
+              controller: controllers.passwordController,
+              obscureText: controllers.isHidden,
+              decoration: InputDecoration(
+                hintText: 'Enter your password',
+                suffix: InkWell(
+                  onTap: MediaQuery.of(context).viewInsets.bottom == 0
+                      ? controllers.togglePasswordViewInVisible
+                      : controllers.togglePasswordViewVisible,
+                  child: controllers.isHidden ? iconVisible : iconInvisible,
+                ),
+                hintStyle: hintStyle,
+                focusedBorder: focused,
+                border: border,
               ),
-              hintStyle: hintStyle,
-              focusedBorder: focused,
-              border: border,
             ),
           ),
         ],

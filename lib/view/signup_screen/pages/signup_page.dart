@@ -16,7 +16,6 @@ class _SignUpPageState extends State<SignUpPage> {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Colors.white,
-      resizeToAvoidBottomInset: false,
       body: FutureBuilder(
         future: FlutterSession().get('mail'),
         builder: (context, snapshot) {
