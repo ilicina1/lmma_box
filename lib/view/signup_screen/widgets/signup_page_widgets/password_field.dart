@@ -4,7 +4,6 @@ import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/password_field_text.dart';
 import 'package:lmma_box/viewModel/validate_password_viewModel.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter/services.dart';
 
 // ignore: must_be_immutable
 class PasswordField extends StatefulWidget {
