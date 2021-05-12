@@ -13,7 +13,7 @@ Widget LinkedinIcon(context) {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => getWebView(context)),
+                MaterialPageRoute(builder: (context) => WebViewLinkedIn()),
               );
             }, // handle your image tap here
             child: Image(

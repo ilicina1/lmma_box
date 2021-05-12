@@ -13,7 +13,7 @@ Widget TwitterIcon(context) {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => getWebView(context)),
+                MaterialPageRoute(builder: (context) => WebViewTwitter()),
               );
             }, // handle your image tap here
             child: Image(

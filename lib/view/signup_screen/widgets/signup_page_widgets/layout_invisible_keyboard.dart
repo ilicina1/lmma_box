@@ -11,9 +11,9 @@ import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/signup_s
 
 Widget layoutInvisibleKeyboard(context, _formKey, _scaffoldKey) {
   return SizedBox(
-    height: MediaQuery.of(context).size.height * 0.78,
+    height: MediaQuery.of(context).size.height * 0.85,
     child: ListView(
-      physics: BouncingScrollPhysics(),
+      // physics: BouncingScrollPhysics(),
       children: [
         Form(
           key: _formKey,
@@ -26,7 +26,7 @@ Widget layoutInvisibleKeyboard(context, _formKey, _scaffoldKey) {
                 Padding(
                   padding: MediaQuery.of(context).size.width < 380
                       ? const EdgeInsets.fromLTRB(0, 10, 0, 15)
-                      : const EdgeInsets.fromLTRB(0, 30, 0, 30),
+                      : const EdgeInsets.fromLTRB(0, 0, 0, 30),
                   child: Text(
                     "Create Account",
                     style: MediaQuery.of(context).size.width < 380

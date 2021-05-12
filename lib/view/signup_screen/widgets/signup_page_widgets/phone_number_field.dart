@@ -10,6 +10,7 @@ class PhoneNumberField extends StatefulWidget {
 }
 
 class _PhoneNumberFieldState extends State<PhoneNumberField> {
+  var focusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
     var phone = context.watch<FormSignUpNotifier>();
@@ -32,16 +33,21 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
                 ? labelaStyleSmall
                 : labelaStyle,
           ),
-          InternationalPhoneInput(
-            onPhoneNumberChange: onPhoneNumberChange,
-            initialSelection: "+387",
-            decoration: InputDecoration(
-              hintText: 'Ex: 3452323423',
-              border: border,
-              focusedBorder: focused,
+          GestureDetector(
+            onTap: () {
+              FocusScope.of(context).requestFocus(focusNode);
+            },
+            child: InternationalPhoneInput(
+              onPhoneNumberChange: onPhoneNumberChange,
+              initialSelection: "+387",
+              decoration: InputDecoration(
+                hintText: 'Ex: 3452323423',
+                border: border,
+                focusedBorder: focused,
+              ),
+              hintText: "Ex: 3452323423",
+              showCountryFlags: true,
             ),
-            hintText: "Ex: 3452323423",
-            showCountryFlags: true,
           ),
         ],
       ),

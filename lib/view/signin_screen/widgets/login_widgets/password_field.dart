@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:keyboard_visibility/keyboard_visibility.dart';
 import 'package:lmma_box/providers/form_signin_notifier.dart';
 import 'package:lmma_box/viewModel/validate_password_viewModel.dart';
 import 'package:provider/provider.dart';
@@ -13,9 +14,26 @@ class PasswordField extends StatefulWidget {
 }
 
 class _passwordFieldState extends State<PasswordField> {
+  var pom = false;
+
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<FormSignInNotifier>();
+
+    KeyboardVisibilityNotification().addNewListener(
+      onChange: (bool visible) {
+        if (visible) {
+          setState(() {
+            pom = true;
+          });
+        } else {
+          setState(() {
+            pom = false;
+          });
+        }
+      },
+    );
+
     return TextFormField(
       focusNode: controllers.focusNode,
       controller: controllers.passwordController,
@@ -23,7 +41,7 @@ class _passwordFieldState extends State<PasswordField> {
       decoration: InputDecoration(
         hintText: '••••••••••',
         suffix: InkWell(
-          onTap: MediaQuery.of(context).viewInsets.bottom == 0
+          onTap: pom == false
               ? controllers.togglePasswordViewInVisible
               : controllers.togglePasswordViewVisible,
           child: controllers.obscureText
