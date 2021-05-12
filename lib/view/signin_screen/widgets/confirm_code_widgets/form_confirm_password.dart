@@ -38,7 +38,7 @@ class PasswordConfirmForm extends StatelessWidget {
             controller: controllers.passwordConfirmController,
             decoration: InputDecoration(
               suffix: InkWell(
-                onTap: controllers.togglePasswordViewsecond,
+                onTap: controllers.togglePasswordViewSecond,
                 child: controllers.obscureTextSecond
                     ? Icon(
                         Icons.visibility,
