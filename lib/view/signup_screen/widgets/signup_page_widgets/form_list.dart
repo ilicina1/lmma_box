@@ -20,22 +20,10 @@ class _FormListState extends State<FormList> {
   @override
   void initState() {
     super.initState();
-    // KeyboardVisibilityNotification().addNewListener(
-    //   onChange: (bool visible) {
-    //     print("visible $visible");
-    //     // if (visible) {
-    //     //   return layoutVisibleKeyboard(context, _formKey, widget._scaffoldKey);
-    //     // } else {
-    //     //   return layoutInvisibleKeyboard(
-    //     //       context, _formKey, widget._scaffoldKey);
-    //     // }
-    //   },
-    // );
   }
 
   @override
   Widget build(BuildContext context) {
-    // var controllers = context.watch<FormSignUpNotifier>();
     KeyboardVisibilityNotification().addNewListener(
       onChange: (bool visible) {
         if (visible) {
@@ -53,9 +41,6 @@ class _FormListState extends State<FormList> {
         }
       },
     );
-    print("pom je $pom");
-
-    // return layoutInvisibleKeyboard(context, _formKey, widget._scaffoldKey);
 
     return KeyboardVisibilityBuilder(
       builder: (context, child, isKeyboardVisible) {
