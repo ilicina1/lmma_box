@@ -13,17 +13,21 @@ class SignInService implements SignInInterface {
     final COGNITO_Pool_ID = cognitoPoolId;
 
     var finalCode;
+    String url;
     if (authCode.contains('#')) {
       finalCode = authCode.split('#');
+      url = "https://meelz.auth.us-east-1" +
+          ".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id=" +
+          "${COGNITO_CLIENT_ID}&code=" +
+          finalCode[0] +
+          "&redirect_uri=http://localhost:4200/home";
     } else {
-      finalCode = authCode;
+      url = "https://meelz.auth.us-east-1" +
+          ".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id=" +
+          "${COGNITO_CLIENT_ID}&code=" +
+          authCode +
+          "&redirect_uri=http://localhost:4200/home";
     }
-
-    String url = "https://meelz.auth.us-east-1" +
-        ".amazoncognito.com/oauth2/token?grant_type=authorization_code&client_id=" +
-        "${COGNITO_CLIENT_ID}&code=" +
-        finalCode[0] +
-        "&redirect_uri=http://localhost:4200/home";
 
     final response = await http.post(Uri.parse(url),
         body: {},
