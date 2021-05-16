@@ -18,7 +18,7 @@ Widget PolicyAndTerms(context) {
                 style: privacyBlue,
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
@@ -34,7 +34,7 @@ Widget PolicyAndTerms(context) {
                     style: privacyBlue,
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
