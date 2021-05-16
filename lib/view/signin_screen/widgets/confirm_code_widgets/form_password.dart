@@ -47,7 +47,7 @@ class _PasswordFormState extends State<PasswordForm> {
                 : labelaStyle,
           ),
           TextFormField(
-            focusNode: controllers.focusNode,
+            focusNode: controllers.focusNode2,
             obscureText: controllers.obscureText,
             validator: (value) {
               if (ValidatePasswordModel(value, widget._scaffoldKey) == false)

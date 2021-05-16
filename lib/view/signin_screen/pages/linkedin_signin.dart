@@ -17,7 +17,7 @@ class WebViewLinkedInState extends State<WebViewLinkedIn> {
 
   Widget getWebView() {
     var url =
-        "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?response_type=code&identity_provider=LinkedIn&client_id=31goilt5aaqpbo84acs1abfket&connection=linkedin&redirect_uri=http://localhost:4200/home&scope=email+openid+profile+aws.cognito.signin.user.admin";
+        "https://meelz.auth.us-east-1.amazoncognito.com/oauth2/authorize?response_type=code&identity_provider=Linkedin&client_id=31goilt5aaqpbo84acs1abfket&connection=linkedin&redirect_uri=http://localhost:4200/home&scope=email+openid+profile+aws.cognito.signin.user.admin";
     return WebView(
       initialUrl: url,
       userAgent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) ' +

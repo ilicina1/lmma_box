@@ -48,7 +48,7 @@ class _signUpButtonState extends State<SignUpButton> {
                   ;
                 },
               )
-            : CircularProgressIndicator(),
+            : Center(child: CircularProgressIndicator()),
       ),
     );
   }
