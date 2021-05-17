@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/utils/style/styles.dart';
 import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/button_confirm.dart';
 import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/form_confirm_password.dart';
 import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/form_password.dart';
@@ -39,7 +38,7 @@ class ConfirmCodePage extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 30.0),
                     child: ButtonConfirm(_formKey, _scaffoldKey),
                   ),
-                  TextRich(),
+                  // TextRich(),
                 ],
               ),
             ),

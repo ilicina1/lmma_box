@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/providers/form_signup_notifier.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/keyboard_visibility_builder.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/layout_invisible_keyboard.dart';
 import 'package:keyboard_visibility/keyboard_visibility.dart';
 import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/layout_visible_keyboard.dart';
-import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class FormList extends StatefulWidget {

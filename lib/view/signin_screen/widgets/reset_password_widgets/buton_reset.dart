@@ -17,23 +17,26 @@ class ButtonReset extends StatelessWidget {
       height: MediaQuery.of(context).size.width < 380
           ? MediaQuery.of(context).size.height * 0.05
           : 45,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            elevation: 0.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-            primary: Color(0xFFFFDF36)),
-        child: Text(
-          'Send confirmation code',
-          style: twoButtonsStyle,
-        ),
-        onPressed: () {
-          _formKey.currentState.validate()
-              ? controllers.resetPassword(context)
-              : print("processing data");
-        },
-      ),
+      child: controllers.isLoading
+          ? ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  elevation: 0.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  primary: Color(0xFFFFDF36)),
+              child: Text(
+                'Send confirmation code',
+                style: twoButtonsStyle,
+              ),
+              onPressed: () {
+                controllers.changeStateLoading();
+                _formKey.currentState.validate()
+                    ? controllers.resetPassword(context)
+                    : controllers.changeStateLoading();
+              },
+            )
+          : Center(child: CircularProgressIndicator()),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/app_bar_resetpw.dart';
+import 'package:lmma_box/view/signup_screen/widgets/signup_page_widgets/app_bar_back.dart';
 
 class TermsContainer extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class TermsContainer extends StatelessWidget {
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: AppBarWithIconBack(context, "Terms of use"),
+              child: AppBarWithIconBackReplace(context, "Terms of use"),
             ),
           ),
           SizedBox(

@@ -49,6 +49,7 @@ class _PasswordFieldState extends State<PasswordField> {
               FocusScope.of(context).requestFocus(focusNode);
             },
             child: TextFormField(
+              keyboardType: TextInputType.emailAddress,
               focusNode: controllers.focusNode,
               validator: (value) {
                 if (ValidatePasswordModel(value, widget._scaffoldKey) == false)

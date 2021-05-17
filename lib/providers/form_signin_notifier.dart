@@ -14,6 +14,7 @@ class FormSignInNotifier extends ChangeNotifier {
   TextEditingController _passwordConfirmController = TextEditingController();
   TextEditingController _confirmationCodeController = TextEditingController();
   FocusNode _focusNode = FocusNode();
+  FocusNode _focusNode2 = FocusNode();
   FocusNode _focusNodeConfirm = FocusNode();
   String _controller = "";
 
@@ -31,6 +32,7 @@ class FormSignInNotifier extends ChangeNotifier {
   TextEditingController get confirmationCodeController =>
       _confirmationCodeController;
   FocusNode get focusNode => _focusNode;
+  FocusNode get focusNode2 => _focusNode2;
   FocusNode get focusNodeConfirm => _focusNodeConfirm;
   String get controller => _controller;
 
@@ -59,7 +61,8 @@ class FormSignInNotifier extends ChangeNotifier {
     _obscureText = !_obscureText;
     focusNode.unfocus();
     focusNode.canRequestFocus = false;
-
+    focusNode2.unfocus();
+    focusNode2.canRequestFocus = false;
     notifyListeners();
   }
 
@@ -141,14 +144,16 @@ class FormSignInNotifier extends ChangeNotifier {
           builder: (_) => ConfirmCodePage(),
         ),
       );
+      _isLoading = !_isLoading;
     } on AuthException catch (e) {
-      print(e.message);
+      _isLoading = !_isLoading;
+      print("${e.message} error neki");
     }
     notifyListeners();
   }
 
   Future<void> submitResetCode(context, _scaffoldKey) async {
-    print("$_confirmationCodeController controller");
+    print("${_controller} controller je");
     try {
       await Amplify.Auth.confirmPassword(
         username: _emailController.text.trim(),
@@ -173,11 +178,30 @@ class FormSignInNotifier extends ChangeNotifier {
       );
       // Navigator.pop(context);
     } on AuthException catch (e) {
-      _scaffoldKey.currentState.showSnackBar(
-        SnackBar(
-          content: Text(e.message),
-        ),
-      );
+      if (e.toString().contains("UserLambdaValidationException")) {
+        _emailController.text = "";
+        _passwordController.text = "";
+        _confirmationCodeController.text = "";
+        CoolAlert.show(
+          onConfirmBtnTap: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (_) => LoginScreen(),
+              ),
+            );
+          },
+          context: context,
+          title: "You have successfully changed password!",
+          type: CoolAlertType.success,
+        );
+      } else {
+        _scaffoldKey.currentState.showSnackBar(
+          SnackBar(
+            content: Text(e.message),
+          ),
+        );
+      }
     }
 
     notifyListeners();

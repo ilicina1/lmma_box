@@ -35,6 +35,7 @@ class _passwordFieldState extends State<PasswordField> {
     );
 
     return TextFormField(
+      keyboardType: TextInputType.emailAddress,
       focusNode: controllers.focusNode,
       controller: controllers.passwordController,
       obscureText: controllers.obscureText,
