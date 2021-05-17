@@ -3,7 +3,6 @@ import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/button_
 import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/form_confirm_password.dart';
 import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/form_password.dart';
 import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/pin_container2.dart';
-import 'package:lmma_box/view/signin_screen/widgets/confirm_code_widgets/text_rich.dart';
 import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/app_bar_resetpw.dart';
 
 class ConfirmCodePage extends StatelessWidget {
@@ -20,7 +19,7 @@ class ConfirmCodePage extends StatelessWidget {
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: AppBarWithIconBack(context, "Confirn code"),
+              child: AppBarWithIconBack(context, "Confirm code"),
             ),
           ),
           Padding(

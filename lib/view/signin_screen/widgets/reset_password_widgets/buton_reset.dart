@@ -6,7 +6,9 @@ import 'package:lmma_box/utils/style/styles.dart';
 // ignore: must_be_immutable
 class ButtonReset extends StatelessWidget {
   var _formKey;
-  ButtonReset(this._formKey);
+  var _scaffoldKey;
+
+  ButtonReset(this._formKey, this._scaffoldKey);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class ButtonReset extends StatelessWidget {
               onPressed: () {
                 controllers.changeStateLoading();
                 _formKey.currentState.validate()
-                    ? controllers.resetPassword(context)
+                    ? controllers.resetPassword(context, _scaffoldKey)
                     : controllers.changeStateLoading();
               },
             )

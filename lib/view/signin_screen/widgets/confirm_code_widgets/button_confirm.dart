@@ -33,12 +33,6 @@ class ButtonConfirm extends StatelessWidget {
           _formKey.currentState.validate()
               ? controllers.submitResetCode(context, _scaffoldKey)
               : print("processing data");
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (_) => ConfirmCodePage(),
-          //   ),
-          // );
         },
       ),
     );

@@ -133,7 +133,7 @@ class FormSignInNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> resetPassword(context) async {
+  Future<void> resetPassword(context, _scaffoldKey) async {
     try {
       await Amplify.Auth.resetPassword(
         username: _emailController.text.trim(),
@@ -147,6 +147,9 @@ class FormSignInNotifier extends ChangeNotifier {
       _isLoading = !_isLoading;
     } on AuthException catch (e) {
       _isLoading = !_isLoading;
+      _scaffoldKey.currentState.showSnackBar(
+        SnackBar(content: Text(e.message)),
+      );
       print("${e.message} error neki");
     }
     notifyListeners();

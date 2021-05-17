@@ -4,7 +4,8 @@ import 'package:lmma_box/view/signin_screen/widgets/reset_password_widgets/buton
 // ignore: must_be_immutable
 class ContainerColored extends StatelessWidget {
   var _formKey;
-  ContainerColored(this._formKey);
+  var _scaffoldKey;
+  ContainerColored(this._formKey, this._scaffoldKey);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class ContainerColored extends StatelessWidget {
         ),
       ),
       child: SizedBox.expand(
-        child: ButtonReset(_formKey),
+        child: ButtonReset(_formKey, _scaffoldKey),
       ),
     );
   }

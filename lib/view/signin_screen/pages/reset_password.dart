@@ -39,7 +39,7 @@ class ResetPasswordPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    MainContainer(_formKey),
+                    MainContainer(_formKey, _scaffoldKey),
                   ],
                 ),
               ),
